@@ -1,6 +1,6 @@
 # Dancewear
 
-An experiment for pod work
+An experiment for pod work (code for that won't be available on this GitHub)
 
 Tech stack:
 
@@ -9,4 +9,8 @@ Tech stack:
 * React
 * TypeScript?
 * SCSS
+* Redux?
+* JUnit
+* Cypress
+* Jest
 
