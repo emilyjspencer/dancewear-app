@@ -1,15 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import  User from './User';
-import UsersPage from './UsersPage';
+import UsersPage from './components/UsersPage/UsersPage';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <UsersPage />
-    
-      </header>
+      
+      <UsersPage />
+   
     </div>
   );
 }
