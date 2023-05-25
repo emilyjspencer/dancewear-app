@@ -1,8 +1,8 @@
 package com.example.dancewear.controller;
 
 
-import com.example.dancewear.entity.User;
-import com.example.dancewear.service.UserService;
+import com.example.dancewear.entity.Product;
+import com.example.dancewear.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,16 +13,17 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping("/api/users")
-public class UserController {
+@RequestMapping("/api/products")
+public class ProductController {
 
     @Autowired
-    private UserService userService;
+    private ProductService productService;
 
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping
-    public List<User> getAll() {
-        return userService.getAll();
+    public List<Product> getAll() {
+        return productService.getAll();
     }
 
 }
+
