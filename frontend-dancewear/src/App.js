@@ -4,6 +4,7 @@ import  User from './User';
 import UsersPage from './components/UsersPage/UsersPage';
 import Footer from './components/HeaderFooter/Footer';
 import Header from './components/HeaderFooter/Header';
+import Products from './components/Products/Products'
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <div className="App">
       <Header />
       <UsersPage />
+      <Products />
      <Footer />
     </div>
   );
