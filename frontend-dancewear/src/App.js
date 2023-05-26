@@ -6,9 +6,10 @@ import Footer from './components/HeaderFooter/Footer';
 import Header from './components/HeaderFooter/Header';
 import Products from './components/Products/Products'
 import Decor from './components/Decor';
-import Contact from './components/Contact';
+import Contact from './components/Contact/Contact';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Test from './Test';
+import Quiz from './components/Quiz/Quiz';
 
 
 
@@ -21,6 +22,7 @@ function App() {
       <Products />
       <Decor />
       <Test />
+      <Quiz />
       <Contact />
      <Footer />
     </div>

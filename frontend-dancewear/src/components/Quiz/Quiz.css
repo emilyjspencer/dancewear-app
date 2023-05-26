@@ -1,0 +1,43 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    background-color: rgb(71, 230, 230);
+  }
+  
+  .selected {
+    background: rgb(106, 215, 230) !important;
+  }
+  
+  .options {
+    padding: 6px;
+    border: 3px solid rgb(242, 245, 247);
+    cursor: pointer;
+    width: 100%;
+    background-color: white;
+    color: steelblue;
+    font-weight: bold;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  ul li {
+    margin: 5px;
+  }
+  
+ 
+  
+  h1, h2, p {
+    font-family: Dancing Script;
+  }
+  
+  button {
+    font-family: Dancing Script;
+  }
+  
+ 
