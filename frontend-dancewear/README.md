@@ -12,37 +12,19 @@
 # Categories
 
 * Dance Shoes
- - ballet shoes
- - character shoes
-  - pointe shoes
-  - jazz shoes
- - dance trainers
- - tap shoes
- - heels
- - salsa shoes
+ * ballet shoes character shoes   pointe shoes   jazz shoes  dance trainers  tap shoes  heels
+salsa shoes
 
 * Leotards
- - strappy
- - long sleeve
- - short sleeve
- - low back
- - high neck
- - unitard
- - boy shorts leotard
+  strappy  long sleeve short sleeve  low back   high neck   unitard   boy shorts leotard
 
 * Gymnastics
 
 * Accessories
- - bottles
-  - posters
-  - scrunchies
-  - duvet covers
-  - pencil cases
+  bottles  posters  scrunchies  duvet covers  pencil cases
 
 * Dance bags
- - ballet bag
- - rucksacak
- - holdall
+  ballet bag   rucksack   holdall  string bag   shoulder bag 
 
 
 * Ballroom
@@ -71,20 +53,30 @@
 * Displayed on cards
 
 
-### Contact component
+### Contact 
 
 * Social media links
 * Subscribe to newsletter form
 
 
-### Basket component
+### Basket 
 
-### Navbar component
+### Navbar 
 
-### Footer component
+### Footer 
 
 
-### Carousel component
+### Carousel 
+
+### Quiz
+
+### Reviews SingleReview  SubmitReview
+
+### Cards  SingleCard
+
+### Chatbot
+
+### Pagination 
 
 
 # Pages
@@ -99,3 +91,6 @@
 * Gymnastics
 * Quiz page
 * Sale
+* Login
+* Logout
+* Signup
