@@ -1,20 +1,13 @@
+import { useState, useEffect } from "react";
+import Card from "../Cards/Cards";
 
-import { useState, useEffect} from 'react';
-
-
-export const Carousel = () => {
-
-    
-
-  
-    
-
-    return (
+const Carousel = () => {
+  return (
     <>
-       <h1>Trending</h1>
-       
+      <h1>Trending</h1>
+      <Card />
+    </>
+  );
+};
 
-                       
-                        </>
-    )
-}
+export default Carousel;

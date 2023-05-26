@@ -10,6 +10,7 @@ import Contact from './components/Contact/Contact';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Test from './Test';
 import Quiz from './components/Quiz/Quiz';
+import Carousel from './components/Carousel/Carousel';
 
 
 
@@ -22,6 +23,7 @@ function App() {
       <Products />
       <Decor />
       <Test />
+      <Carousel />
       <Quiz />
       <Contact />
      <Footer />
