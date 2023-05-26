@@ -15,15 +15,33 @@ const Header = () => {
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a className="nav-link" href="#">Home</a>
+          <a className="nav-link" href="/">Home</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Search Products</a>
+          <a className="nav-link" href="products">Search Products</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/dancewear">Dancewear</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="shoes">Danceshoes</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/costumes">Costumes</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/accessories">Accessories</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/gymnastics">Gymnastics</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/sale">Clearance</a>
         </li>
       </ul>
       <ul className="">
         <li className="">
-          <a className="" type="button" href="#">Sign in</a>
+          <a className="" type="button" href="/login">Log in</a>
         </li>
       </ul>
       </div>
