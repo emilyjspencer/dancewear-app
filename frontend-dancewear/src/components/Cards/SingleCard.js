@@ -6,7 +6,7 @@ const SingleCard = (props) => {
         <div
           className="card-item">
           <p>
-            <strong>{props.trend.title}</strong>
+            <strong><a href={props.trend.url}>{props.trend.title}</a></strong>
           </p>
           <div>{props.trend.img}</div>
         </div>

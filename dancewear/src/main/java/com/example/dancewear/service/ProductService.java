@@ -1,9 +1,7 @@
 package com.example.dancewear.service;
 
 import com.example.dancewear.dao.ProductRepository;
-
 import com.example.dancewear.entity.Product;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
