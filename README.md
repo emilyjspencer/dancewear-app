@@ -144,6 +144,8 @@ salsa shoes
 * Blog
 * Contact with subscribe to newsletter
 * Reviews - write a review   See others' reviews
+* Filters = filter by brand, filter by category, filter by size, 
+* Sorting - sort by price, sort reverse by price, sort alphabetically
 
 
 # Running the project

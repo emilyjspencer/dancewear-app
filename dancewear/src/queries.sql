@@ -12,6 +12,10 @@ INSERT INTO User (firstname, lastname) VALUES ('James', 'Smith');
 INSERT INTO User (firstname, lastname) VALUES ('Sally', 'Green');
 INSERT INTO User (firstname, lastname) VALUES ('Laura', 'Thompson');
 INSERT INTO User (firstname, lastname) VALUES ('Matthew', 'Edwards');
+INSERT INTO User (firstname, lastname) VALUES ('Jonny', 'Jones');
+INSERT INTO User (firstname, lastname) VALUES ('Imelda', 'Staunton');
+INSERT INTO User (firstname, lastname) VALUES ('Sandra', 'Bullock');
+INSERT INTO User (firstname, lastname) VALUES ('Ryan', 'Reynolds');
 
 <!-- Will make associations later -->
 CREATE TABLE Product (

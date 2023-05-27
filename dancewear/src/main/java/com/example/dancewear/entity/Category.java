@@ -1,2 +1,4 @@
-package com.example.dancewear.entity;public class Category {
+package com.example.dancewear.entity;
+
+public class Category {
 }

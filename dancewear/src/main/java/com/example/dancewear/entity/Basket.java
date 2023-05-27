@@ -1,2 +1,4 @@
-package com.example.dancewear.entity;public class Basket {
+package com.example.dancewear.entity;
+
+public class Basket {
 }
