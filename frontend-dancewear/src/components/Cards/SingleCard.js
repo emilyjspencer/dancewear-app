@@ -4,11 +4,11 @@ const SingleCard = (props) => {
     return (
       <li>
         <div
-          className="card-item">
+          className="card-container">
           <p>
-            <strong><a href={props.trend.url}>{props.trend.title}</a></strong>
+            <strong><a href={props.item.url}>{props.item.title}</a></strong>
           </p>
-          <div>{props.trend.img}</div>
+          <div className='card-img'>{props.item.img}</div>
         </div>
       </li>
     );

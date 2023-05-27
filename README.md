@@ -185,6 +185,13 @@ SELECT * FROM users;
 
 ## Database tables 
 
-Will be quite complex, involving primary keys etc to make associatations between different entities e.g. users and reviews,
+Will be quite complex, involving primary keys etc to make associations between different entities e.g. users and reviews,
 users and orders, products and brands, products and categories
+
+* One to Many relationships:
+ * User - Reviews
+ * User - Orders
+ * Product - Brands
+ * Product - Categories
+ * Brands - Categories
 

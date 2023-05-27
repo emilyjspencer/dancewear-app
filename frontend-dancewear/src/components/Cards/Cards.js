@@ -1,13 +1,14 @@
-import trending  from './TrendingData';
 import SingleCard from './SingleCard';
 
 const Cards = () => {
 
+ const list = [];
+
     return (
-      <div className="card-container">
+      <div className="card-container2">
       <ul>
-        {trending.map(trend => {
-          return <SingleCard trend={trend} key={trend.id} />;
+        {list.map(item => {
+          return <SingleCard item={item} key={item.id} />;
         })}
       </ul>
       </div>
