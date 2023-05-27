@@ -1,0 +1,17 @@
+.container {
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+.help {
+    flex-direction: column;
+}
+
+.info {
+    flex-direction: column;
+
+}
+
+.customer {
+    flex-direction: column;
+}

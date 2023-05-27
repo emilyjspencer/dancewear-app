@@ -4,38 +4,38 @@ import gymnastics from '../gymnastics.jpg'
 import shoes from '../tapshoes.jpg'
 import tutu from '../tutu.jpg'
 
-const trending = [
+const trends = [
     {
       id: 1,
       title: "Dancewear",
-      img: <img src={dancewear} />,
-      url: "/dancewear"
+      img: dancewear,
+      url: <a href="/dancewear">Link</a>
     },
     {
       id: 2,
       title: "Dance shoes",
-      img: <img src={brands} />,
-      url: "/shoes"
+      img: shoes,
+      url: <a href="/shoes">Link</a>
     },
     {
       id: 3,
       title: "Costumes",
-      img: <img src={shoes} />,
-      url: "/costumes"
+      img: tutu,
+      url: <a href="/costumes">Link</a>
     },
     {
       id: 4,
       title: "Gymnastics",
-      img: <img src={tutu} />,
-      url: "/gymnastics"
+      img: gymnastics,
+      url: <a href="/gymnastics">Link</a>
     },
     {
         id: 5,
         title: "Brands",
-        img: <img src={gymnastics} />,
-        url: "/brands"
+        img: brands,
+        url: <a href="/brands">Link</a>
       }
   ];
 
 
-  export default trending;
+  export default trends;
