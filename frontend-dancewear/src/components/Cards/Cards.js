@@ -1,7 +1,7 @@
 import trending  from './TrendingData';
 import SingleCard from './SingleCard';
 
-const Cards = (props) => {
+const Cards = () => {
 
     return (
       <div className="card-container">

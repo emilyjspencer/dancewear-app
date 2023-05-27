@@ -1,5 +1,5 @@
 
-import Cards from '../Cards/Cards';
+import Carousel from '../Carousel/Carousel'
 import Contact from '../Contact/Contact';
 
 const Home = () => {
@@ -7,7 +7,7 @@ const Home = () => {
     return (
        <>
         <h1>Home</h1>
-        <Cards />
+        <Carousel />
         <Contact />
         </>
     )

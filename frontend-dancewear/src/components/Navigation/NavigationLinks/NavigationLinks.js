@@ -5,6 +5,9 @@ import './NavigationLinks.css';
 
 const NavigationLinks = () => {
   return <ul className="nav-links">
+      <li>
+      <NavLink to="/">Home</NavLink>
+    </li>
     <li>
       <NavLink to="/brands">Brands</NavLink>
     </li>
