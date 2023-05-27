@@ -33,6 +33,7 @@ const App = () => {
      <nav className="navbar">
       <Link to="/">Home</Link>
       <Link to="/brands">Brands</Link>
+      <Link to="/products">Products</Link>
       <Link to="/dancewear">Dancewear</Link>
       <Link to="/shoes">Shoes</Link>
       <Link to="/gymnastics">Gymnastics</Link>

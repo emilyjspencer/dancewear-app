@@ -13,6 +13,9 @@ const NavigationLinks = () => {
       <NavLink to="/brands">Brands</NavLink>
     </li>
     <li>
+      <NavLink to="/products">Products</NavLink>
+    </li>
+    <li>
       <NavLink to="/shoes">Shoes</NavLink>
     </li>
     <li>

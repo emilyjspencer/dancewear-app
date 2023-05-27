@@ -1,5 +1,6 @@
 import { useState, useEffect} from 'react';
 import './Products.css';
+import Pagination from '../Pagination/Pagination';
 
 const Products = () => {
 const [products, setProducts] = useState([])
@@ -27,6 +28,7 @@ return (
         ))}
       </ul>
     )}
+    <Pagination />
   </div>
 );
 }
