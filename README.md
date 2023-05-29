@@ -236,3 +236,13 @@ id 13 Tops
 id 14 Trousers
 id 15 Casual
 
+
+# Points to consider
+
+* How to store images in the database
+* Should I use a CSS framework to make styling easier e.g. Tailwind
+* Accessibility 
+* Testing - unit and e2e
+* Security
+* Reusability of code
+* Performance 
