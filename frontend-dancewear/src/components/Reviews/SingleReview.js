@@ -7,7 +7,8 @@ const SingleReview = (props) => {
           className="review-item">
           <p>
             <strong>{props.review.title}
-            {props.review.author}
+            {props.review.authorId}
+            {props.review.productId}
             {props.review.description}
             {props.review.stars}
             </strong>

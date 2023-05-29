@@ -11,8 +11,6 @@ public class Review {
     @Id
     private Integer id;
 
-    private String author;
-
     private String title;
 
     private String description;
@@ -20,11 +18,11 @@ public class Review {
     private Integer stars;
 
     @OneToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "userId")
+    @JoinColumn(name = "author_id")
     private User user;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "productId")
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "product_id")
     private Product product;
 
 }

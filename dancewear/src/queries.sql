@@ -38,16 +38,19 @@ INSERT INTO PRODUCT (name, description, price) VALUES ('Katz scrunchie', 'Pink s
 CREATE TABLE Review (
 	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	title varchar(30) NOT NULL,
-	author varchar(30) NOT NULL,
 	description varchar(200) NOT NULL,
-	stars INT NOT NULL
+	stars INT NOT NULL,
+	author_id INT NOT NULL,
+	product_id INT NOT NULL,
+	FOREIGN KEY (author_id) REFERENCES User(id),
+	FOREIGN KEY (product_id) REFERENCES Product(id)
 );
 
 <!-- will make user associations later -->
-INSERT INTO Review (authorId, productId, title, description, stars) VALUES (1, 1, 'Great leotard', 'I love it', 5);
-INSERT INTO Review (authorId, productId, title, description, stars) VALUES (1, 2, 'Great bag', 'I love it', 5);
-INSERT INTO Review (authorId, productId, title, description, stars) VALUES (2, 1, 'Great tutu', 'I love it', 4);
-INSERT INTO Review (authorId, productId, title, description, stars) VALUES (2, 2, 'Great tutu' ,'I love it', 4);
+INSERT INTO Review (author_id, product_id, title, description, stars) VALUES (1, 1, 'Great leotard', 'I love it', 5);
+INSERT INTO Review (author_id, product_id, title, description, stars) VALUES (1, 2, 'Great bag', 'I love it', 5);
+INSERT INTO Review (author_id, product_id, title, description, stars) VALUES (2, 1, 'Great tutu', 'I love it', 4);
+INSERT INTO Review (author_id, product_id, title, description, stars) VALUES (2, 2, 'Great tutu' ,'I love it', 4);
 
 
 CREATE TABLE Blog (
