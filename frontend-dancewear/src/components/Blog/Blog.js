@@ -20,12 +20,21 @@ useEffect(() => {
   fetchBlogPosts()
 }, [])
 
+console.log(posts);
+
 return (
   <div>
     {posts.length > 0 && (
       <ul>
         {posts.map(post => (
-          <li key={post.id}>{post.firstname} {post.lastname}</li>
+          <li key={post.id}>
+            {post.title}
+            
+            <br /> 
+            <br />
+          {post.body}
+          <br />
+          {post.date_of_blog_post}</li>
         ))}
       </ul>
     )}
