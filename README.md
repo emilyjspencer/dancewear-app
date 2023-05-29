@@ -209,20 +209,30 @@ users and orders, products and brands, products and categories
 
 Brands
 
- id 1 'Katz
+id 1 'Katz
 id 2 Pineapple
 id 3 Bloch
 id 4 Capezio
 id 5 1st Position
 id 6 Ballet Rosa
 id 7 Little Ballerina
+id 8 Revolution
 
 ### Categories
 
-id 1 'Dancewear'
-id 2 'Shoes
+id 1 'Tutus'
+id 2 'Tap shoes
 id 3 'Bags'
 id 4 'Accessories'
 id 5  'Gymnastics wear'
 id 6 'Costumes'
+id 7 Character shoes
+id 8 Ballet shoes
+id 9 Pointe shoes
+id 10 Dance trainers
+id 11 Jazz shoes
+id 12 Leotards
+id 13 Tops
+id 14 Trousers
+id 15 Casual
 

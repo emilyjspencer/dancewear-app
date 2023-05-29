@@ -23,19 +23,38 @@ CREATE TABLE Product (
 	name varchar(30) NOT NULL,
 	description varchar(200) NOT NULL,
 	price INT NOT NULL
-	brand_id INT NOT NULL,
-	category_id INT NOT NULL,
-	FOREIGN KEY (brand_id) REFERENCES Brand(id),
-	FOREIGN KEY (category_id) REFERENCES Category(id),
 );
 
-<!-- Will make associations later -->
-INSERT INTO Product (name, description, price, brand_id, category_id) VALUES ('Polly Leotard', 'Pink, velvet leotard. High cut. Backless', 20, 1, 1);
-INSERT INTO Product (name, description, price, brand_id, category_id) VALUES ('Ruby Tap Shoes', 'Ruby red tap shoes. Perfect for those looking to add a bit of pizazz', 22);
-INSERT INTO Product (name, description, price, brand_id, category_id) VALUES ('Alice Ballet Bag', 'Baby pink ballet bag with dancer pattern', 18);
-INSERT INTO Product (name, description, price, brand_id, category_id) VALUES ('Angel tutu', 'Stunning white tutu with rhinestones', 40);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Black male leotard', 'Smart black leotard for men', 20);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Katz scrunchie', 'Pink sparkly scrunchy', 3);
+INSERT INTO Product (name, description, price) VALUES ('Polly Leotard', 'Pink, velvet leotard. High cut. Backless', 20);
+INSERT INTO Product (name, description, price) VALUES ('Ruby Tap Shoes', 'Ruby red tap shoes. Perfect for those looking to add a bit of pizazz', 22);
+INSERT INTO Product (name, description, price) VALUES ('Alice Ballet Bag', 'Baby pink ballet bag with dancer pattern', 18);
+INSERT INTO Product (name, description, price) VALUES ('Angel tutu', 'Stunning white tutu with rhinestones', 40);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Black male leotard', 'Smart black leotard for men', 20);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Katz scrunchie', 'Pink sparkly scrunchy', 3);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Ballerina duvet cover', 'Ages 3+', 22);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Revolution Leotard', 'Blue and silver gymnastics leotard', 28);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Katz Character shoes', 'Black with pink elastic', 18);
+INTO PRODUCT (name, description, price) VALUES ('Katz Character shoes', 'Grey with pink elastic', 18);
+INTO PRODUCT (name, description, price) VALUES ('Katz Character shoes', 'Beige with pink elastic', 18);
+INTO PRODUCT (name, description, price) VALUES ('Katz Tap shoes', 'Black with toe tapping board', 20);
+INTO PRODUCT (name, description, price) VALUES ('Katz Tap shoes', 'Black with heel and toe tapping boards', 20);
+INTO PRODUCT (name, description, price) VALUES ('Katz Tap shoes', 'White with toe tapping board', 20);
+INTO PRODUCT (name, description, price) VALUES ('Katz Tap shoes', 'White with heel and toe tapping boards', 20);
+INTO PRODUCT (name, description, price) VALUES ('Katz Tap shoes', 'Black with toe tapping board', 20);
+INTO PRODUCT (name, description, price) VALUES ('Pineapple dance trainers', 'Perfect for modern dance. Black', 24);
+INTO PRODUCT (name, description, price) VALUES ('Pineapple dance trainers', 'Perfect for modern dance. Pink', 24);
+INTO PRODUCT (name, description, price) VALUES ('Pineapple dance trainers', 'Perfect for modern dance. Blue', 24);
+INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for those new to dancing en pointe. Pink', 28);
+INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for those new to dancing en pointe. White', 28);
+INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for more experienced ballerinas. Pink', 30);
+INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for more experienced ballerinas. White', 30);
+INTO PRODUCT (name, description, price) VALUES ('Revolution long-sleeved leotard', 'Purple', 19);
+INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for more experienced ballerinas. Pink', 30);
+INTO PRODUCT (name, description, price) VALUES ('Chicago Costume', 'Black dress with fringe', 21);
+INTO PRODUCT (name, description, price) VALUES ('Cats the Musical costume', 'Miaow', 28);
+INTO PRODUCT (name, description, price) VALUES ('Katz t-shirt', 'Pink', 15);
+
+
 
 
 CREATE TABLE Review (
@@ -49,7 +68,6 @@ CREATE TABLE Review (
 	FOREIGN KEY (product_id) REFERENCES Product(id)
 );
 
-<!-- will make user associations later -->
 INSERT INTO Review (author_id, product_id, title, description, stars) VALUES (1, 1, 'Great leotard', 'I love it', 5);
 INSERT INTO Review (author_id, product_id, title, description, stars) VALUES (1, 2, 'Great bag', 'I love it', 5);
 INSERT INTO Review (author_id, product_id, title, description, stars) VALUES (2, 1, 'Great tutu', 'I love it', 4);
@@ -61,7 +79,7 @@ CREATE TABLE Blog (
 	title varchar(30) NOT NULL,
 	author_id INT NOT NULL,
 	body varchar(3000) NOT NULL,
-	dateOfBlogPost DATE NOT NULL,
+	date_of_blog_post DATE NOT NULL,
 	FOREIGN KEY (author_id) REFERENCES User(id)
 );
 
@@ -71,8 +89,7 @@ INSERT INTO Blog (title, author_id, body, date_of_blog_post) VALUES ('Why dance 
 
 CREATE TABLE Brand (
 	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-	name varchar(30) NOT NULL,
-	categoryId INT NOT NULL
+	name varchar(30) NOT NULL
 );
 
 INSERT INTO Brand (name) VALUES ('Katz');
@@ -82,18 +99,28 @@ INSERT INTO Brand (name) VALUES ('Capezio');
 INSERT INTO Brand (name) VALUES ('1st Position');
 INSERT INTO Brand (name) VALUES ('Ballet Rosa');
 INSERT INTO Brand (name) VALUES ('Little Ballerina');
+INSERT INTO Brand (name) VALUES ('Revolution');
 
 CREATE TABLE Category (
 	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	name varchar(30) NOT NULL
 );
 
-INSERT INTO Category (name) VALUES ('Dancewear');
-INSERT INTO Category (name) VALUES ('Shoes');
+INSERT INTO Category (name) VALUES ('Tutus');
+INSERT INTO Category (name) VALUES ('Tap Shoes');
 INSERT INTO Category (name) VALUES ('Bags');
 INSERT INTO Category (name) VALUES ('Accessories');
-INSERT INTO Category (name) VALUES ('Gymnastics wear');
+INSERT INTO Category (name) VALUES ('Gymnastics');
 INSERT INTO Category (name) VALUES ('Costumes');
+INSERT INTO Category (name) VALUES ('Character Shoes');
+INSERT INTO Category (name) VALUES ('Ballet Shoes');
+INSERT INTO Category (name) VALUES ('Pointe Shoes');
+INSERT INTO Category (name) VALUES ('Dance Trainers');
+INSERT INTO Category (name) VALUES ('Jazz Shoes');
+INSERT INTO Category (name) VALUES ('Leotards');
+INSERT INTO Category (name) VALUES ('Tops');
+INSERT INTO Category (name) VALUES ('Trousers');
+INSERT INTO Category (name) VALUES ('Casual');
 
 
 <!-- many to many
@@ -107,8 +134,37 @@ CREATE TABLE CATEGORY_BRAND (
 	FOREIGN KEY (brand_id) REFERENCES Brand(id)
 );
 INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (1,1);
-INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (1,1);
-INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (1,1);
-INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (1,1);
-INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (1,1);
-INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (1,1);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (1,2);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (1,3);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (1,4);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (1,5);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (1,6);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (1,7);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (2,1);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (2,2);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (2,3);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (2,4);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (2,7);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (3,1);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (3,2);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (3,6);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (3,7);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (4,1);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (4,2);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (4,6);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (4,7);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (4,1);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (5,5);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (5,8);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (6,5);
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (6,8);
+
+<!-- products can have many categories categories can have many products
+CREATE TABLE CATEGORY_PRODUCT (
+    category_id INT NOT NULL,
+	product_id INT NOT NULL,
+	FOREIGN KEY (category_id) REFERENCES Category(id),
+	FOREIGN KEY (product_id) REFERENCES Product(id)
+);
+
+INSERT INTO CATEGORY_BRAND(CATEGORY_id, PRODUCT_id) values (15,28);
