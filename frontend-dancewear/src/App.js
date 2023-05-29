@@ -12,7 +12,6 @@ import Brands from './components/Brands/Brands';
 import DanceShoes from './components/Shoes/DanceShoes'
 import MainNavigation from './components/Navigation/MainNavigation';
 import Contact from './components/Contact/Contact';
-import Header from './components/HeaderFooter/Header';
 import UsersPage from './components/UsersPage/UsersPage';
 import Home from './components/Home/Home';
 import Footer from './components/HeaderFooter/Footer';
@@ -22,6 +21,8 @@ import Privacy from './components/Privacy/Privacy';
 import Returns from './components/Returns/Returns';
 import TermsConditions from './components/TermsConditions/TermsConditions';
 import NotFound from './components/NotFound/NotFound';
+import Careers from './components/Careers/Careers';
+import Blog from './components/Blog/Blog';
 
 
 const App = () => {
@@ -42,6 +43,7 @@ const App = () => {
       <Link to="/register">Sign Up</Link>
       <Link to="/login">Login</Link>
       <Link to="/users">Users</Link>
+      <Link to="/blog">Blog</Link>
      </nav>
      <Routes>
      <Route path="/" element={<Home />} />
@@ -59,6 +61,8 @@ const App = () => {
           <Route path="/delivery" element={<Delivery />} />
           <Route path="/returns" element={<Returns />} />
           <Route path="/termsconditions" element={<TermsConditions />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/blog" element={<Blog />} />
           </Routes>
           </Router>
       
