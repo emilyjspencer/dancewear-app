@@ -34,25 +34,25 @@ INSERT INTO PRODUCT (name, description, price) VALUES ('Katz scrunchie', 'Pink s
 INSERT INTO PRODUCT (name, description, price) VALUES ('Ballerina duvet cover', 'Ages 3+', 22);
 INSERT INTO PRODUCT (name, description, price) VALUES ('Revolution Leotard', 'Blue and silver gymnastics leotard', 28);
 INSERT INTO PRODUCT (name, description, price) VALUES ('Katz Character shoes', 'Black with pink elastic', 18);
-INTO PRODUCT (name, description, price) VALUES ('Katz Character shoes', 'Grey with pink elastic', 18);
-INTO PRODUCT (name, description, price) VALUES ('Katz Character shoes', 'Beige with pink elastic', 18);
-INTO PRODUCT (name, description, price) VALUES ('Katz Tap shoes', 'Black with toe tapping board', 20);
-INTO PRODUCT (name, description, price) VALUES ('Katz Tap shoes', 'Black with heel and toe tapping boards', 20);
-INTO PRODUCT (name, description, price) VALUES ('Katz Tap shoes', 'White with toe tapping board', 20);
-INTO PRODUCT (name, description, price) VALUES ('Katz Tap shoes', 'White with heel and toe tapping boards', 20);
-INTO PRODUCT (name, description, price) VALUES ('Katz Tap shoes', 'Black with toe tapping board', 20);
-INTO PRODUCT (name, description, price) VALUES ('Pineapple dance trainers', 'Perfect for modern dance. Black', 24);
-INTO PRODUCT (name, description, price) VALUES ('Pineapple dance trainers', 'Perfect for modern dance. Pink', 24);
-INTO PRODUCT (name, description, price) VALUES ('Pineapple dance trainers', 'Perfect for modern dance. Blue', 24);
-INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for those new to dancing en pointe. Pink', 28);
-INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for those new to dancing en pointe. White', 28);
-INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for more experienced ballerinas. Pink', 30);
-INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for more experienced ballerinas. White', 30);
-INTO PRODUCT (name, description, price) VALUES ('Revolution long-sleeved leotard', 'Purple', 19);
-INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for more experienced ballerinas. Pink', 30);
-INTO PRODUCT (name, description, price) VALUES ('Chicago Costume', 'Black dress with fringe', 21);
-INTO PRODUCT (name, description, price) VALUES ('Cats the Musical costume', 'Miaow', 28);
-INTO PRODUCT (name, description, price) VALUES ('Katz t-shirt', 'Pink', 15);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Katz Character shoes', 'Grey with pink elastic', 18);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Katz Character shoes', 'Beige with pink elastic', 18);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Katz Tap shoes', 'Black with toe tapping board', 20);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Katz Tap shoes', 'Black with heel and toe tapping boards', 20);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Katz Tap shoes', 'White with toe tapping board', 20);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Katz Tap shoes', 'White with heel and toe tapping boards', 20);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Katz Tap shoes', 'Black with toe tapping board', 20);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Pineapple dance trainers', 'Perfect for modern dance. Black', 24);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Pineapple dance trainers', 'Perfect for modern dance. Pink', 24);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Pineapple dance trainers', 'Perfect for modern dance. Blue', 24);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for those new to dancing en pointe. Pink', 28);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for those new to dancing en pointe. White', 28);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for more experienced ballerinas. Pink', 30);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for more experienced ballerinas. White', 30);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Revolution long-sleeved leotard', 'Purple', 19);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for more experienced ballerinas. Pink', 30);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Chicago Costume', 'Black dress with fringe', 21);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Cats the Musical costume', 'Miaow', 28);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Katz t-shirt', 'Pink', 15);
 
 
 

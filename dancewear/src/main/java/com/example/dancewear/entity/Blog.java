@@ -9,14 +9,14 @@ import java.time.LocalDate;
 
 @Entity
 @Data
-public class Blog{
+public class Blog {
 
     @Id
     private int id;
 
     private String title;
 
-    private String author;
+    private String author_id;
 
     private String body;
 
