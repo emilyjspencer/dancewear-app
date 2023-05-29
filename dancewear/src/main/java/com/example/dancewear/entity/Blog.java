@@ -20,6 +20,6 @@ public class Blog{
 
     private String body;
 
-    private LocalDate dateOfBlogPost;
+    private LocalDate date_of_blog_post;
 
 }

@@ -190,10 +190,39 @@ SELECT * FROM users;
 Will be quite complex, involving primary keys etc to make associations between different entities e.g. users and reviews,
 users and orders, products and brands, products and categories
 
-* One to Many relationships:
+### One to One relationships:
  * User - Reviews
+ * User - Blog
+ * User - Basket
+
+### One to Many relationship
  * User - Orders
- * Product - Brands
- * Product - Categories
- * Brands - Categories
+ * Brands - Products
+ * Basket - Product
+
+
+ ### Many to many relationships:
+
+* Brands - Categories
+* Product - Categories
+
+
+Brands
+
+ id 1 'Katz
+id 2 Pineapple
+id 3 Bloch
+id 4 Capezio
+id 5 1st Position
+id 6 Ballet Rosa
+id 7 Little Ballerina
+
+### Categories
+
+id 1 'Dancewear'
+id 2 'Shoes
+id 3 'Bags'
+id 4 'Accessories'
+id 5  'Gymnastics wear'
+id 6 'Costumes'
 

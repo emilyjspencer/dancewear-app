@@ -17,7 +17,7 @@ public class Product {
 
     private Integer price;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "brandId")
     private Brand brand;
 

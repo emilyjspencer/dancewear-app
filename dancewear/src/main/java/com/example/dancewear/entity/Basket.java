@@ -2,6 +2,8 @@ package com.example.dancewear.entity;
 
 
 import lombok.Data;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.List;
@@ -17,6 +19,7 @@ public class Basket {
     @JoinColumn(name = "userId")
     private User user;
 
+    @LazyCollection(LazyCollectionOption.FALSE)
     @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     @JoinColumn(name = "productId")
     @JoinTable(name = "BASKET_PRODUCT")
