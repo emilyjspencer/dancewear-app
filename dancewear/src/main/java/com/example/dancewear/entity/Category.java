@@ -18,13 +18,13 @@ public class Category {
     private String name;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "product_id")
     @JoinTable(name = "CATEGORY_PRODUCT")
     private List<Product> products;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "brand_id")
     @JoinTable(name = "CATEGORY_BRAND")
     private List<Brand> brands;
