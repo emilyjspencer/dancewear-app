@@ -242,7 +242,16 @@ id 15 Casual
 * How to store images in the database
 * Should I use a CSS framework to make styling easier e.g. Tailwind
 * Accessibility 
-* Testing - unit and e2e
+* Testing - unit tests with Jest and e2e test with Cypress
 * Security
 * Reusability of code
 * Performance 
+* Wireframes - use drawio
+* Use case diagrams
+* User stories
+* Use SCSS instead of CSS
+* Incorporate TypeScript into React - .tsx files instead of js
+* Make it a PWA - progressive web app
+* Code splitting
+* Image optimization
+* Authentication - how to do this
