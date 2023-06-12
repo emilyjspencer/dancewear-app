@@ -1,5 +1,6 @@
 import { useState, useEffect} from 'react';
 import './UsersPage.css';
+import Cards from '../Cards/Cards';
 
 const UsersPage = () => {
 const [users, setUsers] = useState([])
@@ -19,16 +20,32 @@ useEffect(() => {
 }, [])
 
 return (
-  <div>
-    {users.length > 0 && (
-      <ul>
-        {users.map(user => (
-          <li key={user.id}>{user.firstname} {user.lastname}</li>
-        ))}
-      </ul>
-    )}
-  </div>
-);
-}
+  <>
+
+    <div className="users-list">
+      {users.length > 0 && (
+        
+          <ul>
+            {users.map(user => (
+              <>
+                <li key={user.id}>
+                </li>
+                <Cards
+                  imgSrc="https://picsum.photos/id/201/300/300"
+                  imgAlt="Card Image 1"
+                  text1={`First name: ${user.first_name}`}
+                  text2={`Last name: ${user.last_name}`}
+                  text3={`Job location: ${user.email}`}
+                  text4={`Contract duration: ${user.phone_number}`}
+                />
+              
+              </>
+            ))}
+          </ul>
+        
+
+      )}
+    </div>
+    </>)}
 
 export default UsersPage;
