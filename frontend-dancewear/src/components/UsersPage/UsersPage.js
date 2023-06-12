@@ -31,8 +31,8 @@ return (
                 <li key={user.id}>
                 </li>
                 <Cards
-                  imgSrc="https://picsum.photos/id/201/300/300"
-                  imgAlt="Card Image 1"
+                  imgSrc=""
+                  imgAlt="User placeholder"
                   text1={`First name: ${user.first_name}`}
                   text2={`Last name: ${user.last_name}`}
                   text3={`Job location: ${user.email}`}
