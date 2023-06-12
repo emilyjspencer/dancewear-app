@@ -1,3 +1,12 @@
  li {
    list-style-type: none;
 }
+
+button {
+  margin-bottom: 40px;
+}
+
+.users-list {
+  margin-left: 400px;
+  margin-top: 40px;
+}

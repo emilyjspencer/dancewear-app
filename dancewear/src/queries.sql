@@ -4,18 +4,20 @@ USE dancewear;
 
 CREATE TABLE User (
 	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-	firstname varchar(30) NOT NULL,
-	lastname varchar(30) NOT NULL
+	first_name varchar(30) NOT NULL,
+	last_name varchar(30) NOT NULL,
+    email varchar(40) NOT NULL,
+    phone_number bigint NOT NULL
 );
 
-INSERT INTO User (firstname, lastname) VALUES ('James', 'Smith');
-INSERT INTO User (firstname, lastname) VALUES ('Sally', 'Green');
-INSERT INTO User (firstname, lastname) VALUES ('Laura', 'Thompson');
-INSERT INTO User (firstname, lastname) VALUES ('Matthew', 'Edwards');
-INSERT INTO User (firstname, lastname) VALUES ('Jonny', 'Jones');
-INSERT INTO User (firstname, lastname) VALUES ('Imelda', 'Staunton');
-INSERT INTO User (firstname, lastname) VALUES ('Sandra', 'Bullock');
-INSERT INTO User (firstname, lastname) VALUES ('Ryan', 'Reynolds');
+INSERT INTO User (first_name, last_name, email, phone_number) VALUES ('James', 'Smith', 'james@email.com', 8327382372);
+INSERT INTO User (first_name, last_name, email, phone_number) VALUES ('Sally', 'Green', 'sally@email.com', 4898493);
+INSERT INTO User (first_name, last_name, email, phone_number) VALUES ('Laura', 'Thompson', 'laura@email.com', 58395839);
+INSERT INTO User (first_name, last_name, email, phone_number) VALUES ('Matthew', 'Edwards', 'matt@email.com', 7434834);
+INSERT INTO User (first_name, last_name, email, phone_number) VALUES ('Jonny', 'Jones', 'jonny@email.com', 2783734);
+INSERT INTO User (first_name, last_name, email, phone_number) VALUES ('Imelda', 'Staunton', 'imelda@email.com', 18374742);
+INSERT INTO User (first_name, last_name, email, phone_number) VALUES ('Sandra', 'Bullock', 'sandra@email.com', 7493853984);
+INSERT INTO User (first_name, last_name, email, phone_number) VALUES ('Ryan', 'Reynolds', 'ryan@email.com', 73875837);
 
 
 CREATE TABLE Product (
@@ -48,7 +50,7 @@ INSERT INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', '
 INSERT INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for those new to dancing en pointe. White', 28);
 INSERT INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for more experienced ballerinas. Pink', 30);
 INSERT INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for more experienced ballerinas. White', 30);
-INSERT INTO PRODUCT (name, description, price) VALUES ('Revolution long-sleeved leotard', 'Purple', 19);
+INSERT INTO PRODUCT (name, description, price) VALUES ('Revolution  leotard', 'Purple', 19);
 INSERT INTO PRODUCT (name, description, price) VALUES ('Capezio pointe shoes', 'Perfect for more experienced ballerinas. Pink', 30);
 INSERT INTO PRODUCT (name, description, price) VALUES ('Chicago Costume', 'Black dress with fringe', 21);
 INSERT INTO PRODUCT (name, description, price) VALUES ('Cats the Musical costume', 'Miaow', 28);
@@ -123,9 +125,6 @@ INSERT INTO Category (name) VALUES ('Trousers');
 INSERT INTO Category (name) VALUES ('Casual');
 
 
-<!-- many to many
- categories  have many brands
- brands have many categories-->
 
 CREATE TABLE CATEGORY_BRAND (
     category_id INT NOT NULL,
@@ -159,7 +158,7 @@ INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (5,8);
 INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (6,5);
 INSERT INTO CATEGORY_BRAND(CATEGORY_id, BRAND_id) values (6,8);
 
-<!-- products can have many categories categories can have many products
+
 CREATE TABLE CATEGORY_PRODUCT (
     category_id INT NOT NULL,
 	product_id INT NOT NULL,
