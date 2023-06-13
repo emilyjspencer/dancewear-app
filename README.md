@@ -1,11 +1,10 @@
 # Dancewear
 
-An experiment for pod work (code for that project (portal project) obviously won't be available on this GitHub)
 
 Tech stack:
 
-* Spring Boot (with Java)
-* MySQL or PostgreSQL
+* Spring Boot
+* MySQL
 * React
 * TypeScript?
 * SCSS
@@ -22,7 +21,8 @@ Tech stack:
 * Order
 * Brand
 * Product
-* Category?
+* Category
+* Basket
 
 ## Controllers
 * Review 
@@ -31,7 +31,7 @@ Tech stack:
 * Brand
 * Product
 * Basket
-* Category?
+* Category
 
 ## Services
 * Review
@@ -40,7 +40,7 @@ Tech stack:
 * Brand
 * Product
 * Basket
-* Category?
+* Category
 
 
 
@@ -103,6 +103,7 @@ salsa shoes
 
 ### Footer 
 
+### Modal
 
 ### Carousel 
 
@@ -115,6 +116,12 @@ salsa shoes
 ### Chatbot
 
 ### Pagination 
+
+### Cookies
+
+### Privacy Policy
+
+### Careers
 
 
 # Pages
@@ -151,6 +158,7 @@ salsa shoes
 # Running the project
 
 * MySQL needs to be downloaded
+* Password set upon installation must be used when connecting to MySQL server using the command line or Workbench
 * Connect to MySQL via the command line using:
 ```
 mysql -u root -p
@@ -207,7 +215,7 @@ users and orders, products and brands, products and categories
 * Product - Categories
 
 
-Brands
+### Brands
 
 id 1 'Katz
 id 2 Pineapple
@@ -254,4 +262,5 @@ id 15 Casual
 * Make it a PWA - progressive web app
 * Code splitting
 * Image optimization
-* Authentication - how to do this
+* Authentication - how to do this  - stateful or stateless authentication. Currently have no knowledge of JWT - useful to learn
+* Filtering - use named queries on the backend
