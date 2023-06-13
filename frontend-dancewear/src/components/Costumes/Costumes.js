@@ -1,9 +1,50 @@
 
-const Costumes = () => {
+import { useState, useEffect} from 'react';
+import './Costumes.css';
+import Cards from '../Cards/Cards';
 
-    return (
-        <h1>Costumes</h1>
-    )
+const CostumesPage = () => {
+const [costumes, setCostumes] = useState([])
+
+const fetchCostumesData = () => {
+  fetch("http://localhost:8080/api/costumes")
+    .then(response => {
+      return response.json()
+    })
+    .then(data => {
+      setCostumes(data)
+    })
 }
 
-export default Costumes;
+useEffect(() => {
+  fetchCostumesData()
+}, [])
+
+return (
+  <>
+
+    <div className="">
+      {costumes.length > 0 && (
+        
+          <ul className="container">
+            {costumes.map(costume => (
+              <>
+               
+                <Cards
+                  imgSrc=""
+                  imgAlt="Costume placeholder"
+                  text1={`Costume: ${costume.name}`}
+                />
+        
+              </>
+              
+            ))}
+            
+          </ul>
+        
+
+      )}
+    </div>
+    </>)}
+
+export default CostumePage;

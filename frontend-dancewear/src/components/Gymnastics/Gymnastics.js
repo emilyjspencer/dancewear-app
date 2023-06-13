@@ -1,10 +1,49 @@
+import { useState, useEffect} from 'react';
+import './Gymnastics.css';
+import Cards from '../Cards/Cards';
 
+const GymnasticsPage = () => {
+const [gymnastics, setGymnastics] = useState([])
 
-const Gymnastics = () => {
-
-    return (
-        <h1>Gymnastics</h1>
-    )
+const fetchGymnasticsData = () => {
+  fetch("http://localhost:8080/api/gymnastics")
+    .then(response => {
+      return response.json()
+    })
+    .then(data => {
+      setGymnastics(data)
+    })
 }
 
-export default Gymnastics;
+useEffect(() => {
+  fetchGymnasticsData()
+}, [])
+
+return (
+  <>
+
+    <div className="">
+      {gymnastics.length > 0 && (
+        
+          <ul className="container">
+            {gymnastics.map(gymnastic => (
+              <>
+               
+                <Cards
+                  imgSrc=""
+                  imgAlt="Gymnastic placeholder"
+                  text1={`Name: ${gymnastic.name}`}
+                />
+        
+              </>
+              
+            ))}
+            
+          </ul>
+        
+
+      )}
+    </div>
+    </>)}
+
+export default GymnasticsPage;

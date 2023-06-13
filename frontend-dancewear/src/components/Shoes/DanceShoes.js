@@ -1,10 +1,49 @@
+import { useState, useEffect} from 'react';
+import './DanceShoes.css';
+import Cards from '../Cards/Cards';
 
+const DanceShoesPage = () => {
+const [danceshoes, setDanceShoes] = useState([])
 
-const DanceShoes = () => {
-
-    return (
-        <h1>Shoes</h1>
-    )
+const fetchDanceShoesData = () => {
+  fetch("http://localhost:8080/api/danceshoes")
+    .then(response => {
+      return response.json()
+    })
+    .then(data => {
+      setDanceShoes(data)
+    })
 }
 
-export default DanceShoes;
+useEffect(() => {
+  fetchDanceShoesData()
+}, [])
+
+return (
+  <>
+
+    <div className="">
+      {danceshoes.length > 0 && (
+        
+          <ul className="container">
+            {danceshoes.map(shoe => (
+              <>
+               
+                <Cards
+                  imgSrc=""
+                  imgAlt="Shoes placeholder"
+                  text1={`Name: ${shoe.name}`}
+                />
+        
+              </>
+              
+            ))}
+            
+          </ul>
+        
+
+      )}
+    </div>
+    </>)}
+
+export default DanceShoesPage;
