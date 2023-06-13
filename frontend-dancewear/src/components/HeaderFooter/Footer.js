@@ -1,6 +1,6 @@
  const Footer = () => {
     return (
-            <div className="container">
+            <div className="container-fluid">
                     <div className="customer">
                         <h3>Customer Service</h3>
                         <ul>
