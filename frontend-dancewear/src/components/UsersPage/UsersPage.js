@@ -2,6 +2,7 @@ import { useState, useEffect} from 'react';
 import './UsersPage.css';
 import Cards from '../Cards/Cards';
 import UserDetailView from '../Test/UserDetailView';
+import Modal from '../Modal/Modal';
 
 const UsersPage = () => {
 const [users, setUsers] = useState([])
@@ -24,20 +25,22 @@ return (
           {users.map(user => (
 
             <>
+            <div className="card-container">
               <Cards
                 imgSrc=""
                 imgAlt="User placeholder"
                 text1={`First name: ${user.first_name}`}
                 text2={`Last name: ${user.last_name}`}
                 />
-                <li key={user.id} onClick={() => setUserDetail(user)}>{user.first_name}</li></>
-
+                <button className="more-info-button" key={user.id} onClick={() => setUserDetail(user)}>
+                  View more information about {user.first_name}</button>
+                </div>
+                </>
           ))}
 
         </ul> )}
 
           {userDetail ? <UserDetailView user={userDetail} /> : "hi"}
-
         </>
     )}
 

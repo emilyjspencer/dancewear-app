@@ -5,7 +5,7 @@ import * as React from 'react';
 
 
 const Cards = ({
-  imgSrc, imgAlt, title, text1, text2, text3, text4, text5, text6, text7, text8, text9, text10
+  imgSrc, imgAlt, title, text1, text2, text3, text4, text5, text6, text7, text8, text9, text10, button
 }) => {
 
 
@@ -33,8 +33,8 @@ const Cards = ({
        {text7}
        <br />
        {text8}
+       {button}
       </div>
-      <button className="view-more-button">View more information</button>
     </div>
   )
 
