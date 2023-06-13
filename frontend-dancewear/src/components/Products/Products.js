@@ -2,6 +2,7 @@ import { useState, useEffect} from 'react';
 import './Products.css';
 import Pagination from '../Pagination/Pagination';
 import Cards from '../Cards/Cards';
+import Filter from './Filter/Filter';
 
 const Products = () => {
 const [products, setProducts] = useState([])
@@ -22,7 +23,7 @@ useEffect(() => {
 
 return (
   <>
-
+    <Filter />
     <div className="">
       {products.length > 0 && (
         

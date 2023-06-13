@@ -3,6 +3,7 @@ import './UsersPage.css';
 import Cards from '../Cards/Cards';
 import UserDetailView from '../Test/UserDetailView';
 import Modal from '../Modal/Modal';
+import Filter from './Filter/Filter';
 
 const UsersPage = () => {
 const [users, setUsers] = useState([])
@@ -19,7 +20,7 @@ useEffect(() => {
 
 return (
   <>
-
+     <Filter />
       {users.length > 0 && (
           <ul className="container">
           {users.map(user => (

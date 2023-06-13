@@ -2,6 +2,7 @@
 import { useState, useEffect} from 'react';
 import './Costumes.css';
 import Cards from '../Cards/Cards';
+import Filter from '../Filter/Filter';
 
 const CostumesPage = () => {
 const [costumes, setCostumes] = useState([])
@@ -22,7 +23,7 @@ useEffect(() => {
 
 return (
   <>
-
+     <Filter />
     <div className="">
       {costumes.length > 0 && (
         

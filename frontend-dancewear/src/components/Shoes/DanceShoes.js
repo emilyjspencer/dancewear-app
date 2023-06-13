@@ -1,6 +1,7 @@
 import { useState, useEffect} from 'react';
 import './DanceShoes.css';
 import Cards from '../Cards/Cards';
+import Filter from '../Filter/Filter';
 
 const DanceShoesPage = () => {
 const [danceshoes, setDanceShoes] = useState([])
@@ -21,7 +22,7 @@ useEffect(() => {
 
 return (
   <>
-
+    <Filter />
     <div className="">
       {danceshoes.length > 0 && (
         

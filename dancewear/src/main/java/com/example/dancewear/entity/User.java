@@ -22,4 +22,13 @@ import java.math.BigInteger;
 
         private BigInteger phone_number;
 
+        private String user_password; // will be hashed
+
+        private String address;
+
+        private BigInteger account_number;
+
+        private String favourite_dance_genre;
+
+
     }

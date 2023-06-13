@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 
 import SingleReview from './SingleReview';
+import Filter from './Filter';
 
 const Reviews = () => {
 
@@ -22,6 +23,8 @@ useEffect(() => {
 
 
     return (
+      <>
+      <Filter />
       <div className="review-container">
       <ul>
         {reviews.map(review => {
@@ -29,6 +32,7 @@ useEffect(() => {
         })}
       </ul>
       </div>
+      </>
     );
 }
 
