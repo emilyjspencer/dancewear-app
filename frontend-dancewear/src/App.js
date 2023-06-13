@@ -26,6 +26,7 @@ import UserList from './components/Test/UserDetailView';
 import Sale from './components/Sale/Sale';
 import MyAccount from './components/MyAccount/MyAccount';
 import Basket from './components/Basket/Basket';
+import MainNavigation from './components/Navigation/MainNavigation';
 
 
 const App = () => {
@@ -36,23 +37,7 @@ const App = () => {
 
 
      <Router>
-     <nav className="navbar">
-      <Link to="/">Home</Link>
-      <Link to="/brands">Brands</Link>
-      <Link to="/products">Products</Link>
-      <Link to="/dancewear">Dancewear</Link>
-      <Link to="/shoes">Shoes</Link>
-      <Link to="/gymnastics">Gymnastics</Link>
-      <Link to="/costumes">Costumes</Link>
-      <Link to="/quiz">Quiz</Link>
-      <Link to="/register">Sign Up</Link>
-      <Link to="/login">Login</Link>
-      <Link to="/users">Users</Link>
-      <Link to="/blog">Blog</Link>
-      <Link to="/sale">Sale</Link>
-      <Link to="/myaccount">My Account</Link>
-      <Link to="/checkout">Basket</Link>
-     </nav>
+     <MainNavigation brand =" FDM Portal" />
      <Routes>
      <Route path="/" element={<Home />} />
      <Route path="/reviews" element={<Reviews />} />

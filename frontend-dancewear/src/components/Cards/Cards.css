@@ -6,6 +6,11 @@
     
 }
 
+.card-container:hover {
+  background-color: #121825;
+  color: white;
+}
+
 img {
     height: 200px;
     width: 240px;

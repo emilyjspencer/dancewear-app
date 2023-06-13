@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 
 import SingleReview from './SingleReview';
-import Filter from './Filter';
+import Filter from '../Filter/Filter';
 
 const Reviews = () => {
 

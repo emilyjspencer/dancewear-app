@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react';
 import './Gymnastics.css';
 import Cards from '../Cards/Cards';
-import Filter from './Filter/Filter';
+import Filter from '../Filter/Filter';
 
 const GymnasticsPage = () => {
 const [gymnastics, setGymnastics] = useState([])

@@ -1,22 +1,30 @@
 import React, { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
-
-import NavigationLinks from './NavigationLinks/NavigationLinks';
-
-
+import NavigationLinks from '../Navigation/NavigationLinks/NavigationLinks';
 import './MainNavigation.css';
-
-const MainNavigation = () => {
-
+import PropTypes from 'prop-types';
+import logo from '../../components/logo.jpg';
+const MainNavigation = (props) => {
+  const { brand } = props
  
   return ( 
-      <>
-        <nav>
-            <NavigationLinks />
-          </nav>
+      
+          <div className="container-fluid">
+            <img src={logo} alt="Logo" id="logo-image"></img>
+              <div className='linksContainer'>
+                <NavigationLinks className="navbar-brand" to="/">{brand}</NavigationLinks>
+              </div>
+          </div>
+            
+    )
   
-  </>
-  );
+  
+  
 };
+MainNavigation.defaultProps = {
+  brand: "FDM Portal"
+}
 
+MainNavigation.propTypes = {
+  brand: PropTypes.string.isRequired
+}
 export default MainNavigation;

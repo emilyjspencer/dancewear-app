@@ -7,7 +7,7 @@ const Filter = () => {
 
         <>
         <div className="filter-container">
-        <h1>Filter component</h1>
+      
         </div>
         </>
     )
