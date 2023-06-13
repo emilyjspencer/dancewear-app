@@ -22,13 +22,13 @@ useEffect(() => {
 return (
   <>
 
-    <div className="users-list">
+    <div className="">
       {users.length > 0 && (
         
-          <ul>
+          <ul className="container">
             {users.map(user => (
               <>
-                <li key={user.id}></li>
+               
                 <Cards
                   imgSrc=""
                   imgAlt="User placeholder"
@@ -37,9 +37,11 @@ return (
                   text3={`Email: ${user.email}`}
                   text4={`Phone number: ${user.phone_number}`}
                 />
-              
+        
               </>
+              
             ))}
+            
           </ul>
         
 

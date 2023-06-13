@@ -34,6 +34,7 @@ const Cards = ({
        <br />
        {text8}
       </div>
+      <button className="view-more-button">View more information</button>
     </div>
   )
 

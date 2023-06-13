@@ -6,7 +6,11 @@ button {
   margin-bottom: 40px;
 }
 
-.users-list {
-  margin-left: 400px;
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
+  grid-gap: 16px;
   margin-top: 40px;
+
 }
+

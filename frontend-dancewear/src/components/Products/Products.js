@@ -23,14 +23,12 @@ useEffect(() => {
 return (
   <>
 
-    <div className="products-list">
+    <div className="">
       {products.length > 0 && (
         
-          <ul>
+          <ul className="container">
             {products.map(product => (
               <>
-                <li key={product.id}>
-                </li>
                 <Cards
                   imgSrc=""
                   imgAlt="Product placeholder"
