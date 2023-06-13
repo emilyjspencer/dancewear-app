@@ -12,12 +12,6 @@ const NavigationLinks = () => {
       <NavLink to="/brands">Brands</NavLink>
     </li>
     <li>
-      <NavLink to="/products">Products</NavLink>
-    </li>
-    <li>
-      <NavLink to="/shoes">Shoes</NavLink>
-    </li>
-    <li>
       <NavLink to="/dancewear">DanceWear</NavLink>
     </li>
     <li>
@@ -25,12 +19,6 @@ const NavigationLinks = () => {
     </li>
     <li>
       <NavLink to="/accessories">Accessories</NavLink>
-    </li>
-    <li>
-      <NavLink to="/gymnastics">Gymnastics</NavLink>
-    </li>
-    <li>
-      <NavLink to="/costumes">Costumes</NavLink>
     </li>
     <li>
       <NavLink to="/products">Search products</NavLink>
