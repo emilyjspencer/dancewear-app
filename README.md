@@ -123,6 +123,24 @@ salsa shoes
 
 ### Careers
 
+### Delivery
+
+### Terms and Conditions
+
+
+### Modal - to display more information e.g. product 
+
+
+### Pagination
+
+
+### Accordion 
+
+### Filter
+
+### Banner
+
+
 
 # Pages
 
@@ -143,7 +161,7 @@ salsa shoes
 
 ## Features
 
-* Chatbot
+* Chatbot 
 * Authentication
 * Add items to basket
 * View basket
@@ -192,6 +210,7 @@ e.g.
 
 SELECT * FROM users;
 
+Queries can be pasted into MySQL workbench and executed in one fell swoop
 
 ## Database tables 
 
@@ -248,7 +267,7 @@ id 15 Casual
 # Points to consider
 
 * How to store images in the database
-* Should I use a CSS framework to make styling easier e.g. Tailwind
+* Should I use a CSS framework to make styling easier e.g. Tailwind, React Bootstrap
 * Accessibility 
 * Testing - unit tests with Jest and e2e test with Cypress
 * Security
@@ -264,3 +283,5 @@ id 15 Casual
 * Image optimization
 * Authentication - how to do this  - stateful or stateless authentication. Currently have no knowledge of JWT - useful to learn
 * Filtering - use named queries on the backend
+* Improve knowledge of working with session storage and local storage through some other features
+
