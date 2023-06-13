@@ -32,9 +32,9 @@ return (
                 <Cards
                   imgSrc=""
                   imgAlt="Product placeholder"
-                  text1={`First name: ${product.name}`}
-                  text2={`Last name: ${product.description}`}
-                  text3={`Job location: ${product.price}`}
+                  text1={`Product: ${product.name}`}
+                  text2={`Description: ${product.description}`}
+                  text3={`Price: ${product.price}`}
                 />
               
               </>

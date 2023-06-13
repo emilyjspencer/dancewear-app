@@ -10,7 +10,6 @@ import Reviews from './components/Reviews/Reviews';
 import Gymnastics from './components/Gymnastics/Gymnastics';
 import Brands from './components/Brands/Brands';
 import DanceShoes from './components/Shoes/DanceShoes'
-import MainNavigation from './components/Navigation/MainNavigation';
 import Contact from './components/Contact/Contact';
 import UsersPage from './components/UsersPage/UsersPage';
 import Home from './components/Home/Home';
@@ -23,13 +22,19 @@ import TermsConditions from './components/TermsConditions/TermsConditions';
 import NotFound from './components/NotFound/NotFound';
 import Careers from './components/Careers/Careers';
 import Blog from './components/Blog/Blog';
+import UserList from './components/Test/UserDetailView';
+import Sale from './components/Sale/Sale';
+import MyAccount from './components/MyAccount/MyAccount';
+import Basket from './components/Basket/Basket';
 
 
 const App = () => {
 
   return (
     <>
-     
+    
+
+
      <Router>
      <nav className="navbar">
       <Link to="/">Home</Link>
@@ -44,6 +49,9 @@ const App = () => {
       <Link to="/login">Login</Link>
       <Link to="/users">Users</Link>
       <Link to="/blog">Blog</Link>
+      <Link to="/sale">Sale</Link>
+      <Link to="/myaccount">My Account</Link>
+      <Link to="/checkout">Basket</Link>
      </nav>
      <Routes>
      <Route path="/" element={<Home />} />
@@ -63,9 +71,13 @@ const App = () => {
           <Route path="/termsconditions" element={<TermsConditions />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/sale" element={<Sale />} />
+          <Route path="/myaccount" element={<MyAccount />} />
+          <Route path="/checkout" element={<Basket />} />
           </Routes>
           </Router>
       
+
         <Footer />
           </>
   );
