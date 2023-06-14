@@ -22,7 +22,6 @@ import TermsConditions from './components/TermsConditions/TermsConditions';
 import NotFound from './components/NotFound/NotFound';
 import Careers from './components/Careers/Careers';
 import Blog from './components/Blog/Blog';
-import UserList from './components/Test/UserDetailView';
 import Sale from './components/Sale/Sale';
 import MyAccount from './components/MyAccount/MyAccount';
 import Basket from './components/Basket/Basket';

@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react';
 import './UsersPage.css';
 import Cards from '../Cards/Cards';
-import UserDetailView from '../Test/UserDetailView';
+import UserDetailView from './UserDetailView';
 import Modal from '../Modal/Modal';
 import Filter from '../Filter/Filter';
 
@@ -41,7 +41,7 @@ return (
 
         </ul> )}
 
-          {userDetail ? <UserDetailView user={userDetail} /> : "hi"}
+          {userDetail ? <UserDetailView user={userDetail} /> : "Select a card to view more information"}
         </>
     )}
 
