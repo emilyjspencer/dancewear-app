@@ -285,3 +285,14 @@ id 15 Casual
 * Filtering - use named queries on the backend
 * Improve knowledge of working with session storage and local storage through some other features
 
+# User Stories
+
+* As an unregistered user
+so that I can decide whether to sign up or not
+I can view all products on the website
+
+* As a registered user
+so that I can buy products
+I can add items to my basket
+
+* As  

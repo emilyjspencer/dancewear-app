@@ -22,13 +22,13 @@ return (
   <>
      <Filter />
       {users.length > 0 && (
-          <ul className="container">
+          <ul className="users-container">
           {users.map(user => (
 
             <>
             <div className="card-container">
               <Cards
-                imgSrc=""
+                imgSrc="https://picsum.photos/seed/picsum/200/300"
                 imgAlt="User placeholder"
                 text1={`First name: ${user.first_name}`}
                 text2={`Last name: ${user.last_name}`}
