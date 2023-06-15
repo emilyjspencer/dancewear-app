@@ -1,8 +1,8 @@
-import UserDetailView from '../UsersPage/UserDetailView';
-import './Modal.css';
+
+import './Modal1.css';
 import { useEffect, useState } from 'react';
 
-const Modal = ({ user }) => {
+const Modal1 = ({ user }) => {
 
 
     const [userDetail, setUserDetail] = useState(null);
@@ -17,7 +17,7 @@ const Modal = ({ user }) => {
 
     return (
         <>
-            <div class="modal-container">
+            <div className="modal-container">
                 <h1>Modal component</h1>
                 <ul className="modal-container">
                     <div className="user-detail-container">
@@ -49,4 +49,4 @@ const Modal = ({ user }) => {
 
 }
 
-export default Modal;
+export default Modal1;

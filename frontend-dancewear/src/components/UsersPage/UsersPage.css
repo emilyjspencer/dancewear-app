@@ -2,18 +2,28 @@
    list-style-type: none;
 }
 
+#card-modal-button {
+  width: 230px;
+  height: 25px;
+  font-size: 14px;
+}
 
 
 .users-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
-  grid-gap: 65px;
+  grid-gap: 95px;
   margin-top: 40px;
 
 }
 
 .card-container {
   padding-bottom: 8px;
+}
+
+.mini-modal-container {
+  height: 20rem;
+  width: 100%;
 }
 
 
