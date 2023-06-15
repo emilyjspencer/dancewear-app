@@ -295,4 +295,42 @@ I can view all products on the website
 so that I can buy products
 I can add items to my basket
 
-* As  
+* As a registered user
+so that no one can buy items on my behalf
+I can only log in with the correct credentials
+
+* As a registered user
+so as to reduce the risk of data theft
+my password is hashed
+
+* As a registered user
+so that I can keep track of what I want to buy
+I can view items in my basket
+
+* As a registered user
+so that I can not overspend
+I can delete items from my basket
+
+* As someone who is interested in dance
+so that I can read about interesting topics and news in the dance world
+I can view blog posts
+
+* As a registered user
+so that I can provide feedback
+I can write reviews
+
+* As a registered or non-registered user
+so that I can judge whether to buy a product or not
+I can read reviews
+
+* As a registered user
+so that I can provide feedback about products
+I can give a rating out of five (stars)
+
+* As someone who is interested in dance
+so that I can procrastinate when I shouldn't be
+I can take a quiz
+
+* As a registered or non-registered user
+so that I can get answers quickly to my questions
+I can chat with a bot
