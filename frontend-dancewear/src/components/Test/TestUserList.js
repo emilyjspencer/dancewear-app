@@ -12,7 +12,8 @@ const TestUserList = () => {
     <TestUserDetailView listtodetail={data}/>
 
     <div>
-        <button onClick={() => passDataFromListToDetail()}>Click UserList</button>
+        <button onClick={() => passDataFromListToDetail()}>
+            Click UserList</button>
     </div>
     </>
     )

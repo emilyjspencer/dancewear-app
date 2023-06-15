@@ -41,7 +41,7 @@ return (
 
         </ul> )}
 
-          {userDetail ? <UserDetailView user={userDetail} /> : "Select a card to view more information"}
+        {userDetail ? <Modal user={userDetail} /> : "Select a card to view more info"}
         </>
     )}
 
