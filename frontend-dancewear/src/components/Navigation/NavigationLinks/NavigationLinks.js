@@ -24,7 +24,7 @@ const NavigationLinks = () => {
       <NavLink to="/quiz">Quiz</NavLink>
     </li>
     <li>
-      <NavLink to="/signup">Sign up</NavLink>
+      <NavLink to="/register">Sign up</NavLink>
     </li>
     <li>
       <NavLink to="/login">Log in</NavLink>

@@ -30,9 +30,13 @@ import TestUserList from './components/Test/TestUserList';
 import CookieConsent from "react-cookie-consent";
 import Logout from './components/Logout/Logout';
 import Login from './components/Login/Login';
+import Register from './components/Register/Register';
+import RegisterTeacher from './components/Register/RegisterTeacher';
 
 
 const App = () => {
+
+  
 
   return (
     <>
@@ -64,6 +68,8 @@ const App = () => {
           <Route path="/logout" element={<Logout />} />
           <Route path="/myaccount" element={<MyAccount />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/registerteacher" element={<RegisterTeacher />} />
           </Routes>
           </Router>
       
