@@ -334,3 +334,25 @@ I can take a quiz
 * As a registered or non-registered user
 so that I can get answers quickly to my questions
 I can chat with a bot
+
+* As a registered user so that I can change my mind about purchases, I can update my basket
+
+* As a registered user, so that my login details are protected, I can log out of my account
+
+* As a user, so that I know what is most popular on the website, I can see trending items/categories
+
+* As a registered user, so that I can keep track of my orders, I can see my previous orders
+
+* As a registered user, so that I can store a collection of items I liked, I can 'like' an item
+
+* As a registered user, so that I can keep track of all of the items that I have liked, I can see a list of liked items
+
+* As a user, so that I can hear about the latest items on the site, I can subscribe 
+
+* As a dance teacher, so that I can get discounts, I can sign up for a dance teacher account
+
+* As a user, so that I can refine my search, I can filter by brand, category, product
+
+* As a user, so that I can see which items are the cheapest, I can sort items by price from lowest to highest
+
+* As a user, so that I can see which items are the most expensive, I can sort items by price form highest to lowest
