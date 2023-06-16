@@ -12,16 +12,13 @@ const NavigationLinks = () => {
       <NavLink to="/brands">Brands</NavLink>
     </li>
     <li>
-      <NavLink to="/dancewear">DanceWear</NavLink>
-    </li>
-    <li>
       <NavLink to="/sale">Clearance</NavLink>
     </li>
     <li>
       <NavLink to="/accessories">Accessories</NavLink>
     </li>
     <li>
-      <NavLink to="/products">Search products</NavLink>
+      <NavLink to="/products">Products</NavLink>
     </li>
     <li>
       <NavLink to="/quiz">Quiz</NavLink>
@@ -37,7 +34,10 @@ const NavigationLinks = () => {
     </li>
     {/* temp  */}
     <li>
-      <NavLink to="/Users">Users</NavLink>
+      <NavLink to="/users">Users</NavLink>
+    </li>
+    <li>
+      <NavLink to="/myaccount">My Account</NavLink>
     </li>
   </ul>
 

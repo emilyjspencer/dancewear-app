@@ -61,6 +61,7 @@ const App = () => {
           <Route path="/checkout" element={<Basket />} />
           <Route path="/test" element={<TestUserList/>} />
           <Route path="/logout" element={<Logout />} />
+          <Route path="/myaccount" element={<MyAccount />} />
           </Routes>
           </Router>
       
