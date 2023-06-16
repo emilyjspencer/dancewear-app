@@ -29,6 +29,7 @@ import MainNavigation from './components/Navigation/MainNavigation';
 import TestUserList from './components/Test/TestUserList';
 import CookieConsent from "react-cookie-consent";
 import Logout from './components/Logout/Logout';
+import Login from './components/Login/Login';
 
 
 const App = () => {
@@ -62,6 +63,7 @@ const App = () => {
           <Route path="/test" element={<TestUserList/>} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/myaccount" element={<MyAccount />} />
+          <Route path="/login" element={<Login />} />
           </Routes>
           </Router>
       
