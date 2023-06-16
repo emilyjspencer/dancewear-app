@@ -27,10 +27,13 @@ const NavigationLinks = () => {
       <NavLink to="/quiz">Quiz</NavLink>
     </li>
     <li>
-      <NavLink to="/Sign up">Sign up</NavLink>
+      <NavLink to="/signup">Sign up</NavLink>
     </li>
     <li>
-      <NavLink to="/Log in">Log in</NavLink>
+      <NavLink to="/login">Log in</NavLink>
+    </li>
+    <li>
+      <NavLink to="/logout">Logout</NavLink>
     </li>
     {/* temp  */}
     <li>

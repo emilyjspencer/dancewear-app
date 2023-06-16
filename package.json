@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "react-cookie-consent": "^8.0.1",
     "react-modal": "^3.16.1",
     "react-transition-group": "^4.4.5"
   }

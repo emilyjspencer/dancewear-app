@@ -27,6 +27,8 @@ import MyAccount from './components/MyAccount/MyAccount';
 import Basket from './components/Basket/Basket';
 import MainNavigation from './components/Navigation/MainNavigation';
 import TestUserList from './components/Test/TestUserList';
+import CookieConsent from "react-cookie-consent";
+import Logout from './components/Logout/Logout';
 
 
 const App = () => {
@@ -58,6 +60,7 @@ const App = () => {
           <Route path="/myaccount" element={<MyAccount />} />
           <Route path="/checkout" element={<Basket />} />
           <Route path="/test" element={<TestUserList/>} />
+          <Route path="/logout" element={<Logout />} />
           </Routes>
           </Router>
       
