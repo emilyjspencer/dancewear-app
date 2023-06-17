@@ -1,7 +1,7 @@
  const Footer = () => {
     return (
             <div className="container-fluid">
-                    <div className="customer">
+                    <div className="customer-container">
                         <h3>Customer Service</h3>
                         <ul>
                         <li><a href="/contact">Contact</a></li>

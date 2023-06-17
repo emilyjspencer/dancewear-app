@@ -356,3 +356,23 @@ I can chat with a bot
 * As a user, so that I can see which items are the cheapest, I can sort items by price from lowest to highest
 
 * As a user, so that I can see which items are the most expensive, I can sort items by price form highest to lowest
+
+* As a visitor to the website, when I visit the homepage, I see a cookies banner
+
+* As a registered user who has forgotten their password, I can reset my password
+
+* As a visitor to the website, so that I can view learn more about the retailer, I can see links to their Instagram, Twitter, Tiktok and Facebook accounts
+
+* As a German speaker visiting the website, so that I can navigate the site, I can view site content in German
+
+# CI/CD
+
+* Need to add TravisCI
+
+
+# Testing
+
+* units tests for Java code - testing controllers, services. JUnit
+* tests for React code - Jest
+* e2e tests - Cypress
+

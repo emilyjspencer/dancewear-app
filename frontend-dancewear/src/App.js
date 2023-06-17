@@ -32,7 +32,68 @@ import Logout from './components/Logout/Logout';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import RegisterTeacher from './components/Register/RegisterTeacher';
+import ChatBot from 'react-simple-chatbot';
+ 
+import { ThemeProvider } from 'styled-components';
+ 
+const steps = [
+    {
+        id: '0',
+        message: 'Hi there!',
+ 
+        // This calls the next id
+        // i.e. id 1 in this case
+        trigger: '1',
+    }, {
+        id: '1',
+ 
+        // This message appears in
+        // the bot chat bubble
+        message: 'How may I help',
+        trigger: '2'
+    }, {
+        id: '2',
+ 
+        // Here we want the user
+        // to enter input
+        user: true,
+        trigger: '3',
+    }, {
+        id: '3',
+        message: " hi {previousValue}, how can I help you?",
+        trigger: 4
+    }, {
+        id: '4',
+        options: [
+             
+            // When we need to show a number of
+            // options to choose we create alist
+            // like this
+            { value: 1, label: 'View products' },
+            { value: 2, label: 'Contact us' },
+            { value: 3, label: 'Ask a question' },
+ 
+        ],
+        end: true
+    }
+];
+ 
 
+const theme = {
+    background: '#121825',
+    headerBgColor: 'gray',
+    headerFontSize: '20px',
+    headerFontColor: 'white',
+    botFontColor: 'white',
+    userBubbleColor: '#FF5733',
+    userFontColor: 'white',
+};
+ 
+const configuration = {
+    logo: "logo.png",
+    floating: true,
+};
+ 
 
 const App = () => {
 
@@ -73,7 +134,15 @@ const App = () => {
           </Routes>
           </Router>
       
-
+          <ThemeProvider theme={theme}>
+                <ChatBot
+ 
+                    headerTitle="Dancewear"
+                    steps={steps}
+                    {...configuration}
+ 
+                />
+            </ThemeProvider>
         <Footer />
           </>
   );

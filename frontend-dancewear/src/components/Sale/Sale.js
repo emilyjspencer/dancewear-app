@@ -12,7 +12,7 @@ const Sale = () => {
         <h1>Sale</h1>
         <div className="sale-container">
         <h3>Check out our sale items:</h3>
-        <Parent />
+
         </div>
         </>
     )
