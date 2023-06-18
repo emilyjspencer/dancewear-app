@@ -23,6 +23,7 @@ Tech stack:
 * Product
 * Category
 * Basket
+* Role
 
 ## Controllers
 * Review 
@@ -32,6 +33,8 @@ Tech stack:
 * Product
 * Basket
 * Category
+* Authentication
+* AuthComms
 
 ## Services
 * Review
@@ -375,4 +378,32 @@ I can chat with a bot
 * units tests for Java code - testing controllers, services. JUnit
 * tests for React code - Jest
 * e2e tests - Cypress
+
+
+
+# Authentication
+
+After researching, I've chosen to take the stateless approach. In two previous mini personal projects, I've used session-based authentication (stateful, with cookes).
+Since JWT seems to be more common, and scales much better, it makes sense to use JWT.
+
+The server will put the data into a JWT and send to the React application.
+the React application will save the JWT and send it in every request in the request header.
+The spring boot server will validate the JSOn web token and return the response.
+
+JWT is composed of 
+
+* Header - signing algorithm
+* Payload - info like userid
+* signature (or more generally, the footer which contains the signature of the json web token). The signature will be verified with the Secret key.
+
+
+## Roles
+
+I will have 
+
+* User
+* User (dance teacher)
+* Admin
+
+In a portal project I'm working on - will have roles such as accountmanager, consultant etc
 
