@@ -397,6 +397,29 @@ JWT is composed of
 * signature (or more generally, the footer which contains the signature of the json web token). The signature will be verified with the Secret key.
 
 
+
+# JWT Filter
+
+the first thing that will be executed will be the filter - JWT filter. (authentication filter)
+
+This filter class will extend the OncePerFilterRequest class and has the repsonsibility of checking and validating the JWT token.
+
+
+
+There will be an internal check to check whether the JWT token exists or not.
+
+If it doesn't, the Spring boot app will send a not found request back to the React application (403 response).
+
+If there is a JWT token - validation starts
+
+The JWT authentication filter calls using the user service, which calls the user repository, which interfaces with the database to extract the required user information.
+
+Use something like the user email or username as a claim or token subject - 
+
+
+
+
+
 ## Roles
 
 I will have 
