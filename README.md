@@ -412,9 +412,28 @@ If it doesn't, the Spring boot app will send a not found request back to the Rea
 
 If there is a JWT token - validation starts
 
-The JWT authentication filter calls using the user service, which calls the user repository, which interfaces with the database to extract the required user information.
+The JWT authentication filter gets the user from the db or tries to retrieve the user db from the database using  user service, which calls the user repository, which interfaces with the database to extract the required user information.
 
-Use something like the user email or username as a claim or token subject - 
+Filter extracts  information such as user email or username (set as the claim or subject token) and uses that to fetch the user from the datbase.
+
+
+Once user is fetched - validation starts.
+if no usesr found - return 403 response.
+
+# JWT Validation mechanism
+
+
+checks whehter a token has expired for not for that user
+if the token is still valid - update the Security Context Nolder 0 which is used to store the detials of who is authenticated.
+and set the user to be this user.
+
+Then inform the rest of the filter chain that the user is authenticated and update the Authentication Manager
+
+Once the SecurityconextHolder has been updated, it will dispatch the request to the DispatcherServlet and send to the controller.
+
+Return the JWT token and HTTP request with a successful status of 200.
+
+
 
 
 
@@ -430,3 +449,24 @@ I will have
 
 In a portal project I'm working on - will have roles such as accountmanager, consultant etc
 
+
+
+# Localization
+
+Will investigate best approach for localization. At minimum English -> German.
+
+# Chatbot
+
+Have so far simply used the read-made package react-simple-chatbot.
+Ideally I would like to build one from scratch as we did for our Makers final project - using Python, Django, TFLearn, TensorFlow, React etc 
+but most likely will stick to using react-simple-chatbot at least for this project.
+
+# Search and typeaheads
+
+Need to implement search functionality. Have only seen typeaheads in the real world created in Angular using a custom RxJS operator, so requires research
+
+# Improvements
+
+Would like to ideally implement a fully reusable Modal that uses the concept of portals - to inject the Modal outside of the typical DOM structure, using the index.js file and hooks to define where to inject the modal.
+
+Common approach in React, not so much in Angular - where content projection tends to be used, unless using third parties such as Angular Material.
