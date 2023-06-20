@@ -392,9 +392,20 @@ The spring boot server will validate the JSOn web token and return the response.
 
 JWT is composed of 
 
-* Header - signing algorithm
-* Payload - info like userid
-* signature (or more generally, the footer which contains the signature of the json web token). The signature will be verified with the Secret key.
+* Header - signing algorithm e.g. RSA, HMAC, SH256 
+and also specifies the type of token
+
+* Payload - info like userid - contains the claims which are statements about an entity - typically the user and additional data
+
+types of claims - registered, public and private
+
+private claims - custom claims created to share info between parties
+public claims - public by nature
+registered - set of predefined claims - issuer, auth, expiration time/date etc 
+
+* signature (or more generally, the footer which contains the signature of the json web token). 
+is used to verify that the send of the JWT is who they say they are.
+The signature will be verified with the Secret key.
 
 
 
