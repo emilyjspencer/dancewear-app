@@ -457,7 +457,8 @@ DaoAuthenticationProvider is the most common implementatino in Spring - gets use
  Allows us to store passwords securely  - integrates with the PAsswordEncoder interfaced
  Need to exposre a PasswordEncoder Bean 
 
-# UserDetailsService - used by the DaoAuthenticationProvider - for retrieving a username, password and other atributes for authentcating a user
+# UserDetailsService -
+ used by the DaoAuthenticationProvider - for retrieving a username, password and other atributes for authentcating a user
 
 
 

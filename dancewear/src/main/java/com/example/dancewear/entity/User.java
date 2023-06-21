@@ -1,6 +1,9 @@
 package com.example.dancewear.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,8 +16,12 @@ import java.util.Collection;
 import java.util.List;
 
 
+
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-    @Data
+@Data
     public class User implements UserDetails {
 
         @Id
@@ -39,8 +46,10 @@ import java.util.List;
         private EUserRole role; // enum for different users dance teacher user, general user, admin
 
 
+
+
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
+   public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
@@ -66,11 +75,12 @@ import java.util.List;
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return true;
+        return false;
     }
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return false;
     }
+
 }

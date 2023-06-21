@@ -52,10 +52,8 @@ public class TokenManipulationService {
 
     }
 
-
-    public String generateToken ( // generate a token from extra claims and user details
-                                  Map<String, Object> extraClaims,
-                                  UserDetails userDetails
+    // generate a token from extra claims and user details
+    public String generateToken (Map<String, Object> extraClaims, UserDetails userDetails
     ) {
         return Jwts.builder()
                 .setClaims(extraClaims)
@@ -68,6 +66,8 @@ public class TokenManipulationService {
                 .signWith(getKey(), SignatureAlgorithm.HS256)
                 .compact(); // generate and return the token
     }
+
+
 
 
 
@@ -85,11 +85,9 @@ public class TokenManipulationService {
     }
 
     private Date extractExpirationDate(String token) {
-        return getClaimFromToken(token, Claims::getExpiration);
+
+            return getClaimFromToken(token, Claims::getExpiration);
     }
-
-
-
 
 }
 
