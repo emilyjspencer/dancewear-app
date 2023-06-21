@@ -445,6 +445,19 @@ Once the SecurityconextHolder has been updated, it will dispatch the request to 
 Return the JWT token and HTTP request with a successful status of 200.
 
 
+# AuthenticationProvider
+
+This processes the authentication request and returns an object - authenticated - with all credentials
+
+DaoAuthenticationProvider is the most common implementatino in Spring - gets user details fomr a DAO - UserDetailsService which has access ONKY to the username in order to retrieve the full user entity
+
+
+ # PasswordEncoder
+
+ Allows us to store passwords securely  - integrates with the PAsswordEncoder interfaced
+ Need to exposre a PasswordEncoder Bean 
+
+# UserDetailsService - used by the DaoAuthenticationProvider - for retrieving a username, password and other atributes for authentcating a user
 
 
 

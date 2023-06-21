@@ -2,12 +2,17 @@ package com.example.dancewear.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.security.Key;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Function;
 
 @Service
@@ -28,12 +33,6 @@ public class TokenManipulationService {
         return Keys.hmacShaKeyFor(keyBytes); // algorithm
     }
 
-    private Key getSignInKey() {
-        byte[] keyBytes = Decoders.BASE64.decode(SECRET);
-        return Keys.hmacShaKeyFor(keyBytes);
-        // an algorithm
-    }
-
     public <T> T getClaimFromToken(String token, Function<Claims, T> claimsResolver) {
         final Claims claims = getClaims(token);
         return claimsResolver.apply(claims);
@@ -41,12 +40,53 @@ public class TokenManipulationService {
 
     private Claims getClaims(String token) {
         return Jwts.parserBuilder()
-                .setSigningKey(getSignInKey())
+                .setSigningKey(getKey())
                 .build()
                 .parseClaimsJws(token)
                 .getBody();
     }
 
+    //  generate a jtw using only user details and not the extra claims
+    public String generateTokenUserDetailsOnly(UserDetails userDetails) {
+        return generateToken(new HashMap<>(), userDetails);
+
+    }
+
+
+    public String generateToken ( // generate a token from extra claims and user details
+                                  Map<String, Object> extraClaims,
+                                  UserDetails userDetails
+    ) {
+        return Jwts.builder()
+                .setClaims(extraClaims)
+                // subject is user info in this case username
+                .setSubject(userDetails.getUsername())
+                // set issued at
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                // set length token is valid
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 12  * 24))
+                .signWith(getKey(), SignatureAlgorithm.HS256)
+                .compact(); // generate and return the token
+    }
+
+
+
+
+    public boolean hasTokenExpired(String token) {
+
+        return extractExpirationDate(token).before(new Date());
+    }
+
+    public boolean isTokenValid(String token, UserDetails userDetails) {
+
+        String username = getUsername(token);
+
+        return (username.equals(userDetails.getUsername())) && !hasTokenExpired(token);
+    }
+
+    private Date extractExpirationDate(String token) {
+        return getClaimFromToken(token, Claims::getExpiration);
+    }
 
 
 

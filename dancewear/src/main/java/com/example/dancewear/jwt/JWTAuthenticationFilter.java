@@ -2,6 +2,9 @@ package com.example.dancewear.jwt;
 
 import com.example.dancewear.service.TokenManipulationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -18,6 +21,8 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
     public String userEmail;
     public String jwtToken;
 
+    private UserDetailsService userDetailsService;
+
     @Override
     protected void doFilterInternal(HttpServletRequest
                                                 httpServletRequest,
@@ -28,6 +33,7 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
 
          String authenticationHeader = httpServletRequest.getHeader("Authorization");
          String jwtToken;
+        final String userEmail;
         if (authenticationHeader == null | !authenticationHeader.startsWith("Bearer ")) {
             filterChain.doFilter(httpServletRequest, httpServletResponse);
             return;
@@ -37,5 +43,12 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
         jwtToken = authenticationHeader.substring(7);
 
         userEmail = tokenManipulationService.getUsername(jwtToken);
+
+
+        // if the user hasn't been authenticated - add to the securitycontextholder -
+        // which stores all authenticated
+        if (userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+            UserDetails userDetails = this.userDetailsService.loadUserByUsername(userEmail);
+        }
     }
 }
