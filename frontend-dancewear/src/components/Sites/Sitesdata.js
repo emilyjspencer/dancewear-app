@@ -1,6 +1,6 @@
 
 
-sites = [
+let sites = [
 "https://www.dancemagazine.com/",
 "https://www.thewonderfulworldofdance.com/",
 "https://www.insidedance.com/",

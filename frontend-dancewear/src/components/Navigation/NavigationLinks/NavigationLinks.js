@@ -39,6 +39,9 @@ const NavigationLinks = () => {
     <li>
       <NavLink to="/myaccount">My Account</NavLink>
     </li>
+    <li>
+      <NavLink to="/blog">Blog</NavLink>
+    </li>
   </ul>
 
 };

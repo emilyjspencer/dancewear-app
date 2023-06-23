@@ -1,6 +1,8 @@
+ import './Footer.css';
+ 
  const Footer = () => {
     return (
-            <div className="container-fluid">
+            <div className="footer-container">
                     <div className="customer-container">
                         <h3>Customer Service</h3>
                         <ul>
@@ -10,7 +12,7 @@
                         <li><a href="/returns">Download Returns Form</a></li>
                         </ul>
                     </div>
-                    <div className="info">
+                    <div className="info-container">
                         <h3>Information</h3>
                         <ul>
                         <li><a href="/cookies">Cookie Policy</a></li>
@@ -19,7 +21,7 @@
                         <li><a href="/careers">Careers</a></li>
                         </ul>
                     </div>
-                    <div className="help">
+                    <div className="help-container">
                         <h3>Need Help?</h3>
                         <p>hello@dancewear.com</p>
                         <p>Dancewear</p>
