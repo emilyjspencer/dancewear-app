@@ -30,7 +30,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
                     .disable()
                     // implement whitelisting
                     .authorizeHttpRequests()
-                    .requestMatchers("/api/authentication/**")
+                    .requestMatchers("/api/**")
                     // permit all routes in the authentication controller
                     .permitAll()
                     .anyRequest()
@@ -39,8 +39,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
                     .sessionManagement()
                     .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                     .and()
-                    .authenticationProvider(authenticationProvider)
-                    .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+                    .authenticationProvider(authenticationProvider);
+                    //.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
             return http.build();
         }

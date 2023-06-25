@@ -1,14 +1,17 @@
 
 import './App.css';
 
-import Products from './components/Products/Products'
-
-import Quiz from './components/Quiz/Quiz';
-
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+
+import Products from './components/Products/Products'
+import Product from './components/Products/Product/Product';
+import AddProduct from './components/Products/AddProduct/AddProduct'
+import Quiz from './components/Quiz/Quiz';
 import Reviews from './components/Reviews/Reviews';
 import Gymnastics from './components/Gymnastics/Gymnastics';
 import Brands from './components/Brands/Brands';
+import Brand from './components/Brands/Brand/Brand';
+import AddBrand from './components/Brands/AddBrand/AddBrand';
 import DanceShoes from './components/Shoes/DanceShoes'
 import Contact from './components/Contact/Contact';
 import UsersPage from './components/UsersPage/UsersPage';
@@ -33,8 +36,12 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import RegisterTeacher from './components/Register/RegisterTeacher';
 import ChatBot from 'react-simple-chatbot';
+import Accessories from './components/Accessories/Accessories';
+import Accessory from './components/Accessories/Accessory/Accessory';
+import AddAccessory from './components/Accessories/AddAccessory/AddAccessory';
  
 import { ThemeProvider } from 'styled-components';
+
  
 const steps = [
     {
@@ -108,11 +115,19 @@ const App = () => {
      <Route path="/" element={<Home />} />
      <Route path="/reviews" element={<Reviews />} />
           <Route path="/brands" element={<Brands />} />
+          <Route path="/brands/:id" element={<Brand />} />
+          <Route path="/brands/add" element={<AddBrand />} />
           <Route path="/shoes" element={<DanceShoes />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/gymnastics" element={<Gymnastics />} />
+          <Route path ="/accessories" element={<Accessories />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<Product />} />
+          <Route path="/products/add" element={<AddProduct />} />
+          <Route path="/accessories" element={<Accessories />} />
+          <Route path="/accessories/:id" element={<Accessory />} />
+          <Route path="/accessories/add" element={<AddAccessory />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/users" element={<UsersPage />} />
           <Route path="/cookies" element={<Cookies />} />

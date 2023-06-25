@@ -1,10 +1,11 @@
 package com.example.dancewear.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
-import javax.persistence.*;
+
 import java.util.List;
 
 

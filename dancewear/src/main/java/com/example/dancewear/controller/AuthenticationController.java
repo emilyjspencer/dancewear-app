@@ -22,7 +22,7 @@ public class AuthenticationController {
     @Autowired
     AuthenticationService authenticationService;
 
-
+/*
     @PostMapping("/authenticate")
     public ResponseEntity<AuthenticationResponse> register(
             @RequestBody AuthenticationRequest request
@@ -36,4 +36,6 @@ public class AuthenticationController {
     ) {
         return ResponseEntity.ok(authenticationService.register(request));
     }
+    */
+
 }

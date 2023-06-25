@@ -13,3 +13,37 @@ button {
     margin-top: 40px;
 
 }
+
+.products-list-container {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-gap: 50px; 
+    padding: 20px; 
+    padding-left: 200px !important;
+    max-height: 100%;
+}
+
+.search-container {
+    width: 30%;
+    margin-left: 400px;
+}
+
+.list {
+    text-align: left;
+    max-width: 750px;
+    margin: auto;
+  }
+  
+  .submit-form {
+    max-width: 300px;
+    margin: auto;
+  }
+  
+  .edit-form {
+    max-width: 300px;
+    margin: auto;
+  }
+
+  .product {
+    display: none;
+  }

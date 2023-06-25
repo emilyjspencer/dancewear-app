@@ -18,8 +18,10 @@ import java.io.IOException;
 
 @RequiredArgsConstructor
 @Component
-public class JWTAuthenticationFilter extends OncePerRequestFilter {
+public class JWTAuthenticationFilter {
+        //extends OncePerRequestFilter {
 
+    /*
     @Autowired
     private TokenManipulationService tokenManipulationService;
 
@@ -56,4 +58,7 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
             UserDetails userDetails = this.userDetailsService.loadUserByUsername(userEmail);
         }
     }
+
+    */
+
 }

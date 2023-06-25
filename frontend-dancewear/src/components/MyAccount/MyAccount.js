@@ -6,9 +6,9 @@ const MyAccount = () => {
     return (
         <>
             <h1>My Account</h1>
-            <h3 className="edit">Edit your details here:</h3>
+            <h3 className="edit-container">Edit your details here:</h3>
 
-            <form className="edit-form">
+            <form className="edit-form-myaccount">
                 <div className="first-name">
                 <label htmlFor="First Name">First Name</label>
                 <input type="text" placeholder="Edit first name"></input>

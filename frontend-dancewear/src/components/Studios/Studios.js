@@ -16,7 +16,9 @@ let studios = [
     {url: "https://www.city-academy.com/dance-classes?gad=1&gclid=CjwKCAjwhdWkBhBZEiwA1ibLmL51Dnyb6qMHgG7ZBDY-pQ_HID61D47HaL_DrhBjf6sjzeEXdYQjtRoCmowQAvD_BwE", name: "City Academy"},
     
     {url: "https://rambert.org.uk/", name: "Rambert"},
-    {url: "https://studio68london.net/", name: "Studio 68"}
+    {url: "https://studio68london.net/", name: "Studio 68"},
+    {url: "https://theplace.org.uk/", name: "The Place"},
+    {url: "https://www.heelsandfeels.com/", name: "Heels and Feels"}
     ];
 
     return (

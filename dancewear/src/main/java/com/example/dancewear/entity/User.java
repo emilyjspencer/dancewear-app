@@ -1,5 +1,7 @@
 package com.example.dancewear.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,8 +11,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.math.BigInteger;
 import java.util.Collection;
 import java.util.List;
@@ -22,7 +22,8 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Data
-    public class User implements UserDetails {
+    //public class User implements UserDetails {
+public class User {
 
         @Id
         private int id;
@@ -43,16 +44,17 @@ import java.util.List;
 
         private String favourite_dance_genre;
 
-        private EUserRole role; // enum for different users dance teacher user, general user, admin
+        //private EUserRole role; // enum for different users dance teacher user, general user, admin
 
 
 
 
-    @Override
-   public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(role.name()));
-    }
+    //@Override
+   //public Collection<? extends GrantedAuthority> getAuthorities() {
+     //   return List.of(new SimpleGrantedAuthority(role.name()));
+    //}
 
+    /*
     @Override
     public String getPassword() {
         return null;
@@ -82,5 +84,7 @@ import java.util.List;
     public boolean isEnabled() {
         return false;
     }
+
+*/
 
 }

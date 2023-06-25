@@ -13,6 +13,19 @@ Tech stack:
 * Cypress
 * Jest
 
+# Architecture
+
+* Backend application - is a Spring Boot application
+* Frontend application is a React application
+
+* Spring Boot uses Spring Web MVC to export REST Apis
+* Spring Boot uses Spring JPA  to interact with the database
+* Requests come into the respective controllers. Methods in the request handler for each endpoint will call the respective method in the respective service.
+The method in the service will call the respective method in the Repository. The Repository interfaces with the MySQL database.
+
+* The React application sends HTTP Requests to the Spring Boot backend and retrieve HTTP Responses.
+
+
 
 ## Entities
 
@@ -385,6 +398,8 @@ I can chat with a bot
 
 After researching, I've chosen to take the stateless approach. In two previous mini personal projects, I've used session-based authentication (stateful, with cookes).
 Since JWT seems to be more common, and scales much better, it makes sense to use JWT.
+
+
 
 The server will put the data into a JWT and send to the React application.
 the React application will save the JWT and send it in every request in the request header.

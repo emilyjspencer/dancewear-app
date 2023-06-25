@@ -5,7 +5,7 @@ import com.example.dancewear.requestresponse.AuthenticationRequest;
 import com.example.dancewear.requestresponse.AuthenticationResponse;
 import com.example.dancewear.requestresponse.RegistrationRequest;
 import lombok.RequiredArgsConstructor;
-import lombok.var;
+
 import org.springframework.security.authentication.AuthenticationManager;
 
 import com.example.dancewear.entity.User;
@@ -24,6 +24,7 @@ public class AuthenticationService {
     private final TokenManipulationService tokenManipulationService;
     private final AuthenticationManager authenticationManager;
 
+    /*
     public AuthenticationResponse register(RegistrationRequest request) {
         // create a user
         var user = User.builder()
@@ -62,5 +63,5 @@ public class AuthenticationService {
 
 
     }
-
+*/
 }

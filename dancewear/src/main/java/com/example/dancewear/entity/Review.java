@@ -1,8 +1,9 @@
 package com.example.dancewear.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
+
 
 @Entity
 @Data
