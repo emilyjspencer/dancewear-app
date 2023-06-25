@@ -21,22 +21,20 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8081")
 @RequestMapping("/api/products")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ProductController {
 
     private static final Logger log = LoggerFactory.getLogger("ProductController.class");
     @Autowired
     private ProductService productService;
 
-    @CrossOrigin(origins = "http://localhost:8081")
     @GetMapping
     public List<Product> getAll() {
         log.info("ProductController - get all products");
         return productService.getAll();
     }
 
-    @CrossOrigin(origins = "http://localhost:8081")
     @PostMapping
     public ResponseEntity<Void> addProduct(@RequestBody Product product) throws ProductAlreadyExistsException {
         Product newProduct = productService.addProduct(product);
@@ -45,14 +43,12 @@ public class ProductController {
         return ResponseEntity.created(location).build();
     }
 
-    @CrossOrigin(origins = "http://localhost:8081")
     @GetMapping("/{id}")
     public ResponseEntity<Product> findProductById(@PathVariable int id) throws ProductNotFoundException {
         log.info("Find product by id " + id);
         return ResponseEntity.status(HttpStatus.OK).body(productService.findProductById(id));
     }
 
-    @CrossOrigin(origins = "http://localhost:8081")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProductById(@PathVariable int id) throws ProductNotFoundException{
         productService.deleteProductById(id);
@@ -60,7 +56,6 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    @CrossOrigin(origins = "http://localhost:8081")
     @PutMapping
     public ResponseEntity<Product> updateProduct(@RequestBody Product product) throws ProductNotFoundException{
         log.info("Update product]");

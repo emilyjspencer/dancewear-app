@@ -68,16 +68,17 @@ CREATE TABLE Review (
 	title varchar(30) NOT NULL,
 	description varchar(200) NOT NULL,
 	stars INT NOT NULL,
+    posted_date Date NOT NULL,
 	author_id INT NOT NULL,
 	product_id INT NOT NULL,
 	FOREIGN KEY (author_id) REFERENCES User(id),
 	FOREIGN KEY (product_id) REFERENCES Product(id)
 );
 
-INSERT INTO Review (author_id, product_id, title, description, stars) VALUES (1, 1, 'Great leotard', 'I love it', 5);
-INSERT INTO Review (author_id, product_id, title, description, stars) VALUES (1, 2, 'Great bag', 'I love it', 5);
-INSERT INTO Review (author_id, product_id, title, description, stars) VALUES (2, 1, 'Great tutu', 'I love it', 4);
-INSERT INTO Review (author_id, product_id, title, description, stars) VALUES (2, 2, 'Great tutu' ,'I love it', 4);
+INSERT INTO Review (author_id, product_id, title, description, stars, posted_date) VALUES (1, 1, 'Great leotard', 'I love it', 5, STR_TO_DATE("May 10 2023", "%M %d %Y"));
+INSERT INTO Review (author_id, product_id, title, description, stars, posted_date) VALUES (1, 2, 'Great bag', 'I love it', 5, STR_TO_DATE("May 18 2023", "%M %d %Y"));
+INSERT INTO Review (author_id, product_id, title, description, stars, posted_date) VALUES (2, 1, 'Great tutu', 'I love it', 4, STR_TO_DATE("May 26 2023", "%M %d %Y"));
+INSERT INTO Review (author_id, product_id, title, description, stars, posted_date) VALUES (2, 2, 'Great tutu' ,'I love it', 4, STR_TO_DATE("June 2 2023", "%M %d %Y"));
 
 
 CREATE TABLE Blog (

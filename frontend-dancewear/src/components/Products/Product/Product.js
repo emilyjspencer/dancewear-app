@@ -4,7 +4,7 @@ import ProductsService from '../ProductsService';
 import './Product'
 
 const Product = props => {
-  const { id }= useParams();
+  const { id } = useParams();
   let navigate = useNavigate();
 
   const initialState = {

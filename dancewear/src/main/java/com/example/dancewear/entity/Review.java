@@ -3,6 +3,7 @@ package com.example.dancewear.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Date;
 
 
 @Entity
@@ -17,6 +18,8 @@ public class Review {
     private String description;
 
     private Integer stars;
+
+    private Date posted_date;
 
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "author_id")

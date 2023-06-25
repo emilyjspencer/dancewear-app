@@ -92,16 +92,13 @@ const Products = () => {
 
   return (
   
-    <>
-    <div className="">
-      <h4>Our Products</h4>
-      <div className="search-container">
-        <input type="text" className="" placeholder="Search by product name"
-        value={searchProductName}  onChange={onChangeSearchProductName} />
-      </div>
-      <Link to={"/products/add"} className="add-product">Add new product</Link>
+    <><><>
+      <div className="search-add-container">
+        <div className="search-container">
+          <input type="text" className="" placeholder="Search by product name"
+            value={searchProductName} onChange={onChangeSearchProductName} />
 
-      <div className="">
+          <div className="search-button">
             <button
               className=""
               type="button"
@@ -110,25 +107,30 @@ const Products = () => {
               Search Products
             </button>
           </div>
-      <ul className="products-list-container">
-        {products &&
-          products.map((product, index) => (
+        </div>
+        <Link to={"/products/add"} className="add-product">Add new product</Link>
+      </div>
+      <h4>Click on each card to learn more about each product</h4>
+
+
+      {products.length > 0 && (
+        <ul className="products-list-container">
+          {products.map((product, index) => (
             <>
-            <li>
-            <button key={product.id} className="product"
-            onClick={(e) => { setActiveProduct(product, index); setProductDetail(product);
-               setModalOpen(e)}} >View more information
-            </button>
-            <Cards
-              imgSrc="https://picsum.photos/seed/picsum/200/300"
-              imgAlt="Product placeholder"
-              text1={`Product : ${product.name}`}
-              text2={`Description: ${product.description}`}
-              text3={`Price: ${product.price}`} 
-              onClick={(e) => {setModalOpen(e)}}
-              />
-      
-              <Link
+              <div id="card-modal-button" key={product.id}
+                onClick={(e) => {
+                  setActiveProduct(product, index); setProductDetail(product);
+                  setModalOpen(e);
+                } }>View more information
+
+                <Cards
+                  imgSrc="https://picsum.photos/seed/picsum/200/300"
+                  imgAlt="Product placeholder"
+                  text1={`Product : ${product.name}`}
+                  text2={`Description: ${product.description}`}
+                  text3={`Price: ${product.price}`} />
+
+                <Link
                   to={"/products/" + product.id}
                   className=""
                 >
@@ -139,69 +141,66 @@ const Products = () => {
                   to={"/basket/" + product.id}
                   className=""
                 >
-                 Add to basket
+                  Add to basket
                 </Link>
-              </li>
-              </>))}
-              </ul>
+              </div>
+            </>
+          ))}
+        </ul>
+      )}
 
-                {productDetail ? <Modal
-          isOpen={modalOpen}
-          onRequestClose={() => setModalOpen(false)}
-          style={modalStyles}
-          product={productDetail}>
-          
+      {productDetail ? <Modal
+        isOpen={modalOpen}
+        onRequestClose={() => setModalOpen(false)}
+        style={modalStyles}
+        product={productDetail}>
+
         <ul className="product-detail-list">
-            <li><strong>Name: </strong> {productDetail.name}</li>
-            <li><strong>Description: </strong>{productDetail.description}</li>
-            <li><strong>Price: </strong>{productDetail.price}</li>
-            
-          </ul>
-            </Modal> : "" }
+          <li><strong>Name: </strong> {productDetail.name}</li>
+          <li><strong>Description: </strong>{productDetail.description}</li>
+          <li><strong>Price: </strong>{productDetail.price}</li>
 
-           
+        </ul>
+      </Modal> : ""}
+    </>
+      <button
+        className=""
+        onClick={deleteAllProducts}
+      >
+        Delete all
+      </button></>
       
-  
+      <div className="">
+        {currentProduct ? (
+          <div>
+            <h4>Product</h4>
+            <div>
+              <label>
+                <strong>Product </strong>
+              </label>
+            </div>
+            <div>
+              <label>
+                <strong>Description:</strong>
+              </label>{" "}
+              {currentProduct.description}
+            </div>
+            <div>
+              <label>
+                <strong>Price:</strong>
+              </label>{" "}
+              {currentProduct.price}
+            </div>
 
-          <button
-            className=""
-            onClick={deleteAllProducts}
-          >
-            Delete all
-          </button>
-          
-        </div>
-        <div className="">
-            {currentProduct ? (
-              <div>
-                <h4>Product</h4>
-                <div>
-                  <label>
-                    <strong>Product </strong>
-                  </label>
-                </div>
-                <div>
-                  <label>
-                    <strong>Description:</strong>
-                  </label>{" "}
-                  {currentProduct.description}
-                </div>
-                <div>
-                  <label>
-                    <strong>Price:</strong>
-                  </label>{" "}
-                  {currentProduct.price}
-                </div>
 
-          
-              </div>
-            ) : (
-              <div>
-                <br />
+          </div>
+        ) : (
+          <div>
+            <br />
 
-              </div>
-            )}
-          </div></>
+          </div>
+        )}
+      </div></>
 
   
   );
