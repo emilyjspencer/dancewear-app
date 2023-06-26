@@ -10,7 +10,7 @@ const BlogPostCard = ({
 
 
   return (
-    <div className="card-container">
+    <div className="blog-post-card-container">
       <img src={imgSrc} alt={imgAlt}>
 
       </img>
