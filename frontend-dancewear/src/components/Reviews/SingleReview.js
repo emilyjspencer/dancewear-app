@@ -14,12 +14,12 @@ const SingleReview = (props) => {
         <div
           className="review-item">
           <p>
-            
+
             <strong>Title: </strong>{props.review.title}
             <strong>Author:  </strong>{props.review.authorId}
             <strong>Product: </strong>{props.review.productId}
             <strong>Review: </strong>{props.review.description}
-            <strong>Starts: </strong>{props.review.stars}
+            <strong>Stars: </strong>{props.review.stars}
           <strong>Date of review: </strong> {formatPostedDate(props.review.posted_date)}
            
           </p>

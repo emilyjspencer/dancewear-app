@@ -13,6 +13,8 @@ const AddProduct = () => {
   const [product, setProduct] = useState(initialState);
   const [submitted, setSubmitted] = useState(false);
 
+  
+
   const handleInputChange = event => {
     const { name, value } = event.target;
     setProduct({ ...product, [name]: value });

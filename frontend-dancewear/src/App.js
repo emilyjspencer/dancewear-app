@@ -39,6 +39,7 @@ import ChatBot from 'react-simple-chatbot';
 import Accessories from './components/Accessories/Accessories';
 import Accessory from './components/Accessories/Accessory/Accessory';
 import AddAccessory from './components/Accessories/AddAccessory/AddAccessory';
+import AddReview from './components/AddReview/AddReview';
  
 import { ThemeProvider } from 'styled-components';
 
@@ -117,6 +118,7 @@ const App = () => {
           <Route path="/brands" element={<Brands />} />
           <Route path="/brands/:id" element={<Brand />} />
           <Route path="/brands/add" element={<AddBrand />} />
+          
           <Route path="/shoes" element={<DanceShoes />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="*" element={<NotFound />} />

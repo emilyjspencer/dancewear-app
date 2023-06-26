@@ -36,6 +36,10 @@ const Products = () => {
 
   const [modalOpen, setModalOpen] = useState(false);
 
+  const [searchId, setId] = useState("");
+
+
+
 
   useEffect(() => {
     getProducts();
@@ -112,16 +116,33 @@ const Products = () => {
       </div>
       <h4>Click on each card to learn more about each product</h4>
 
+      <div>
+              <div className="main">
+                  <div className="search-container">
+                      <div className="t">
+                          <input type="number" placeholder="Search .." name="searchId" onChange={(event) => setId(event.target.value)}></input>
+                          <input type="text" placeholder="name" name="searchProductName" onChange={(event) => setSearchProductName(event.target.value)}></input>
+                          
+                      </div>
+                  </div>
+              </div>
+      </div>
 
       {products.length > 0 && (
         <ul className="products-list-container">
-          {products.map((product, index) => (
+         
             <>
+            {products.filter((product) => {
+                      return searchId === "" ? product : product.id.toString() === searchId
+                  }).filter((product) => {
+                    return searchProductName === "" ? product : product.name.toLowerCase().includes(searchProductName)
+                  }).map((product, index) => (
+
               <div id="card-modal-button" key={product.id}
                 onClick={(e) => {
                   setActiveProduct(product, index); setProductDetail(product);
                   setModalOpen(e);
-                } }>View more information
+                } }>
 
                 <Cards
                   imgSrc="https://picsum.photos/seed/picsum/200/300"
@@ -143,9 +164,9 @@ const Products = () => {
                 >
                   Add to basket
                 </Link>
-              </div>
+              </div>))}
             </>
-          ))}
+        
         </ul>
       )}
 
