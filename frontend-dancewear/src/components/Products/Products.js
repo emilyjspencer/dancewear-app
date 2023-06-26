@@ -83,54 +83,29 @@ const Products = () => {
       });
   };
 
-  const findByProductName = () => {
-    ProductsService.findByProductName(searchProductName)
-      .then(response => {
-        setProducts(response.data);
-        console.log(response.data);
-      })
-      .catch(e => {
-        console.log(e);
-      });
-  };
-
   return (
   
     <><><>
       <div className="search-add-container">
-        <div className="search-container">
-          <input type="text" className="" placeholder="Search by product name"
-            value={searchProductName} onChange={onChangeSearchProductName} />
-
-          <div className="search-button">
-            <button
-              className=""
-              type="button"
-              onClick={findByProductName}
-            >
-              Search Products
-            </button>
-          </div>
-        </div>
+        
         <Link to={"/products/add"} className="add-product">Add new product</Link>
       </div>
-      <h4>Click on each card to learn more about each product</h4>
+      
 
       <div>
               <div className="main">
                   <div className="search-container">
-                      <div className="t">
+                      <div className="">
                           <input type="number" placeholder="Search .." name="searchId" onChange={(event) => setId(event.target.value)}></input>
-                          <input type="text" placeholder="name" name="searchProductName" onChange={(event) => setSearchProductName(event.target.value)}></input>
+                          <input type="text" placeholder="Search by product name" name="searchProductName" onChange={(event) => setSearchProductName(event.target.value)}></input>
                           
                       </div>
                   </div>
               </div>
       </div>
-
+      <h4>Click on each card to learn more about each product</h4>
       {products.length > 0 && (
         <ul className="products-list-container">
-         
             <>
             {products.filter((product) => {
                       return searchId === "" ? product : product.id.toString() === searchId

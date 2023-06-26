@@ -3,6 +3,7 @@ import './UsersPage.css';
 import Cards from '../Cards/Cards';
 import Filter from '../Filter/Filter';
 import Modal from 'react-modal';
+import { Link } from 'react-router-dom';
 
 
 const modalStyles = {
@@ -25,9 +26,13 @@ const modalStyles = {
 const UsersPage = () => {
 const [users, setUsers] = useState([])
 const [userDetail, setUserDetail] = useState(null);
-console.log(users)
+
 
 const [modalOpen, setModalOpen] = useState(false);
+const [searchId, setId] = useState("");
+const [searchName, setSearchName] = useState("");
+const [currentUser, setCurrentUser] = useState(null);
+const [currentIndex, setCurrentIndex] = useState(-1);
 
 
 useEffect(() => {
@@ -38,34 +43,52 @@ useEffect(() => {
   })();
 }, []);
 
+const setActiveUser = (user, index) => {
+  setCurrentUser(user);
+  setCurrentIndex(index);
+};
+
 return (
   <>
-     <Filter />
-  
-      {users.length > 0 && (
+       <div className="search-add-container">
         
+        <Link to={"/users/add"} className="add-user">Add new user</Link>
+      </div>
+     <div>
+              <div className="main">
+                  <div className="search-container">
+                      <div className="">
+                          <input type="number" placeholder="Search .." name="searchId" onChange={(event) => setId(event.target.value)}></input>
+                          <input type="text" placeholder="Search by user's name" name="searchName" onChange={(event) => setSearchName(event.target.value)}></input>
+                          
+                      </div>
+                  </div>
+              </div>
+      </div>
+      <h4>Click on each card to learn more about each product</h4>
+      {users.length > 0 && (
           <ul className="users-container">
-          {users.map(user => (
-              
             <>
+           {users.filter((user) => {
+                      return searchId === "" ? user : user.id.toString() === searchId
+                  }).filter((user) => {
+                    return searchName === "" ? user : user.first_name.toLowerCase().includes(searchName)
+                  }).map((user, index) => (
               
-            <div className="card-container">
-            <button id="card-modal-button" key={user.id} onClick={(e) => { setUserDetail(user);
-               setModalOpen(e)  }}>View more information about {user.first_name}</button>
-              <Cards
-                imgSrc="https://picsum.photos/seed/picsum/200/300"
-                imgAlt="User placeholder"
-                text1={`First name: ${user.first_name}`}
-                text2={`Last name: ${user.last_name}`}
-                />
-            
-       
-                </div>
-                </>
-          ))}
-
-        </ul> )}
-
+            <div id="card-modal-button" key={user.id} onClick={(e) => {
+                      setUserDetail(user);
+                      setModalOpen(e); setActiveUser(user, index)
+                    } }>
+                      
+                      <Cards
+                        imgSrc="https://picsum.photos/seed/picsum/200/300"
+                        imgAlt="User placeholder"
+                        text1={`First name: ${user.first_name}`}
+                        text2={`Last name: ${user.last_name}`} />
+            </div>))}
+            </>
+       </ul> )}
+                  
        
       {userDetail ? <Modal
         isOpen={modalOpen}
