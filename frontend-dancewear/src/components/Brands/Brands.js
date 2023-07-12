@@ -134,7 +134,7 @@ return (
       imgAlt="placeholder image for brand"
       text1={`Brand: ${brand.name}`}
       text2={`Description: ${brand.description}`}
-      text3={`Price: ${brand.price}`} />
+    />
   
     <Link
       to={"/brands/" + brand.brand_id} 
@@ -156,11 +156,8 @@ return (
       >
 
         <ul className="brand-detail-list">
-          <li><strong>Job role: </strong> {brandDetail.name}</li>
-          <li><strong>Location: </strong>{brandDetail.description}</li>
-          <li><strong>Number of positions: </strong>{brandDetail.price}</li>
-    
-          
+          <li><strong>Brand name: </strong> {brandDetail.name}</li>
+          <li><strong>Description: </strong>{brandDetail.description}</li> 
         </ul>
 
       </Modal> : ""}

@@ -10,7 +10,6 @@ import Quiz from './components/Quiz/Quiz';
 import Reviews from './components/Reviews/Reviews';
 import Gymnastics from './components/Gymnastics/Gymnastics';
 import Brands from './components/Brands/Brands';
-import Brand from './components/Brands/Brand/Brand';
 import AddBrand from './components/Brands/AddBrand/AddBrand';
 import DanceShoes from './components/Shoes/DanceShoes'
 import Contact from './components/Contact/Contact';
@@ -116,7 +115,6 @@ const App = () => {
      <Route path="/" element={<Home />} />
      <Route path="/reviews" element={<Reviews />} />
           <Route path="/brands" element={<Brands />} />
-          <Route path="/brands/:id" element={<Brand />} />
           <Route path="/brands/add" element={<AddBrand />} />
           
           <Route path="/shoes" element={<DanceShoes />} />

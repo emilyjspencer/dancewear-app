@@ -1,33 +1,43 @@
 import React, { useState } from "react";
-import BrandsService from "../BrandsService";
+import UsersService from "../UsersService";
 
-const AddBrand = () => {
+const AddUser = () => {
   const initialState = {
     id: null,
     name: "",
     description: "",
   };
-  const [brand, setBrand] = useState(initialState);
+  const [user, setUser] = useState(initialState);
   const [submitted, setSubmitted] = useState(false);
 
   const handleInputChange = event => {
     const { name, value } = event.target;
-    setBrand({ ...brand, [name]: value });
+    setUser({ ...user, [name]: value });
   };
 
-  const saveBrand = () => {
+  const saveUser = () => {
     var data = {
-      name: brand.name,
-      description: brand.description
+      first_name: user.first_name,
+      last_name: user.last_name,
+      email: user.email,
+      phone_number: user.phone_number,
+      user_password: user.user_password,
+      address: user.address,
+      account_number: user.account_number
     }
   ;
 
-    BrandsService.create(data)
+    UsersService.create(data)
       .then(response => {
         setBrand({
           id: response.data.id,
-          name: response.data.name,
-          description: response.data.description,
+          first_name: response.data.first_name,
+          last_name: response.data.last_name,
+          email: response.data.email,
+          phone_number: response.data.phone_number,
+          user_password: response.data.user_password,
+          address: response.data.address,
+          account_number: response.data.account_number
         });
         setSubmitted(true);
         console.log(response.data);
@@ -37,8 +47,8 @@ const AddBrand = () => {
       });
   };
 
-  const newBrand = () => {
-    setBrand(initialState);
+  const newUser = () => {
+    setUser(initialState);
     setSubmitted(false);
   };
 
@@ -47,27 +57,27 @@ const AddBrand = () => {
           {submitted ? (
             <div>
               <h4>submitted</h4>
-              <button className="" onClick={newBrand}>
-                Add Brand
+              <button className="" onClick={newUser}>
+                Add User
               </button>
             </div>
           ) : (
             <div>
               <div className="">
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">First Name</label>
                 <input
                   type="text"
                   className=""
                   id="name"
                   required
-                  value={brand.name}
+                  value={user.first_name}
                   onChange={handleInputChange}
-                  name="name"
+                  name="first_name"
                 />
               </div>
     
               <div className="">
-                <label htmlFor="description">Description</label>
+                <label htmlFor="last_name">Last Name</label>
                 <input
                   type="text"
                   className=""
