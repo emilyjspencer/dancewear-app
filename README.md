@@ -487,8 +487,31 @@ I will have
 * User (dance teacher)
 * Admin
 
-In a portal project I'm working on - will have roles such as accountmanager, consultant etc
+In a portal project I'm working on - will have roles such as accountmanager, consultant admin etc
 
+# Authorization and roles
+
+## Customer roles
+
+* view products
+* view accessories
+* view reviews
+* write reviews
+* search products by category
+* search for product by brand
+* add items to the basket
+* enter payment details
+* submit an order
+* view orders
+* if the customer is a dance teacher - a discount is applied to their order
+
+## Admin roles
+
+* Add products
+* Add brands
+* Add categories
+* View users
+* Add users, remove users, detail users
 
 
 # Localization
