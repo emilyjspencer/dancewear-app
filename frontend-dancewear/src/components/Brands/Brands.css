@@ -6,9 +6,11 @@ button {
   margin-bottom: 40px;
 }
 
-.container {
+.brands-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
-  grid-gap: 16px;
-  margin-top: 40px;
+  grid-template-columns: 300px 300px 300px;
+  grid-gap: 50px; 
+  padding: 20px; 
+  padding-left: 200px !important;
+  max-height: 100%;
 }

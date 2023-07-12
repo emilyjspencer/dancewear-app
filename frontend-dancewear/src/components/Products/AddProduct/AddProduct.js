@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+import { useEffect, useState } from "react";
+import {  useNavigate } from 'react-router-dom';
 import ProductsService from "../ProductsService";
 import './AddProduct.css';
 
@@ -13,7 +15,7 @@ const AddProduct = () => {
   const [product, setProduct] = useState(initialState);
   const [submitted, setSubmitted] = useState(false);
 
-  
+  const navigate = useNavigate();
 
   const handleInputChange = event => {
     const { name, value } = event.target;
@@ -110,3 +112,4 @@ const AddProduct = () => {
 
 
 export default AddProduct;
+

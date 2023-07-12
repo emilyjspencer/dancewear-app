@@ -22,16 +22,16 @@ public class TokenManipulationConfig {
     private final UserRepository userRepository;
 
 
-    @Bean
-    public UserDetailsService userDetailsService() {
-        return username -> userRepository.findByEmail(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+    //@Bean
+    //public UserDetailsService userDetailsService() {
+      //  return username -> userRepository.findByEmail(username)
+        //        .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
         //return new UserDetailsService() {
         //@Override
         //public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException("User not found")
         //return userRepository.findByEmail(username);
-    }
+   // }
     //}
 
     @Bean
@@ -39,21 +39,21 @@ public class TokenManipulationConfig {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    public AuthenticationProvider authenticationProvider() {
+    //@Bean
+    //public AuthenticationProvider authenticationProvider() {
         // this is the data access object that is responsible for fetching user details
-        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsService(userDetailsService());
+      //  DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+       // authProvider.setUserDetailsService(userDetailsService());
         // passwordencoder
-        authProvider.setPasswordEncoder(passwordEncoder());
-        return authProvider;
-    }
+        //authProvider.setPasswordEncoder(passwordEncoder());
+        //return authProvider;
+    //}
 
     // manages the authentication
-    @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
-        return config.getAuthenticationManager();
-    }
+    //@Bean
+    //public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+      //  return config.getAuthenticationManager();
+   // }
 
 
 }

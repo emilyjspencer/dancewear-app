@@ -11,6 +11,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+/*
 @Configuration
     @EnableWebSecurity
     @RequiredArgsConstructor
@@ -19,7 +20,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
         private final JWTAuthenticationFilter jwtAuthFilter;
 
-        private final AuthenticationProvider authenticationProvider;
+        //private final AuthenticationProvider authenticationProvider;
 
 // at application startup - spring security will try to look for a bean of type securityfilterchain
         // which is responsible for configuring all the http security of  app
@@ -50,3 +51,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
     }
 
+
+
+ */

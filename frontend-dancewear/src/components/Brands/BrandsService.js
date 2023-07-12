@@ -24,7 +24,7 @@ const removeAll = () => {
   return http.delete(`/brands`);
 };
 
-const findByName = name => {
+const findByBrandName = name => {
   return http.get(`/brands?name=${name}`);
 };
 
@@ -35,7 +35,7 @@ const BrandsService = {
   update,
   remove,
   removeAll,
-  findByName
+  findByBrandName
 };
 
 export default BrandsService;

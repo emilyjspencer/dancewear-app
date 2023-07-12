@@ -19,10 +19,10 @@ import com.example.dancewear.entity.EUserRole;
 public class AuthenticationService {
 
 
-    private final PasswordEncoder passwordEncoder;
-    private final UserRepository repository;
-    private final TokenManipulationService tokenManipulationService;
-    private final AuthenticationManager authenticationManager;
+    //private final PasswordEncoder passwordEncoder;
+    //private final UserRepository repository;
+    //private final TokenManipulationService tokenManipulationService;
+    //private final AuthenticationManager authenticationManager;
 
     /*
     public AuthenticationResponse register(RegistrationRequest request) {
