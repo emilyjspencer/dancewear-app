@@ -351,35 +351,84 @@ I can take a quiz
 so that I can get answers quickly to my questions
 I can chat with a bot
 
-* As a registered user so that I can change my mind about purchases, I can update my basket
+* As a registered user 
+so that I can change my mind about purchases, 
+I can update my basket
 
-* As a registered user, so that my login details are protected, I can log out of my account
+* As a registered user, 
+so that my login details are protected, 
+I can log out of my account
 
-* As a user, so that I know what is most popular on the website, I can see trending items/categories
+* As a user, 
+so that I know what is most popular on the website, 
+I can see trending items/categories
 
-* As a registered user, so that I can keep track of my orders, I can see my previous orders
+* As a registered user, 
+so that I can keep track of my orders, 
+I can see my previous orders
 
-* As a registered user, so that I can store a collection of items I liked, I can 'like' an item
+* As a registered user, 
+so that I can store a collection of items I liked, 
+I can 'like' an item
 
-* As a registered user, so that I can keep track of all of the items that I have liked, I can see a list of liked items
+* As a registered user, 
+so that I can keep track of all of the items that I have liked, 
+I can see a list of liked items
 
-* As a user, so that I can hear about the latest items on the site, I can subscribe 
+* As a user, 
+so that I can hear about the latest items on the site, 
+I can subscribe 
 
-* As a dance teacher, so that I can get discounts, I can sign up for a dance teacher account
+* As a dance teacher, 
+so that I can get discounts, 
+I can sign up for a dance teacher account
 
-* As a user, so that I can refine my search, I can filter by brand, category, product
+* As a user, 
+so that I can refine my search, 
+I can filter by brand, category, product
 
-* As a user, so that I can see which items are the cheapest, I can sort items by price from lowest to highest
+* As a user, 
+so that I can see which items are the cheapest, 
+I can sort items by price from lowest to highest
 
-* As a user, so that I can see which items are the most expensive, I can sort items by price form highest to lowest
+* As a user, 
+so that I can see which items are the most expensive,
+I can sort items by price form highest to lowest
 
-* As a visitor to the website, when I visit the homepage, I see a cookies banner
+* As a visitor to the website, 
+when I visit the homepage, 
+I see a cookies banner
 
-* As a registered user who has forgotten their password, I can reset my password
+* As a registered user
+ who has forgotten their password, 
+ I can reset my password
 
-* As a visitor to the website, so that I can view learn more about the retailer, I can see links to their Instagram, Twitter, Tiktok and Facebook accounts
+* As a visitor to the website, 
+so that I can view learn more about the retailer, 
+I can see links to their Instagram, Twitter, Tiktok and Facebook accounts
 
-* As a German speaker visiting the website, so that I can navigate the site, I can view site content in German
+* As a German speaker visiting the website, 
+so that I can navigate the site, 
+I can view site content in German
+
+* As an admin, so that I can manage customer accounts, 
+I can add a user, 
+delete a user and edit a user
+
+* As an admin, 
+so that I can keep track of customer accounts, 
+I can view all users
+
+* As an admin, 
+so that I can improve user experience for customers, 
+I can add new categories which customers can filter products by
+
+* As an admin, 
+so that users can be aware of any new brands,
+I can add new brands which customers can filte products by
+
+
+
 
 # CI/CD
 
