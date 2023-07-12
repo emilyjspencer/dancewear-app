@@ -39,8 +39,9 @@ public class BrandController {
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping
     public ResponseEntity<Void> addBrand(@RequestBody Brand brand) throws BrandAlreadyExistsException {
+        log.info(brand.toString());
         Brand newBrand = brandService.addBrand(brand);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newBrand.getId()).toUri();
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newBrand.getBrand_id()).toUri();
         log.info("Add new brand to database");
         return ResponseEntity.created(location).build();
     }

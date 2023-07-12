@@ -43,21 +43,21 @@ public class BlogService {
     }
 
     public Blog addBlog(Blog blog) throws BlogAlreadyExistsException {
-        if (!blogRepository.existsById(blog.getId())) {
+        if (!blogRepository.existsById(blog.getBlog_id())) {
             log.info("Add Blog post to database");
             return blogRepository.save(blog);
         }
         log.warn("Unable to add blog post, id in use");
-        throw new BlogAlreadyExistsException("Blog post with Id: " + blog.getId() + " already exists");
+        throw new BlogAlreadyExistsException("Blog post with Id: " + blog.getBlog_id() + " already exists");
     }
 
     public Blog updateBlog(Blog blog) throws BlogNotFoundException {
-        if (blogRepository.existsById(blog.getId())) {
+        if (blogRepository.existsById(blog.getBlog_id())) {
             log.info("Update blog");
             return blogRepository.save(blog);
         }
         log.warn("Unable to update blog post, no id found");
-        throw new BlogNotFoundException("No blog post exists with id: " + blog.getId());
+        throw new BlogNotFoundException("No blog post exists with id: " + blog.getBlog_id());
     }
 
     public Blog findBlogById(int id) throws BlogNotFoundException {

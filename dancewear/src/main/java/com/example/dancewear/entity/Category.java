@@ -2,11 +2,7 @@ package com.example.dancewear.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
 
-
-import java.util.List;
 
 
 @Entity
@@ -14,19 +10,25 @@ import java.util.List;
 public class Category {
 
     @Id
-    private int id;
+    private int category_id;
 
     private String name;
 
-    @LazyCollection(LazyCollectionOption.FALSE)
-    @ManyToMany(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "product_id")
-    @JoinTable(name = "CATEGORY_PRODUCT")
-    private List<Product> products;
+    public Category() {}
 
-    @LazyCollection(LazyCollectionOption.FALSE)
-    @ManyToMany(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "brand_id")
-    @JoinTable(name = "CATEGORY_BRAND")
-    private List<Brand> brands;
+    public int getCategory_id() { return category_id; }
+
+    public void setCategory_id(int category_id) { this.category_id = category_id; }
+
+    public String getName() { return name; }
+
+    public void setName(String name) { this.name = name; }
+
+
+
+    @Override
+    public String toString() {
+        return "Category [category_id=" + category_id + ", name=" + name
+                + "]";
+    }
 }
