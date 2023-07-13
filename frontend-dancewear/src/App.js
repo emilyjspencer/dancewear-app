@@ -4,16 +4,20 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 import Products from './components/Products/Products'
-import Product from './components/Products/Product/Product';
+
 import AddProduct from './components/Products/AddProduct/AddProduct'
+import EditDeleteProduct from './components/Products/EditDeleteProduct/EditDeleteProduct';
 import Quiz from './components/Quiz/Quiz';
 import Reviews from './components/Reviews/Reviews';
 import Gymnastics from './components/Gymnastics/Gymnastics';
 import Brands from './components/Brands/Brands';
 import AddBrand from './components/Brands/AddBrand/AddBrand';
+import EditDeleteBrand from './components/Brands/EditDeleteBrand/EditDeleteBrand';
 import DanceShoes from './components/Shoes/DanceShoes'
 import Contact from './components/Contact/Contact';
 import UsersPage from './components/UsersPage/UsersPage';
+import EditDeleteUser from './components/UsersPage/EditDeleteUser/EditDeleteUser';
+import AddUser from './components/UsersPage/AddUser/AddUser';
 import Home from './components/Home/Home';
 import Footer from './components/HeaderFooter/Footer';
 import Delivery from './components/Delivery/Delivery';
@@ -116,20 +120,22 @@ const App = () => {
      <Route path="/reviews" element={<Reviews />} />
           <Route path="/brands" element={<Brands />} />
           <Route path="/brands/add" element={<AddBrand />} />
-          
+          <Route path="/brands/:id" element={<EditDeleteBrand />} />
           <Route path="/shoes" element={<DanceShoes />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/gymnastics" element={<Gymnastics />} />
           <Route path ="/accessories" element={<Accessories />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/products/:id" element={<Product />} />
+          <Route path="/products/:id" element={<EditDeleteProduct />} />
           <Route path="/products/add" element={<AddProduct />} />
           <Route path="/accessories" element={<Accessories />} />
           <Route path="/accessories/:id" element={<Accessory />} />
           <Route path="/accessories/add" element={<AddAccessory />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/users" element={<UsersPage />} />
+          <Route path="/users:id" element={<EditDeleteUser />} />
+          <Route path="/users/add" element={<AddUser />} />
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/delivery" element={<Delivery />} />

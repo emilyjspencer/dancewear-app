@@ -26,14 +26,13 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+
     @GetMapping
     public List<User> getAll() {
         log.info("UserController - get all users");
         return userService.getAll();
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping
     public ResponseEntity<Void> addUser(@RequestBody User user) throws UserAlreadyExistsException {
         User newUser = userService.addUser(user);
@@ -42,14 +41,12 @@ public class UserController {
         return ResponseEntity.created(location).build();
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/{id}")
     public ResponseEntity<User> findUserById(@PathVariable int id) throws UserNotFoundException {
         log.info("Find user by id " + id);
         return ResponseEntity.status(HttpStatus.OK).body(userService.findUserById(id));
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteJobById(@PathVariable int id) throws UserNotFoundException{
         userService.deleteUserById(id);
@@ -57,11 +54,11 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping
     public ResponseEntity<User> updateUser(@RequestBody User user) throws UserNotFoundException{
         log.info("Update user");
         return ResponseEntity.status(HttpStatus.OK).body(userService.updateUser(user));
     }
+
 
 }

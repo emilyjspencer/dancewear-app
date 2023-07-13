@@ -29,14 +29,13 @@ public class BrandController {
     @Autowired
     private BrandService brandService;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+
     @GetMapping
     public List<Brand> getAll() {
         log.info("BrandController - get all brands");
         return brandService.getAll();
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping
     public ResponseEntity<Void> addBrand(@RequestBody Brand brand) throws BrandAlreadyExistsException {
         log.info(brand.toString());
@@ -46,14 +45,12 @@ public class BrandController {
         return ResponseEntity.created(location).build();
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/{id}")
     public ResponseEntity<Brand> findBrandById(@PathVariable int id) throws BrandNotFoundException {
         log.info("Find brand by id " + id);
         return ResponseEntity.status(HttpStatus.OK).body(brandService.findBrandById(id));
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteBrandById(@PathVariable int id) throws BrandNotFoundException{
         brandService.deleteBrandById(id);
@@ -61,7 +58,6 @@ public class BrandController {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping
     public ResponseEntity<Brand> updateBrand(@RequestBody Brand brand) throws BrandNotFoundException {
         log.info("Update review");

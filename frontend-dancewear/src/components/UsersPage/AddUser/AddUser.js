@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import UsersService from "../UsersService";
+import UsersService from "../UsersService.js";
 
 const AddUser = () => {
   const initialState = {
@@ -29,7 +29,7 @@ const AddUser = () => {
 
     UsersService.create(data)
       .then(response => {
-        setBrand({
+        setUser({
           id: response.data.id,
           first_name: response.data.first_name,
           last_name: response.data.last_name,
@@ -83,12 +83,71 @@ const AddUser = () => {
                   className=""
                   id="description"
                   required
-                  value={brand.description}
+                  value={user.description}
                   onChange={handleInputChange}
                   name="description"
                 />
               </div>
-              <button onClick={saveBrand} className="">
+
+              <div className="">
+                <label htmlFor="last_name">Email</label>
+                <input
+                  type="text"
+                  className=""
+                  id="email"
+                  required
+                  value={user.email}
+                  onChange={handleInputChange}
+                  name="email"
+                />
+              </div>
+              <div className="">
+                <label htmlFor="last_name">Phone Number</label>
+                <input
+                  type="text"
+                  className=""
+                  id="phone_number"
+                  required
+                  value={user.phone_number}
+                  onChange={handleInputChange}
+                  name="phone_number"
+                />
+              </div>
+              <div className="">
+                <label htmlFor="user_password">Password</label>
+                <input
+                  type="password"
+                  className=""
+                  id="user_password"
+                  required
+                  value={user.user_password}
+                  onChange={handleInputChange}
+                  name="user_password"
+                />
+              </div>
+              <div className="form-group">
+              <label htmlFor="address">Address</label>
+              <input
+                type="text"
+                className="form-control"
+                id="address"
+                name="address"
+                value={user.address}
+                onChange={handleInputChange}
+              />
+              </div>
+              <div className="form-group">
+              <label htmlFor="address">Account Number</label>
+              <input
+                type="text"
+                className="form-control"
+                id="account_number"
+                name="account_number"
+                value={user.account_number}
+                onChange={handleInputChange}
+              />
+              </div>
+              <button onClick={saveUser} className="">
                 Submit
               </button>
             </div>
@@ -99,4 +158,4 @@ const AddUser = () => {
   
 
 
-export default AddBrand;
+export default AddUser;

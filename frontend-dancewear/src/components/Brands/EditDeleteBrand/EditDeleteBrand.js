@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import BrandsService from '../BrandsService';
+
 import './EditDeleteBrand.css'
 
 
@@ -21,7 +22,7 @@ const [submitted, setSubmitted] = useState(false);
 
   const initialState = {
     id: id,
-    name: name,
+    brand_name: brand_name,
     description: description
  
   };
@@ -61,7 +62,7 @@ const handleSubmit = (event) => {
         description: description,
     }
 
-        JobService.create(data)
+        BrandsService.create(data)
         .then(response => {
                 if(response.status === 201) {
                     alert('Brands created');
@@ -164,4 +165,4 @@ const handleSubmit = (event) => {
 }
 
 
-export default EditDeleteJob;
+export default EditDeleteBrand;

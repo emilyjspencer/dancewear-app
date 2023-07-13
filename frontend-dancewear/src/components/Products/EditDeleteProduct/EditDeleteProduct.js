@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import ProductsService from '../ProductsService';
-import './Product'
+import './EditDeleteProduct'
 
-const Product = props => {
+const EditDeleteProduct = props => {
   const { id } = useParams();
   let navigate = useNavigate();
 
@@ -129,4 +129,4 @@ const Product = props => {
   ;
 
 
-export default Product;
+export default EditDeleteProduct;

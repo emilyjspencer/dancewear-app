@@ -11,12 +11,11 @@ import lombok.NoArgsConstructor;
 import java.math.BigInteger;
 
 
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+//@Builder
+//@AllArgsConstructor
+//@NoArgsConstructor
 @Entity
 @Data
-    //public class User implements UserDetails {
 public class User {
 
         @Id
@@ -40,13 +39,14 @@ public class User {
 
         //private EUserRole role; // enum for different users dance teacher user, general user, admin
 
+        public User() {}
 
         public int getUser_id() { return user_id; }
 
-        public void setUserid(int user_id) { this.user_id = user_id; }
+        public void setUser_id(int user_id) { this.user_id = user_id; }
         public String getFirst_name() { return first_name; }
 
-        public String setFirst_name(String first_name) { return first_name; }
+        public void setFirst_name(String first_name) { this.first_name = first_name; }
 
         public String getLast_name() { return last_name; }
 
@@ -68,7 +68,7 @@ public class User {
 
         public String getAddress() { return address; }
 
-        public void setAddress(String phone_number) { this.address = address; }
+        public void setAddress(String address) { this.address = address; }
 
         public BigInteger getAccount_number() { return account_number; }
 
