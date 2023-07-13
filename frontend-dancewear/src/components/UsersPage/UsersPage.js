@@ -77,17 +77,27 @@ return (
               
             <div id="card-modal-button" key={user.id} onClick={(e) => {
                       setUserDetail(user);
-                      setModalOpen(e); setActiveUser(user, index)
+                      setModalOpen(e); setActiveUser(user, index);
                     } }>
-                      
+
                       <Cards
                         imgSrc="https://picsum.photos/seed/picsum/200/300"
                         imgAlt="User placeholder"
                         text1={`First name: ${user.first_name}`}
                         text2={`Last name: ${user.last_name}`} />
-            </div>))}
-            </>
-       </ul> )}
+                
+                <Link
+      to={"/users/" + user.user_id} 
+      className=""
+    >
+      Edit User Information/ Delete
+    </Link>
+    </div>
+                  
+   ))}
+   </>
+    </ul>
+      )}
                   
        
       {userDetail ? <Modal

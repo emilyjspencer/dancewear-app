@@ -134,7 +134,7 @@ const App = () => {
           <Route path="/accessories/add" element={<AddAccessory />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/users" element={<UsersPage />} />
-          <Route path="/users:id" element={<EditDeleteUser />} />
+          <Route path="/users/:id" element={<EditDeleteUser />} />
           <Route path="/users/add" element={<AddUser />} />
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/privacy" element={<Privacy />} />

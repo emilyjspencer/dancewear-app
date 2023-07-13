@@ -9,9 +9,12 @@ const EditDeleteUser = props => {
 
   const initialState = {
     id: null,
-    name: "",
-    description: "",
-    price: ""
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone_number: "",
+    user_password: "",
+    address: ""
   };
   const [currentUser, setCurrentUser] = useState(initialState);
   const [message, setMessage] = useState("");
@@ -51,7 +54,7 @@ const EditDeleteUser = props => {
   };
 
   const deleteUser = () => {
-    UsersService.remove(currentUser.id)
+    UsersService.remove(currentUser.user_id)
       .then(response => {
         console.log(response.data);
         navigate("/users");
