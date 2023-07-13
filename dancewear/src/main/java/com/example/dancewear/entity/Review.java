@@ -29,7 +29,6 @@ public class Review {
     @JoinColumn(name = "product_id")
     private Product product;
 
-    // getters and setters
 
     public int getReview_id() { return review_id; }
 
@@ -53,14 +52,12 @@ public class Review {
 
     public void setPosted_date(Date posted_date) { this.posted_date = posted_date; }
 
-    // author id
 
     public User getUser() { return user;  }
 
     public void setUser(User user) {  this.user = user;}
 
 
-    // product id
     public Product getProduct() { return product; }
 
     public void setProduct(Product product) { this.product = product; }

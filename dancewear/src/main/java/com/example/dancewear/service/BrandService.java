@@ -1,13 +1,12 @@
 package com.example.dancewear.service;
 
 import com.example.dancewear.dao.BrandRepository;
-import com.example.dancewear.dao.ProductRepository;
+
 import com.example.dancewear.entity.Brand;
-import com.example.dancewear.entity.Product;
+
 import com.example.dancewear.exceptions.BrandAlreadyExistsException;
 import com.example.dancewear.exceptions.BrandNotFoundException;
-import com.example.dancewear.exceptions.ProductAlreadyExistsException;
-import com.example.dancewear.exceptions.ProductNotFoundException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,21 +42,21 @@ public class BrandService {
     }
 
     public Brand addBrand(Brand brand) throws BrandAlreadyExistsException {
-        if (!brandRepository.existsById(brand.getId())) {
+        if (!brandRepository.existsById(brand.getBrand_id())) {
             log.info("Add product to database");
             return brandRepository.save(brand);
         }
         log.warn("Unable to add brand, id in use");
-        throw new BrandAlreadyExistsException("Brand with Id: " + brand.getId() + " already exists");
+        throw new BrandAlreadyExistsException("Brand with Id: " + brand.getBrand_id() + " already exists");
     }
 
     public Brand updateBrand(Brand brand) throws BrandNotFoundException {
-        if (brandRepository.existsById(brand.getId())) {
+        if (brandRepository.existsById(brand.getBrand_id())) {
             log.info("Update brand");
             return brandRepository.save(brand);
         }
         log.warn("Unable to update brand, no id found");
-        throw new BrandNotFoundException("No brand exists with id: " + brand.getId());
+        throw new BrandNotFoundException("No brand exists with id: " + brand.getBrand_id());
     }
 
     public Brand findBrandById(int id) throws BrandNotFoundException {

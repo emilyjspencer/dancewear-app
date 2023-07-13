@@ -24,7 +24,7 @@ public class UserTest {
     void test_ThatAUserCanBeCreated() throws UserAlreadyExistsException {
         User user = new User();
         userService.addUser(user);
-        assertTrue(user.getId() > 0);
+        assertTrue(user.getUser_id() > 0);
     }
 
 }

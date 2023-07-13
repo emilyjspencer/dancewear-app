@@ -39,21 +39,21 @@ public class UserService {
     }
 
     public User addUser(User user) throws UserAlreadyExistsException {
-        if (!userRepository.existsById(user.getId())) {
+        if (!userRepository.existsById(user.getUser_id())) {
             log.info("Add User to database");
             return userRepository.save(user);
         }
         log.warn("Unable to add user, id in use");
-        throw new UserAlreadyExistsException("User with Id: " + user.getId() + " already exists");
+        throw new UserAlreadyExistsException("User with Id: " + user.getUser_id() + " already exists");
     }
 
     public User updateUser(User user) throws UserNotFoundException {
-        if (userRepository.existsById(user.getId())) {
+        if (userRepository.existsById(user.getUser_id())) {
             log.info("Update user");
             return userRepository.save(user);
         }
         log.warn("Unable to update user, no id found");
-        throw new UserNotFoundException("No job exists with id: " + user.getId());
+        throw new UserNotFoundException("No job exists with id: " + user.getUser_id());
     }
 
     public User findUserById(int id) throws UserNotFoundException {

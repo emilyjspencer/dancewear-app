@@ -27,10 +27,12 @@ useEffect(() => {
       <Filter />
       <div className="review-container">
       <ul>
+        {/*
         {reviews.map(review => {
           
           <SingleReview review={review} key={review.id} />;
         })}
+      */}
       </ul>
       </div>
       </>

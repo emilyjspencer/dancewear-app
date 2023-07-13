@@ -40,7 +40,7 @@ public class BlogController {
         @PostMapping
         public ResponseEntity<Void> addBlogPost(@RequestBody Blog blog) throws BlogAlreadyExistsException {
                 Blog newBlog = blogService.addBlog(blog);
-                URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newBlog.getId()).toUri();
+                URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newBlog.getBlog_id()).toUri();
                 log.info("Add blog post to database");
                 return ResponseEntity.created(location).build();
         }

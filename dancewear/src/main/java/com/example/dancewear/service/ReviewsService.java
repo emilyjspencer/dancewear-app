@@ -43,21 +43,21 @@ public class ReviewsService {
     }
 
     public Review addReview(Review review) throws ReviewAlreadyExistsException {
-        if (!reviewsRepository.existsById(review.getId())) {
+        if (!reviewsRepository.existsById(review.getReview_id())) {
             log.info("Add review to database");
             return reviewsRepository.save(review);
         }
         log.warn("Unable to add review, id in use");
-        throw new ReviewAlreadyExistsException("Review with Id: " + review.getId() + " already exists");
+        throw new ReviewAlreadyExistsException("Review with Id: " + review.getReview_id() + " already exists");
     }
 
     public Review updateReview(Review review) throws ReviewNotFoundException {
-        if (reviewsRepository.existsById(review.getId())) {
+        if (reviewsRepository.existsById(review.getReview_id())) {
             log.info("Update review");
             return reviewsRepository.save(review);
         }
         log.warn("Unable to update review, no id found");
-        throw new ReviewNotFoundException("No review exists with id: " + review.getId());
+        throw new ReviewNotFoundException("No review exists with id: " + review.getReview_id());
     }
 
     public Review findReviewById(int id) throws ReviewNotFoundException {

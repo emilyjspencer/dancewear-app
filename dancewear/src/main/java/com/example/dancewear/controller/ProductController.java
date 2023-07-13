@@ -38,7 +38,7 @@ public class ProductController {
     @PostMapping
     public ResponseEntity<Void> addProduct(@RequestBody Product product) throws ProductAlreadyExistsException {
         Product newProduct = productService.addProduct(product);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newProduct.getId()).toUri();
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newProduct.getProduct_id()).toUri();
         log.info("Add product to database");
         return ResponseEntity.created(location).build();
     }

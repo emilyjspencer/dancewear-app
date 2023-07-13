@@ -37,7 +37,7 @@ public class UserController {
     @PostMapping
     public ResponseEntity<Void> addUser(@RequestBody User user) throws UserAlreadyExistsException {
         User newUser = userService.addUser(user);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newUser.getId()).toUri();
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newUser.getUser_id()).toUri();
         log.info("Add User to database");
         return ResponseEntity.created(location).build();
     }

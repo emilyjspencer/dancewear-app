@@ -132,7 +132,7 @@ return (
     <Cards
       imgSrc="https://picsum.photos/id/201/300/300"
       imgAlt="placeholder image for brand"
-      text1={`Brand: ${brand.name}`}
+      text1={`Brand: ${brand.brand_name}`}
       text2={`Description: ${brand.description}`}
     />
   
@@ -156,7 +156,7 @@ return (
       >
 
         <ul className="brand-detail-list">
-          <li><strong>Brand name: </strong> {brandDetail.name}</li>
+          <li><strong>Brand name: </strong> {brandDetail.brand_name}</li>
           <li><strong>Description: </strong>{brandDetail.description}</li> 
         </ul>
 

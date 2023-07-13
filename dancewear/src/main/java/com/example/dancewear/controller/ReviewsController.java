@@ -41,7 +41,7 @@ public class ReviewsController {
     @PostMapping
     public ResponseEntity<Void> addReview(@RequestBody Review review) throws ReviewAlreadyExistsException {
         Review newReview = reviewsService.addReview(review);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newReview.getId()).toUri();
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newReview.getReview_id()).toUri();
         log.info("Add review to database");
         return ResponseEntity.created(location).build();
     }

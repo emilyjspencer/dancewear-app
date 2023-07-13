@@ -3,8 +3,8 @@ import BrandsService from "../BrandsService";
 
 const AddBrand = () => {
   const initialState = {
-    id: null,
-    name: "",
+    brand_id: null,
+    brand_name: "",
     description: "",
   };
   const [brand, setBrand] = useState(initialState);
@@ -17,7 +17,7 @@ const AddBrand = () => {
 
   const saveBrand = () => {
     var data = {
-      name: brand.name,
+      brand_name: brand.brand_name,
       description: brand.description
     }
   ;
@@ -26,7 +26,7 @@ const AddBrand = () => {
       .then(response => {
         setBrand({
           id: response.data.id,
-          name: response.data.name,
+          brand_name: response.data.brand_name,
           description: response.data.description,
         });
         setSubmitted(true);
@@ -54,15 +54,15 @@ const AddBrand = () => {
           ) : (
             <div>
               <div className="">
-                <label htmlFor="name">Name</label>
+                <label htmlFor="brand_name">Name</label>
                 <input
                   type="text"
                   className=""
-                  id="name"
+                  id="brand_name"
                   required
-                  value={brand.name}
+                  value={brand.brand_name}
                   onChange={handleInputChange}
-                  name="name"
+                  name="brand_name"
                 />
               </div>
     

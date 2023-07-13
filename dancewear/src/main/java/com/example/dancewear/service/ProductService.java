@@ -43,21 +43,21 @@ public class ProductService {
     }
 
     public Product addProduct(Product product) throws ProductAlreadyExistsException {
-        if (!productRepository.existsById(product.getId())) {
+        if (!productRepository.existsById(product.getProduct_id())) {
             log.info("Add product to database");
             return productRepository.save(product);
         }
         log.warn("Unable to add product, id in use");
-        throw new ProductAlreadyExistsException("Product with Id: " + product.getId() + " already exists");
+        throw new ProductAlreadyExistsException("Product with Id: " + product.getProduct_id() + " already exists");
     }
 
     public Product updateProduct(Product product) throws ProductNotFoundException {
-        if (productRepository.existsById(product.getId())) {
+        if (productRepository.existsById(product.getProduct_id())) {
             log.info("Update product");
             return productRepository.save(product);
         }
         log.warn("Unable to update product, no id found");
-        throw new ProductNotFoundException("No product exists with id: " + product.getId());
+        throw new ProductNotFoundException("No product exists with id: " + product.getProduct_id());
     }
 
     public Product findProductById(int id) throws ProductNotFoundException {
