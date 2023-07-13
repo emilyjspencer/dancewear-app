@@ -103,7 +103,7 @@ return (
             <li><strong>Phone: </strong>{userDetail.phone_number}</li>
             <li><strong>Password: </strong>{userDetail.user_password}</li>
             <li><strong>Account number: </strong>{userDetail.account_number}</li>
-            <li><strong>Favourite dance genre: </strong>{userDetail.favourite_dance_genre}</li>
+        
             </ul>
 
         <button onClick={() => setModalOpen(false)}>Close Modal</button>

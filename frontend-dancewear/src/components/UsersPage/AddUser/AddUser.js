@@ -4,8 +4,13 @@ import UsersService from "../UsersService.js";
 const AddUser = () => {
   const initialState = {
     id: null,
-    name: "",
-    description: "",
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone_number: "",
+    user_password: "",
+    address: "",
+    account_number: ""
   };
   const [user, setUser] = useState(initialState);
   const [submitted, setSubmitted] = useState(false);
@@ -64,11 +69,11 @@ const AddUser = () => {
           ) : (
             <div>
               <div className="">
-                <label htmlFor="name">First Name</label>
+                <label htmlFor="first_name">First Name</label>
                 <input
                   type="text"
                   className=""
-                  id="name"
+                  id="first_name"
                   required
                   value={user.first_name}
                   onChange={handleInputChange}
@@ -81,16 +86,16 @@ const AddUser = () => {
                 <input
                   type="text"
                   className=""
-                  id="description"
+                  id="last_name"
                   required
-                  value={user.description}
+                  value={user.last_name}
                   onChange={handleInputChange}
-                  name="description"
+                  name="last_name"
                 />
               </div>
 
               <div className="">
-                <label htmlFor="last_name">Email</label>
+                <label htmlFor="email">Email</label>
                 <input
                   type="text"
                   className=""

@@ -1,7 +1,6 @@
 import {useEffect, useState} from 'react';
 import './UserDetailView.css';
 
-// needs to be a modal component
 const UserDetailView = ({ user }) => {
     const [userDetail, setUserDetail] = useState(null);
 
@@ -28,7 +27,6 @@ const UserDetailView = ({ user }) => {
             <li>Phone: {userDetail.phone_number}</li>
             <li>Password: {userDetail.user_password}</li>
             <li>Account number: {userDetail.account_number}</li>
-            <li>Favourite dance genre: {userDetail.favourite_dance_genre}</li>
             </ul>
             <button>Go Back</button>
           </>
