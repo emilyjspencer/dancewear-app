@@ -62,7 +62,6 @@ public class BrandController {
     }
 
     @PutMapping("/{id}")
-    //@RequestMapping(method = { RequestMethod.PUT}) //@PutMapping
     public ResponseEntity<Brand> updateBrand(@RequestBody Brand brand, @PathVariable int id) throws BrandNotFoundException {
         log.info("Update review");
         return ResponseEntity.status(HttpStatus.OK).body(brandService.updateBrand(brand));

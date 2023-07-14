@@ -43,7 +43,7 @@ const EditDeleteUser = props => {
 
 
   const updateUser = () => {
-    UsersService.update(currentUser.id, currentUser)
+    UsersService.update(currentUser.user_id, currentUser)
       .then(response => {
         console.log(response.data);
         setMessage("User details were updated!");

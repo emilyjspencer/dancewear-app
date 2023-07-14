@@ -60,8 +60,8 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    @PutMapping
-    public ResponseEntity<User> updateUser(@RequestBody User user) throws UserNotFoundException{
+    @PutMapping("/{id}")
+    public ResponseEntity<User> updateUser(@RequestBody User user, @PathVariable int id) throws UserNotFoundException{
         log.info("Update user");
         return ResponseEntity.status(HttpStatus.OK).body(userService.updateUser(user));
     }
