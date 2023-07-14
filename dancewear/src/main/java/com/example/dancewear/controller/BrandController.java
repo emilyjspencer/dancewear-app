@@ -3,10 +3,7 @@ package com.example.dancewear.controller;
 import com.example.dancewear.entity.Brand;
 import com.example.dancewear.entity.Review;
 import com.example.dancewear.entity.User;
-import com.example.dancewear.exceptions.BrandAlreadyExistsException;
-import com.example.dancewear.exceptions.BrandNotFoundException;
-import com.example.dancewear.exceptions.ReviewAlreadyExistsException;
-import com.example.dancewear.exceptions.ReviewNotFoundException;
+import com.example.dancewear.exceptions.*;
 import com.example.dancewear.service.BrandService;
 import com.example.dancewear.service.UserService;
 import org.slf4j.Logger;
@@ -22,7 +19,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping("/api/brands")
+@RequestMapping( "/api/brands")
 public class BrandController {
 
     private static final Logger log = LoggerFactory.getLogger("BrandController.class");
@@ -36,7 +33,7 @@ public class BrandController {
         return brandService.getAll();
     }
 
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<Void> addBrand(@RequestBody Brand brand) throws BrandAlreadyExistsException {
         log.info(brand.toString());
         Brand newBrand = brandService.addBrand(brand);
@@ -58,8 +55,15 @@ public class BrandController {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    @PutMapping
-    public ResponseEntity<Brand> updateBrand(@RequestBody Brand brand) throws BrandNotFoundException {
+    @DeleteMapping("")
+    public ResponseEntity<Void> deleteAll() throws BrandNotFoundException {
+        brandService.deleteAll();
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
+    @PutMapping("/{id}")
+    //@RequestMapping(method = { RequestMethod.PUT}) //@PutMapping
+    public ResponseEntity<Brand> updateBrand(@RequestBody Brand brand, @PathVariable int id) throws BrandNotFoundException {
         log.info("Update review");
         return ResponseEntity.status(HttpStatus.OK).body(brandService.updateBrand(brand));
     }

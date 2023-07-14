@@ -29,6 +29,10 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    public void deleteAll() throws UserNotFoundException {
+        userRepository.deleteAll();
+    }
+
     public void deleteUserById(int id) throws UserNotFoundException  {
         if(!userRepository.existsById(id)){
             log.warn("Unable to delete user with id of: " + id);

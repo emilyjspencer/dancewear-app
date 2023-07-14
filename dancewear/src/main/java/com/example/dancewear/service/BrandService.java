@@ -41,6 +41,10 @@ public class BrandService {
         brandRepository.deleteById(id);
     }
 
+    public void deleteAll() throws BrandNotFoundException {
+        brandRepository.deleteAll();
+    }
+
     public Brand addBrand(Brand brand) throws BrandAlreadyExistsException {
         if (!brandRepository.existsById(brand.getBrand_id())) {
             log.info("Add product to database");

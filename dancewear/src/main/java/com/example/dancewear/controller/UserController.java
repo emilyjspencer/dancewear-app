@@ -48,9 +48,15 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteJobById(@PathVariable int id) throws UserNotFoundException{
+    public ResponseEntity<Void> deleteUserById(@PathVariable int id) throws UserNotFoundException{
         userService.deleteUserById(id);
         log.info("Delete user with id of: " + id);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
+    @DeleteMapping("")
+    public ResponseEntity<Void> deleteAll() throws UserNotFoundException {
+        userService.deleteAll();
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 

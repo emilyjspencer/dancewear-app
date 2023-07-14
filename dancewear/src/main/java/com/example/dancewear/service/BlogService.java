@@ -4,10 +4,7 @@ import com.example.dancewear.dao.BlogRepository;
 import com.example.dancewear.dao.UserRepository;
 import com.example.dancewear.entity.Blog;
 import com.example.dancewear.entity.User;
-import com.example.dancewear.exceptions.BlogAlreadyExistsException;
-import com.example.dancewear.exceptions.BlogNotFoundException;
-import com.example.dancewear.exceptions.UserAlreadyExistsException;
-import com.example.dancewear.exceptions.UserNotFoundException;
+import com.example.dancewear.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +37,10 @@ public class BlogService {
         }
         log.info("Delete blog post with id of: " + id);
         blogRepository.deleteById(id);
+    }
+
+    public void deleteAll() throws BlogNotFoundException {
+        blogRepository.deleteAll();
     }
 
     public Blog addBlog(Blog blog) throws BlogAlreadyExistsException {

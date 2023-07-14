@@ -2,10 +2,7 @@ package com.example.dancewear.controller;
 
 import com.example.dancewear.entity.Blog;
 import com.example.dancewear.entity.User;
-import com.example.dancewear.exceptions.BlogAlreadyExistsException;
-import com.example.dancewear.exceptions.BlogNotFoundException;
-import com.example.dancewear.exceptions.UserAlreadyExistsException;
-import com.example.dancewear.exceptions.UserNotFoundException;
+import com.example.dancewear.exceptions.*;
 import com.example.dancewear.service.BlogService;
 import com.example.dancewear.service.UserService;
 import org.slf4j.Logger;
@@ -57,6 +54,12 @@ public class BlogController {
         public ResponseEntity<Void> deleteBlogById(@PathVariable int id) throws BlogNotFoundException{
                 blogService.deleteBlogById(id);
                 log.info("Delete blog post with id of: " + id);
+                return ResponseEntity.status(HttpStatus.OK).build();
+        }
+
+        @DeleteMapping("")
+        public ResponseEntity<Void> deleteAll() throws BlogNotFoundException {
+                blogService.deleteAll();
                 return ResponseEntity.status(HttpStatus.OK).build();
         }
 

@@ -4,6 +4,7 @@ import Cards from '../Cards/Cards';
 import Filter from '../Filter/Filter';
 import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
+import UsersService from './UsersService';
 
 
 const modalStyles = {
@@ -26,6 +27,7 @@ const modalStyles = {
 const UsersPage = () => {
 const [users, setUsers] = useState([])
 const [userDetail, setUserDetail] = useState(null);
+const [user, setUser] = useState(null);
 
 
 const [modalOpen, setModalOpen] = useState(false);
@@ -35,18 +37,45 @@ const [currentUser, setCurrentUser] = useState(null);
 const [currentIndex, setCurrentIndex] = useState(-1);
 
 
-useEffect(() => {
-  (async () => {
-    const res = await fetch("http://localhost:8080/api/users");
-    const json = await res.json();
-    setUsers(json);
-  })();
-}, []);
+const getUsers = () => {
+  UsersService.getAll()
+   .then(response => {
+    setUsers(response.data);
+    
+   })
+   .catch(e => {
+    console.log(e);
+   })
+}
+
 
 const setActiveUser = (user, index) => {
   setCurrentUser(user);
   setCurrentIndex(index);
 };
+
+const resetUsers = () => {
+  getUsers();
+  setCurrentUser(null);
+  setCurrentIndex(-1);
+};
+
+
+const deleteAllUsers = () => {
+  UsersService.removeAll()
+    .then(response => {
+      console.log(response.data);
+      console.log('deleteAllUsers button has been clicked')
+      resetUsers();
+    })
+    .catch(e => {
+      console.log(e);
+    });
+};
+
+useEffect(() => {
+  getUsers()
+}, [])
 
 return (
   <>
@@ -118,7 +147,9 @@ return (
 
         <button onClick={() => setModalOpen(false)}>Close Modal</button>
       </Modal> : "select a card to view more info" }
-       
+
+      <button className=""  onClick={deleteAllUsers}
+      >Delete all</button>  
         </>
     )}
 

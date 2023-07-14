@@ -41,7 +41,7 @@ const setActivePost = (post, index) => {
 return (
   <><><>
       <div className="search-add-container"> 
-        <Link to={"/posts/add"} className="add-blog">Add new blog post</Link>
+        <Link to={"/blog/add"} className="add-blog">Add new blog post</Link>
       </div>
       <div>
               <div className="main">

@@ -21,7 +21,7 @@ const [submitted, setSubmitted] = useState(false);
   let navigate = useNavigate();
 
   const initialState = {
-    id: id,
+    brand_id: id,
     brand_name: brand_name,
     description: description
  
@@ -54,27 +54,11 @@ const [submitted, setSubmitted] = useState(false);
   };
 
 
-const handleSubmit = (event) => {
-    event.preventDefault();
+//const handleSubmit = (event) => {
+ //   event.preventDefault();
 
-    let data = {
-        brand_name: brand_name,
-        description: description,
-    }
-
-        BrandsService.create(data)
-        .then(response => {
-                if(response.status === 201) {
-                    alert('Brands created');
-                    navigate('/brands')
-                }
-            })
-            .catch(error => {
-                console.error('Unable to send request')
-            })
-   
-      
-    }
+  //   updateBrand();
+//}
 
 
 

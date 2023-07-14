@@ -27,7 +27,9 @@ import Returns from './components/Returns/Returns';
 import TermsConditions from './components/TermsConditions/TermsConditions';
 import NotFound from './components/NotFound/NotFound';
 import Careers from './components/Careers/Careers';
+import EditDeleteBlog from './components/Blog/EditDeleteBlog/EditDeleteBlog';
 import Blog from './components/Blog/Blog';
+import AddBlogPost from './components/Blog/AddBlogPost/AddBlogPost';
 import Sale from './components/Sale/Sale';
 import MyAccount from './components/MyAccount/MyAccount';
 import Basket from './components/Basket/Basket';
@@ -143,6 +145,8 @@ const App = () => {
           <Route path="/termsconditions" element={<TermsConditions />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<EditDeleteBlog />} />
+          <Route path="/blog/add" element={<AddBlogPost />} />
           <Route path="/sale" element={<Sale />} />
           <Route path="/myaccount" element={<MyAccount />} />
           <Route path="/checkout" element={<Basket />} />
