@@ -137,7 +137,7 @@ return (
         
       >
         <ul className="user-detail-list">
-            <li><strong>Name: </strong> {userDetail.first_name} {userDetail.second_name}</li>
+            <li><strong>Name: </strong> {userDetail.first_name} {userDetail.last_name}</li>
             <li><strong>Email: </strong>{userDetail.email}</li>
             <li><strong>Phone: </strong>{userDetail.phone_number}</li>
             <li><strong>Password: </strong>{userDetail.user_password}</li>
