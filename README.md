@@ -582,3 +582,8 @@ Need to implement search functionality. Have only seen typeaheads in the real wo
 Would like to ideally implement a fully reusable Modal that uses the concept of portals - to inject the Modal outside of the typical DOM structure, using the index.js file and hooks to define where to inject the modal.
 
 Common approach in React, not so much in Angular - where content projection tends to be used, unless using third parties such as Angular Material.
+
+# Modifications
+
+At present, when adding and editing reviews and blog posts - we are selecting a user and a date. 
+Once authentication is implemented - the application will know who is logged in and the author information and publishing time will be read from that.
