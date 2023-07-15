@@ -28,13 +28,7 @@ const AddProduct = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
 
-  const navigate = useNavigate();
-
-  const handleInputChange = event => {
-    const { name, value } = event.target;
-    setProduct({ ...product, [name]: value });
-  };
- 
+const navigate = useNavigate();
 
 const handleCategorySelector = (id) => {
     setSelectedCategory(categories[id - 1]);
@@ -68,10 +62,6 @@ const fetchForeignKeys = () => {
 
           }
          
-          
-
-       
-
 
   const newProduct = () => {
     setProduct(initialState);

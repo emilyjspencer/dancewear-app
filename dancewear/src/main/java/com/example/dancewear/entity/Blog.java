@@ -25,11 +25,6 @@ public class Blog {
 
     private LocalDate date_published;
 
-    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
-    @OneToOne
-    @JoinColumn(name = "author_id")
-    private User user;
-
     public Blog() {}
 
     public int getBlog_id() { return blog_id; }
@@ -44,10 +39,6 @@ public class Blog {
 
     public void setTitle(String title) { this.title = title; }
 
-    public User getUser() { return user; }
-
-    public void setUser(User user) { this.user = user; }
-
 
     public LocalDate getDate_published() { return date_published; }
 
@@ -58,7 +49,7 @@ public class Blog {
     public String toString() {
         return "Blog [blog_id=" + blog_id + ", post=" + post + ", title=" + title
 
-                + ", user=" + user + ", date_published=" + date_published
+                +  ", date_published=" + date_published
                 + "]";
     }
 

@@ -11,8 +11,7 @@ const EditDeleteBlog = props => {
     id: null,
     title: "",
     body: "",
-    date_published: "",
-    author_id: ""
+    date_published: ""
   };
   const [currentBlogPost, setCurrentBlogPost] = useState(initialState);
   const [message, setMessage] = useState("");
@@ -98,18 +97,6 @@ const EditDeleteBlog = props => {
                 id="date_published"
                 name="date_published"
                 value={currentBlogPost.date_published}
-                onChange={handleInputChange}
-              />
-              </div>
-
-              <div className="form-group">
-              <label htmlFor="author_id">Author</label>
-              <input
-                type="author_id"
-                className="form-control"
-                id="author_id"
-                name="author_id"
-                value={currentBlogPost.author_id}
                 onChange={handleInputChange}
               />
               </div>
