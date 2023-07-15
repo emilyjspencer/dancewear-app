@@ -11,7 +11,7 @@ import java.util.Date;
 public class Review {
 
     @Id
-    private Integer review_id;
+    private int review_id;
 
     private String title;
 

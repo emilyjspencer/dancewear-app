@@ -28,6 +28,7 @@ const ProductDetailView = ({ product }) => {
             <li>Category: {productDetail.category_id}</li>
             </ul>
             <button>Go Back</button>
+       
           </>
         )}
       </div>

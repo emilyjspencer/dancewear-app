@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import './NavigationLinks.css';
+import Dropdown from '../../Dropdown/Dropdown';
 
 const NavigationLinks = () => {
   return <ul className="nav-links">
@@ -20,16 +21,18 @@ const NavigationLinks = () => {
     <li>
       <NavLink to="/quiz">Quiz</NavLink>
     </li>
+    {/* only visible if not logged in */}
     <li>
       <NavLink to="/register">Sign up</NavLink>
     </li>
+    {/* only visible if not logged in */}
     <li>
       <NavLink to="/login">Log in</NavLink>
     </li>
     <li>
       <NavLink to="/logout">Logout</NavLink>
     </li>
-    {/* temp  */}
+    {/* users will only be visible to admins */}
     <li>
       <NavLink to="/users">Users</NavLink>
     </li>
@@ -38,6 +41,9 @@ const NavigationLinks = () => {
     </li>
     <li>
       <NavLink to="/blog">Blog</NavLink>
+    </li>
+    <li>
+      <Dropdown />
     </li>
   </ul>
 

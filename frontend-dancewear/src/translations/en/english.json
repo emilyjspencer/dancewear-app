@@ -1,0 +1,10 @@
+{
+    "header": {
+        "title": "title"
+    },
+    "test": {
+        "hello": "hello",
+        "how are you": "how are you",
+        "bye": "bye"
+    }
+}

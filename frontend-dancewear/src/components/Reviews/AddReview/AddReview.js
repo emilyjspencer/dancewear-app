@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ReviewsService from '../ReviewsService';
-import UsersService from '../../UsersPage/UsersService';
 import {  useNavigate } from 'react-router-dom';
+import UsersService from "../../UsersPage/UsersService";
+import ProductsService from "../../Products/ProductsService";
 
 
 const AddReview = () => {
@@ -11,18 +12,23 @@ const AddReview = () => {
     description: "",
     stars: "",
     posted_date: "",
-    user: ""
+    user: "",
+    product: ""
   };
-  const [blogPost, setBlogPost] = useState(initialState);
+ 
   const [submitted, setSubmitted] = useState(false);
   const [users, setUsers] = useState([]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [posted_date, setPostedDate ] = useState("");
   const [ stars, setStars ] = useState("");
-  const [user, setUser] = useState({})
 
 
+  const [selectedUser, setSelectedUsers ] = useState(null);
+  const [products, setProducts] = useState([]);
+  const [selectedProduct, setSelectedProducts ] = useState(null);
+  const [review, setReview] = useState(null);
+  const [reviews, setReviews] = useState([]);
 
 
   const navigate = useNavigate();
@@ -30,6 +36,10 @@ const AddReview = () => {
 
   const handleUserSelector = (id) => {
     setSelectedUsers(users[id -1])
+  }
+
+  const handleProductSelector = (id) => {
+    setSelectedProducts(products[id -1 ])
   }
 
   const handleSubmit = (event) => {
@@ -41,25 +51,30 @@ const AddReview = () => {
       description: description,
       posted_date: posted_date,
       stars: stars,
-      user: selectedUser
+      user: selectedUser,
+      product: selectedProduct
     }
 
     console.log('handle submit method is called')
     console.log(data)
 
 
+    if( data.product !== undefined
+        && data.user !== undefined
+        ) {
+
   ReviewsService.create(data)
     .then(response => {
 
             if(response.status === 201) {
                 alert('Review created');
-                navigate('/review')
+                navigate('/reviews')
             }
         })
         .catch(error => {
             console.error('Unable to send request')
         })
-
+    }
   };
 
   const newReview = () => {
@@ -67,6 +82,34 @@ const AddReview = () => {
     setSubmitted(false);
   }
 
+  const fetchForeignKeys = () => {
+    UsersService.getAll()
+        .then(response => {
+            if(response.status === 200) {
+                setUsers(response.data);
+            }
+        })
+        .catch(error => {
+            console.log('Users not found...')
+        })
+
+    ProductsService.getAll()
+            .then(response => {
+                if(response.status === 200) {
+                    console.log(response.data.length + ' products found!');
+                    setProducts(response.data);
+                }
+            })
+            .catch(error => {
+                console.log('Products not found...')
+            })
+
+          }
+         
+          useEffect(() => {
+            fetchForeignKeys();
+          }, []);
+          
 
   return (
         <div className="submit-form">
@@ -93,14 +136,14 @@ const AddReview = () => {
               </div>
     
               <div className="">
-                <label htmlFor="post">Description</label>
+                <label htmlFor="description">Description</label>
                 <input
                   type="text"
                   className=""
                   id="description"
                   required
                   value={description}
-                  onChange={e => setPost(e.target.value)}
+                  onChange={e => setDescription(e.target.value)}
                   name="description"
                 />
               </div>
@@ -143,6 +186,23 @@ const AddReview = () => {
                             key={user.user_id}
                             value={user.user_id}
                             >{user.first_name}
+                            </option>)
+                    }
+                  </select>
+             </div>
+
+             <div className="form-group">
+              <label htmlFor="product">Item</label>
+            <select
+                  required
+                  onChange={e => handleProductSelector(e.target.value)}>
+                    <option>Please select a product</option>
+                    {
+                        products.map(product =>
+                            <option
+                            key={product.product_id}
+                            value={product.product_id}
+                            >{product.product_name}
                             </option>)
                     }
                   </select>

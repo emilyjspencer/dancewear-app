@@ -117,7 +117,7 @@ CREATE TABLE Review (
 
 INSERT INTO Review (author_id, product_id, title, description, stars, posted_date) VALUES (1, 1, 'Great leotard', 'I love it', 5, STR_TO_DATE("May 10 2023", "%M %d %Y"));
 INSERT INTO Review (author_id, product_id, title, description, stars, posted_date) VALUES (1, 2, 'Great bag', 'I love it', 5, STR_TO_DATE("May 18 2023", "%M %d %Y"));
-INSERT INTO Review (author_id, product_id, title, description, stars, posted_date) VALUES (2, 1, 'Great tutu', 'I love it', 4, STR_TO_DATE("May 26 2023", "%M %d %Y"));
+INSERT INTO Review (author_id, product_id, title, description, stars, posted_date) VALUES (2, 1, 'I love this leotard', 'I love it', 4, STR_TO_DATE("May 26 2023", "%M %d %Y"));
 INSERT INTO Review (author_id, product_id, title, description, stars, posted_date) VALUES (2, 2, 'Great tutu' ,'I love it', 4, STR_TO_DATE("June 2 2023", "%M %d %Y"));
 
 

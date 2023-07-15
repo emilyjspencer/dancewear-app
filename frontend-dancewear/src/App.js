@@ -24,6 +24,8 @@ import Delivery from './components/Delivery/Delivery';
 import Cookies from './components/Cookies/Cookies';
 import Privacy from './components/Privacy/Privacy';
 import Returns from './components/Returns/Returns';
+import AddReview from './components/Reviews/AddReview/AddReview';
+import EditDeleteReview from './components/Reviews/EditDeleteReview/EditDeleteReview';
 import TermsConditions from './components/TermsConditions/TermsConditions';
 import NotFound from './components/NotFound/NotFound';
 import Careers from './components/Careers/Careers';
@@ -118,12 +120,15 @@ const App = () => {
      <Routes>
      <Route path="/" element={<Home />} />
      <Route path="/reviews" element={<Reviews />} />
+     <Route path="/reviews/add" element={<AddReview />} />
+     <Route path="/reviews/:id" element={<EditDeleteReview />} />
           <Route path="/brands" element={<Brands />} />
           <Route path="/brands/add" element={<AddBrand />} />
           <Route path="/brands/:id" element={<EditDeleteBrand />} />
           <Route path="/shoes" element={<DanceShoes />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/basket/:id" element={<Basket />} />
           <Route path="/gymnastics" element={<Gymnastics />} />
           <Route path ="/accessories" element={<Accessories />} />
           <Route path="/products" element={<Products />} />
