@@ -1,4 +1,4 @@
-import http from "./http-requests";
+import http from "../../http/http-requests";
 
 const getAll = () => {
   return http.get("/reviews");
