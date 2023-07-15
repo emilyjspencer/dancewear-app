@@ -1,10 +1,8 @@
 package com.example.dancewear.controller;
 
 import com.example.dancewear.entity.Blog;
-import com.example.dancewear.entity.User;
 import com.example.dancewear.exceptions.*;
 import com.example.dancewear.service.BlogService;
-import com.example.dancewear.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,14 +24,13 @@ public class BlogController {
         @Autowired
         private BlogService blogService;
 
-        @CrossOrigin(origins = "http://localhost:3000")
+
         @GetMapping
         public List<Blog> getAll() {
                 log.info("blogController - get all blog posts");
                 return blogService.getAll();
         }
 
-        @CrossOrigin(origins = "http://localhost:3000")
         @PostMapping
         public ResponseEntity<Void> addBlogPost(@RequestBody Blog blog) throws BlogAlreadyExistsException {
                 Blog newBlog = blogService.addBlog(blog);
@@ -42,14 +39,14 @@ public class BlogController {
                 return ResponseEntity.created(location).build();
         }
 
-        @CrossOrigin(origins = "http://localhost:3000")
+
         @GetMapping("/{id}")
         public ResponseEntity<Blog> findBlogById(@PathVariable int id) throws BlogNotFoundException {
                 log.info("Find blog post by id " + id);
                 return ResponseEntity.status(HttpStatus.OK).body(blogService.findBlogById(id));
         }
 
-        @CrossOrigin(origins = "http://localhost:3000")
+
         @DeleteMapping("/{id}")
         public ResponseEntity<Void> deleteBlogById(@PathVariable int id) throws BlogNotFoundException{
                 blogService.deleteBlogById(id);
@@ -63,9 +60,9 @@ public class BlogController {
                 return ResponseEntity.status(HttpStatus.OK).build();
         }
 
-        @CrossOrigin(origins = "http://localhost:3000")
-        @PutMapping
-        public ResponseEntity<Blog> updateBlog(@RequestBody Blog blog) throws BlogNotFoundException{
+
+        @PutMapping("/{id}")
+        public ResponseEntity<Blog> updateBlog(@RequestBody Blog blog, @PathVariable int id) throws BlogNotFoundException{
                 log.info("Update blog post");
                 return ResponseEntity.status(HttpStatus.OK).body(blogService.updateBlog(blog));
         }

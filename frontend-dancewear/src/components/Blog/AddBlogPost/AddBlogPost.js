@@ -1,17 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BlogService from '../BlogService';
+import UsersService from '../../UsersPage/UsersService';
+import {  useNavigate } from 'react-router-dom';
+
 
 const AddBlogPost = () => {
   const initialState = {
     id: null,
     title: "",
-    body: "",
+    post: "",
     date_published: "",
     author_id: ""
   
   };
   const [blogPost, setBlogPost] = useState(initialState);
   const [submitted, setSubmitted] = useState(false);
+  const [users, setUsers] = useState([]);
+  const [title, setTitle] = useState("");
+  const [post, setPost] = useState("");
+  const [date_published, setDatePublished] = useState(null);
+  const [selectedAuthor, setSelectedAuthor] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleInputChange = event => {
     const { name, value } = event.target;
@@ -21,9 +31,9 @@ const AddBlogPost = () => {
   const saveBlog = () => {
     var data = {
       title: blogPost.title,
-      body: blogPost.body,
+      post: blogPost.post,
       date_published: blogPost.date_published,
-      author_id: blogPost.author_id
+      author_id: blogPost.user
     }
   ;
 
@@ -32,9 +42,9 @@ const AddBlogPost = () => {
         setBlogPost({
           id: response.data.id,
           title: response.data.title,
-          body: response.data.body,
+          post: response.data.post,
           date_published: response.data.published,
-          author_id: response.data.author_id
+          author_id: response.data.user_id
          
         });
         setSubmitted(true);
@@ -49,6 +59,62 @@ const AddBlogPost = () => {
     setBlogPost(initialState);
     setSubmitted(false);
   };
+
+  const fetchForeignKeys = () => {
+    UsersService.getAll()
+        .then(response => {
+            if(response.status === 200) {
+                setUsers(response.data);
+            }
+        })
+        .catch(error => {
+            console.log('Users not found...')
+        })
+  }
+
+  const handleAuthorSelector = (id) => {
+    setSelectedAuthor(users[id - 1]);
+}
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+
+
+  let data = {
+      title: title,
+      post: post,
+      date_published: date_published,
+      author_id: selectedAuthor,
+  }
+
+  console.log('handle submit method is called')
+  console.log(data)
+
+
+  
+  if( data.user !== undefined
+      ) {
+      UsersService.create(data)
+      .then(response => {
+
+              if(response.status === 201) {
+                  alert('User created');
+                  navigate('/users')
+              }
+          })
+          .catch(error => {
+              console.error('Unable to send request')
+          })
+  } else {
+      setSubmitted(false);
+    
+  }}
+
+
+  useEffect(() => {
+    fetchForeignKeys();
+  }, []);
+
 
   return (
         <div className="submit-form">
@@ -75,15 +141,15 @@ const AddBlogPost = () => {
               </div>
     
               <div className="">
-                <label htmlFor="body">Body</label>
+                <label htmlFor="post">Body</label>
                 <input
                   type="text"
                   className=""
-                  id="body"
+                  id="post"
                   required
-                  value={blogPost.body}
+                  value={blogPost.post}
                   onChange={handleInputChange}
-                  name="body"
+                  name="post"
                 />
               </div>
 
@@ -99,23 +165,29 @@ const AddBlogPost = () => {
                   name="date_published"
                 />
               </div>
-              <div className="">
-                <label htmlFor="author_id">Author</label>
-                <input
-                  type="text"
-                  className=""
-                  id="author_id"
+             
+              <div className="form-group">
+              <label htmlFor="user">Author</label>
+            <select
                   required
-                  value={blogPost.author_id}
-                  onChange={handleInputChange}
-                  name="author_id"
-                />
+                  onChange={e => handleAuthorSelector(e.target.value)}>
+                    <option>Please select a user</option>
+                    {
+                        users.map(user =>
+                            <option
+                            key={user.user_id}
+                            value={user.user_id}
+                            >{user.first_name} {user.last_name}
+                            </option>)
+                    }
+                  </select>
+                </div>
               
               <button onClick={saveBlog} className="">
                 Submit
               </button>
             </div>
-            </div>
+          
           )}
         </div>
       );

@@ -42,9 +42,7 @@ import Register from './components/Register/Register';
 import RegisterTeacher from './components/Register/RegisterTeacher';
 import ChatBot from 'react-simple-chatbot';
 import Accessories from './components/Accessories/Accessories';
-import Accessory from './components/Accessories/Accessory/Accessory';
-import AddAccessory from './components/Accessories/AddAccessory/AddAccessory';
-import AddReview from './components/AddReview/AddReview';
+
  
 import { ThemeProvider } from 'styled-components';
 
@@ -131,9 +129,6 @@ const App = () => {
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<EditDeleteProduct />} />
           <Route path="/products/add" element={<AddProduct />} />
-          <Route path="/accessories" element={<Accessories />} />
-          <Route path="/accessories/:id" element={<Accessory />} />
-          <Route path="/accessories/add" element={<AddAccessory />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/users" element={<UsersPage />} />
           <Route path="/users/:id" element={<EditDeleteUser />} />

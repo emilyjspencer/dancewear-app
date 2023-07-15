@@ -21,7 +21,7 @@ public class Blog {
 
     private String title;
 
-    private String body;
+    private String post;
 
     private LocalDate date_published;
 
@@ -36,9 +36,9 @@ public class Blog {
 
     public void setBlog_id(int blog_id) { this.blog_id = blog_id; }
 
-    public String getBody() { return body; }
+    public String getPost() { return post; }
 
-    public void setBody(String body) { this.body = body; }
+    public void setPost(String post) { this.post = post; }
 
     public String getTitle() { return title; }
 
@@ -51,12 +51,12 @@ public class Blog {
 
     public LocalDate getDate_published() { return date_published; }
 
-    public Date setDate_published(Date date_published) { return date_published; }
+    public void setDate_published(LocalDate date_published) { this.date_published = date_published; }
 
 
     @Override
     public String toString() {
-        return "Blog [blog_id=" + blog_id + ", body=" + body + ", title=" + title
+        return "Blog [blog_id=" + blog_id + ", post=" + post + ", title=" + title
 
                 + ", user=" + user + ", date_published=" + date_published
                 + "]";

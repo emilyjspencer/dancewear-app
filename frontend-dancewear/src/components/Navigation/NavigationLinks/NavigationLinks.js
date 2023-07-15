@@ -15,9 +15,6 @@ const NavigationLinks = () => {
       <NavLink to="/sale">Clearance</NavLink>
     </li>
     <li>
-      <NavLink to="/accessories">Accessories</NavLink>
-    </li>
-    <li>
       <NavLink to="/products">Products</NavLink>
     </li>
     <li>

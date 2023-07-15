@@ -4,6 +4,7 @@ import { useState, useEffect} from 'react';
 import './Blog.css';
 import { Link } from 'react-router-dom';
 import BlogPostCard from '../BlogPostCard/BlogPostCard';
+import BlogService from './BlogService';
 
 const Blog = () => {
 const [posts, setPosts] = useState([])
@@ -17,21 +18,45 @@ const [postDetail, setPostDetail] = useState(null);
 const [modalOpen, setModalOpen] = useState(false);
 
 
-const fetchBlogPosts = () => {
-  fetch("http://localhost:8080/api/blog")
-    .then(response => {
-      return response.json()
-    })
-    .then(data => {
-      setPosts(data)
-    })
-}
 
 useEffect(() => {
-  fetchBlogPosts()
-}, [])
+  getPosts();
+}, []);
 
-console.log(posts);
+
+const getPosts = () => {
+  BlogService.getAll()
+    .then(response => {
+      setPosts(response.data);
+      console.log(response.data);
+    })
+    .catch(e => {
+      console.log(e);
+    });
+};
+
+const resetPosts = () => {
+  getPosts();
+  setCurrentPost(null);
+  setCurrentIndex(-1);
+};
+
+const setActivePosts = (post, index) => {
+  setCurrentPost(post);
+  setCurrentIndex(index);
+};
+
+const deleteAllPosts = () => {
+  BlogService.removeAll()
+    .then(response => {
+      console.log(response.data);
+      resetPosts();
+    })
+    .catch(e => {
+      console.log(e);
+    });
+};
+
 
 const setActivePost = (post, index) => {
   setCurrentPost(post);
@@ -76,9 +101,9 @@ return (
                   imgSrc="https://picsum.photos/seed/picsum/200/300"
                   imgAlt="Post placeholder"
                   text1={`Title : ${post.title}`}
-                  text2={`Article: ${post.body}`}
-                  text3={`Author: ${post.author_id.name}`}
-                  text4={`Date of article: ${post.date_of_blog_post}`} />
+                  text2={`Article: ${post.post}`}
+                  text3={`Author: ${post.user.first_name}`}
+                  text4={`Date of article: ${post.date_published}`} />
                   </div>
                           
                         </div>
