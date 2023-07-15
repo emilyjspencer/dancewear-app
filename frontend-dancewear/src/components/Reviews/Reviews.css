@@ -1,0 +1,13 @@
+.review-list-container {
+    background-color: pink;
+    display: grid !important;
+    grid-template-columns:  200px 200px 200px 200px !important ;
+    grid-gap: 50px; 
+    padding-bottom: 90px; 
+    max-height: 100%;
+}
+
+.review-cards {
+    height: 900px !important;
+    color: white;
+}

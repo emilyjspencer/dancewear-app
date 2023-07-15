@@ -14,7 +14,7 @@ const Home = () => {
        <Studios />
        <Training />
       <Reviews />
-      <AddReview />
+      
       <Contact />
     </>
   );
