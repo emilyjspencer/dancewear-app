@@ -54,14 +54,6 @@ const [submitted, setSubmitted] = useState(false);
   };
 
 
-//const handleSubmit = (event) => {
- //   event.preventDefault();
-
-  //   updateBrand();
-//}
-
-
-
   const updateBrand = () => {
     BrandsService.update(currentBrand.brand_id, currentBrand)
       .then(response => {

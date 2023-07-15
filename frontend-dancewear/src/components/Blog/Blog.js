@@ -83,15 +83,15 @@ const Blog = () => {
         <ul className="blog-post-list-container">
           <>
             {posts.filter((post) => {
-              return searchId === "" ? post : post.id.toString() === searchId
+              return searchId === "" ? post : post.blog_id.toString() === searchId
             }).filter((post) => {
               return searchBlogPostTitle === "" ? post : post.title.toLowerCase().includes(searchBlogPostTitle)
             }).map((post, index) => (
 
-              <><div id="card-modal-button" key={post.id}
+              <><div id="card-modal-button" key={post.blog_id}
                 onClick={(e) => {
                   setActivePost(post, index); setPostDetail(post);
-                }}></div><div id="" key={post.id}
+                }}></div><div id="" key={post.blog_id}
                   onClick={(e) => {
                     setActivePost(post, index); setPostDetail(post);
                     setModalOpen(e);
@@ -104,6 +104,13 @@ const Blog = () => {
                       text2={`Article: ${post.post}`}
                       text4={`Date of article: ${post.date_published}`} />
                   </div>
+
+                  <Link
+                    to={"/blog/" + post.blog_id}
+                    className=""
+                  >
+                    Edit Blog Post/Delete
+                  </Link>
 
                 </div>
 

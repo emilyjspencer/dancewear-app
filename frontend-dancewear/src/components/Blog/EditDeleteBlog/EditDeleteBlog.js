@@ -8,7 +8,7 @@ const EditDeleteBlog = props => {
   let navigate = useNavigate();
 
   const initialState = {
-    id: null,
+    id: "",
     title: "",
     body: "",
     date_published: ""
@@ -40,7 +40,7 @@ const EditDeleteBlog = props => {
 
 
   const updateBlog = () => {
-    BlogService.update(currentBlogPost.id, currentBlogPost)
+    BlogService.update(currentBlogPost.blog_id, currentBlogPost)
       .then(response => {
         console.log('Blog post was updated');
       })
@@ -82,9 +82,9 @@ const EditDeleteBlog = props => {
               <input
                 type="text"
                 className="form-control"
-                id="body"
-                name="body"
-                value={currentBlogPost.body}
+                id="post"
+                name="post"
+                value={currentBlogPost.post}
                 onChange={handleInputChange}
               />
             </div>
@@ -126,7 +126,6 @@ const EditDeleteBlog = props => {
       )}
     </div>
   )}
-  ;
 
 
 export default EditDeleteBlog;
