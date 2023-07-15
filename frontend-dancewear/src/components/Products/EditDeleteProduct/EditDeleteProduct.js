@@ -44,7 +44,7 @@ const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     fetchForeignKeys();
-  });
+  }, []);
 
   useEffect(() => {
     if (id)
@@ -97,7 +97,7 @@ const [submitted, setSubmitted] = useState(false);
     BrandsService.getAll()
         .then(response => {
             if(response.status === 200) {
-                setBrand(response.data);
+                setBrands(response.data);
             }
         })
         .catch(error => {
@@ -108,7 +108,7 @@ const [submitted, setSubmitted] = useState(false);
             .then(response => {
                 if(response.status === 200) {
                     console.log(response.data.length + ' categories found!');
-                    setCategory(response.data);
+                    setCategories(response.data);
                 }
             })
             .catch(error => {
@@ -233,7 +233,7 @@ const handleCategorySelector = (id) => {
           <button
             type="submit"
             className=""
-            onClick={handleSubmit}
+            onClick={updateProduct}
           >
             Update
           </button>
