@@ -39,30 +39,30 @@ INSERT INTO Brand (brand_name, description) VALUES ('Revolution', 'Revolution is
 
 CREATE TABLE Category (
 	category_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-	name varchar(30) NOT NULL
+	category_name varchar(30) NOT NULL
 );
 
-INSERT INTO Category (name) VALUES ('Tutus');
-INSERT INTO Category (name) VALUES ('Tap Shoes');
-INSERT INTO Category (name) VALUES ('Bags');
-INSERT INTO Category (name) VALUES ('Accessories');
-INSERT INTO Category (name) VALUES ('Gymnastics');
-INSERT INTO Category (name) VALUES ('Costumes');
-INSERT INTO Category (name) VALUES ('Character Shoes');
-INSERT INTO Category (name) VALUES ('Ballet Shoes');
-INSERT INTO Category (name) VALUES ('Pointe Shoes');
-INSERT INTO Category (name) VALUES ('Dance Trainers');
-INSERT INTO Category (name) VALUES ('Jazz Shoes');
-INSERT INTO Category (name) VALUES ('Leotards');
-INSERT INTO Category (name) VALUES ('Tops');
-INSERT INTO Category (name) VALUES ('Trousers');
-INSERT INTO Category (name) VALUES ('Casual');
+INSERT INTO Category (category_name) VALUES ('Tutus');
+INSERT INTO Category (category_name) VALUES ('Tap Shoes');
+INSERT INTO Category (category_name) VALUES ('Bags');
+INSERT INTO Category (category_name) VALUES ('Accessories');
+INSERT INTO Category (category_name) VALUES ('Gymnastics');
+INSERT INTO Category (category_name) VALUES ('Costumes');
+INSERT INTO Category (category_name) VALUES ('Character Shoes');
+INSERT INTO Category (category_name) VALUES ('Ballet Shoes');
+INSERT INTO Category (category_name) VALUES ('Pointe Shoes');
+INSERT INTO Category (category_name) VALUES ('Dance Trainers');
+INSERT INTO Category (category_name) VALUES ('Jazz Shoes');
+INSERT INTO Category (category_name) VALUES ('Leotards');
+INSERT INTO Category (category_name) VALUES ('Tops');
+INSERT INTO Category (category_name) VALUES ('Trousers');
+INSERT INTO Category (category_name) VALUES ('Casual');
 
 
 
 CREATE TABLE Product (
 	product_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-	name varchar(30) NOT NULL,
+	product_name varchar(30) NOT NULL,
 	description varchar(200) NOT NULL,
 	price INT NOT NULL,
 	brand_id INT NOT NULL,
@@ -71,34 +71,34 @@ CREATE TABLE Product (
 	FOREIGN KEY (category_id) REFERENCES Category(category_id)
 );
 
-INSERT INTO Product (name, description, price, brand_id, category_id) VALUES ('Polly Leotard', 'Pink, velvet leotard. High cut. Backless', 20, 1, 12);
-INSERT INTO Product (name, description, price, brand_id, category_id) VALUES ('Ruby Tap Shoes', 'Ruby red tap shoes. Perfect for those looking to add a bit of pizazz', 22, 2, 2);
-INSERT INTO Product (name, description, price, brand_id, category_id) VALUES ('Alice Ballet Bag', 'Baby pink ballet bag with dancer pattern', 18, 6, 3);
-INSERT INTO Product (name, description, price, brand_id, category_id) VALUES ('Angel tutu', 'Stunning white tutu with rhinestones', 40, 5, 1);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Black male leotard', 'Smart black leotard for men', 20, 2, 12);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Katz scrunchie', 'Pink sparkly scrunchy', 3, 1, 4);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Ballerina duvet cover', 'Ages 3+', 22, 7, 4);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Revolution Leotard', 'Blue and silver gymnastics leotard', 28, 8, 5);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Katz Character shoes', 'Black with pink elastic', 18, 1, 7);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Katz Character shoes', 'Grey with pink elastic', 18, 1, 7);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Katz Character shoes', 'Beige with pink elastic', 18, 1, 7);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Katz Tap shoes', 'Black with toe tapping board', 20, 1, 2);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Katz Tap shoes', 'Black with heel and toe tapping boards', 20, 1, 2);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Katz Tap shoes', 'White with toe tapping board', 20, 1 , 2);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Katz Tap shoes', 'White with heel and toe tapping boards', 20, 1, 2);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Katz Tap shoes', 'Black with toe tapping board', 20, 1, 2);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Pineapple dance trainers', 'Perfect for modern dance. Black', 24, 2, 10);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Pineapple dance trainers', 'Perfect for modern dance. Pink', 24, 2, 10);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Pineapple dance trainers', 'Perfect for modern dance. Blue', 24, 2, 10);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Capezio pointe shoes', 'Perfect for those new to dancing en pointe. Pink', 28, 4, 9);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Capezio pointe shoes', 'Perfect for those new to dancing en pointe. White', 28, 4, 9);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Capezio pointe shoes', 'Perfect for more experienced ballerinas. Pink', 30, 4, 9);
-INSERT INTO PRODUCT (name, description, price ,brand_id, category_id) VALUES ('Capezio pointe shoes', 'Perfect for more experienced ballerinas. White', 3, 4, 9);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Revolution  leotard', 'Purple', 19, 8, 12);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Capezio pointe shoes', 'Perfect for more experienced ballerinas. Pink', 30, 4, 9);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Chicago Costume', 'Black dress with fringe', 21, 8, 6);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Cats the Musical costume', 'Miaow', 28, 8, 6);
-INSERT INTO PRODUCT (name, description, price, brand_id, category_id) VALUES ('Katz t-shirt', 'Pink', 15, 1, 15);
+INSERT INTO Product (product_name, description, price, brand_id, category_id) VALUES ('Polly Leotard', 'Pink, velvet leotard. High cut. Backless', 20, 1, 12);
+INSERT INTO Product (product_name, description, price, brand_id, category_id) VALUES ('Ruby Tap Shoes', 'Ruby red tap shoes. Perfect for those looking to add a bit of pizazz', 22, 2, 2);
+INSERT INTO Product (product_name, description, price, brand_id, category_id) VALUES ('Alice Ballet Bag', 'Baby pink ballet bag with dancer pattern', 18, 6, 3);
+INSERT INTO Product (product_name, description, price, brand_id, category_id) VALUES ('Angel tutu', 'Stunning white tutu with rhinestones', 40, 5, 1);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Black male leotard', 'Smart black leotard for men', 20, 2, 12);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Katz scrunchie', 'Pink sparkly scrunchy', 3, 1, 4);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Ballerina duvet cover', 'Ages 3+', 22, 7, 4);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Revolution Leotard', 'Blue and silver gymnastics leotard', 28, 8, 5);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Katz Character shoes', 'Black with pink elastic', 18, 1, 7);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Katz Character shoes', 'Grey with pink elastic', 18, 1, 7);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Katz Character shoes', 'Beige with pink elastic', 18, 1, 7);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Katz Tap shoes', 'Black with toe tapping board', 20, 1, 2);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Katz Tap shoes', 'Black with heel and toe tapping boards', 20, 1, 2);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Katz Tap shoes', 'White with toe tapping board', 20, 1 , 2);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Katz Tap shoes', 'White with heel and toe tapping boards', 20, 1, 2);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Katz Tap shoes', 'Black with toe tapping board', 20, 1, 2);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Pineapple dance trainers', 'Perfect for modern dance. Black', 24, 2, 10);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Pineapple dance trainers', 'Perfect for modern dance. Pink', 24, 2, 10);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Pineapple dance trainers', 'Perfect for modern dance. Blue', 24, 2, 10);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Capezio pointe shoes', 'Perfect for those new to dancing en pointe. Pink', 28, 4, 9);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Capezio pointe shoes', 'Perfect for those new to dancing en pointe. White', 28, 4, 9);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Capezio pointe shoes', 'Perfect for more experienced ballerinas. Pink', 30, 4, 9);
+INSERT INTO PRODUCT (product_name, description, price ,brand_id, category_id) VALUES ('Capezio pointe shoes', 'Perfect for more experienced ballerinas. White', 3, 4, 9);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Revolution  leotard', 'Purple', 19, 8, 12);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Capezio pointe shoes', 'Perfect for more experienced ballerinas. Pink', 30, 4, 9);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Chicago Costume', 'Black dress with fringe', 21, 8, 6);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Cats the Musical costume', 'Miaow', 28, 8, 6);
+INSERT INTO PRODUCT (product_name, description, price, brand_id, category_id) VALUES ('Katz t-shirt', 'Pink', 15, 1, 15);
 
 
 

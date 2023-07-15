@@ -3,17 +3,30 @@ import { useEffect, useState } from "react";
 import {  useNavigate } from 'react-router-dom';
 import ProductsService from "../ProductsService";
 import './AddProduct.css';
+import BrandsService from '../../Brands/BrandsService';
+import CategoriesService from '../../Category/CategoriesService';
 
 const AddProduct = () => {
   const initialState = {
     id: null,
-    title: "",
+    product_name: "",
     description: "",
     price: "",
-    published: false
+    brand: "",
+    category: ""
   };
   const [product, setProduct] = useState(initialState);
   const [submitted, setSubmitted] = useState(false);
+  const [brand, setBrand] = useState({});
+  const [category, setCategory] = useState({});
+  const [product_name, setProductName] = useState("");
+  const [categories, setCategories] = useState([]);
+  const [description, setDescription] = useState("");
+  const [brands, setBrands] = useState([]);
+  const [price, setPrice] = useState("");
+  const [selectedBrand, setSelectedBrand] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
 
   const navigate = useNavigate();
 
@@ -21,34 +34,91 @@ const AddProduct = () => {
     const { name, value } = event.target;
     setProduct({ ...product, [name]: value });
   };
+ 
 
-  const saveProduct = () => {
-    var data = {
-      name: product.name,
-      description: product.description,
-      price: product.price
-    };
+const handleCategorySelector = (id) => {
+    setSelectedCategory(categories[id - 1]);
+}
 
-    ProductsService.create(data)
-      .then(response => {
-        setProduct({
-          id: response.data.id,
-          name: response.data.name,
-          description: response.data.description,
-          price: response.data.price
-        });
-        setSubmitted(true);
-        console.log(response.data);
-      })
-      .catch(e => {
-        console.log(e);
-      });
-  };
+const handleBrandSelector = (id) => {
+  setSelectedBrand(brands[id -1])
+}
+
+const fetchForeignKeys = () => {
+    BrandsService.getAll()
+        .then(response => {
+            if(response.status === 200) {
+                setBrands(response.data);
+            }
+        })
+        .catch(error => {
+            console.log('Brands not found...')
+        })
+
+    CategoriesService.getAll()
+            .then(response => {
+                if(response.status === 200) {
+                    console.log(response.data.length + ' categories found!');
+                    setCategories(response.data);
+                }
+            })
+            .catch(error => {
+                console.log('Categories not found...')
+            })
+
+          }
+         
+          
+
+       
+
 
   const newProduct = () => {
     setProduct(initialState);
     setSubmitted(false);
   };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+
+    let data = {
+        product_name: product_name,
+        description: description,
+        price: price,
+        brand: selectedBrand,
+        category: selectedCategory
+    }
+
+    console.log('handle submit method is called')
+    console.log(data)
+
+
+    
+    if( data.brand !== undefined
+        && data.category !== undefined
+        ) {
+        ProductsService.create(data)
+        .then(response => {
+
+                if(response.status === 201) {
+                    alert('Product created');
+                    navigate('/products')
+                }
+            })
+            .catch(error => {
+                console.error('Unable to send request')
+            })
+    } else {
+        setSubmitted(false);
+      
+    }
+}
+
+useEffect(() => {
+  fetchForeignKeys();
+}, []);
+
 
   return (
         <div className="submit-form">
@@ -62,15 +132,15 @@ const AddProduct = () => {
           ) : (
             <div>
               <div className="">
-                <label htmlFor="name">Name</label>
+                <label htmlFor="product_name">Name</label>
                 <input
                   type="text"
                   className=""
-                  id="name"
+                  id="product_name"
                   required
-                  value={product.name}
-                  onChange={handleInputChange}
-                  name="name"
+                  value={product_name}
+                  onChange={e => setProductName(e.target.value)}
+                  name="product_name"
                 />
               </div>
     
@@ -81,8 +151,8 @@ const AddProduct = () => {
                   className=""
                   id="description"
                   required
-                  value={product.description}
-                  onChange={handleInputChange}
+                  value={description}
+                  onChange={e => setDescription(e.target.value)}
                   name="description"
                 />
               </div>
@@ -90,22 +160,60 @@ const AddProduct = () => {
               <div className="">
                 <label htmlFor="price">Price</label>
                 <input
-                  type="text"
+                  type="number"
                   className=""
                   id="price"
                   required
-                  value={product.price}
-                  onChange={handleInputChange}
+                  value={price}
+                  onChange={e => setPrice(e.target.value)}
                   name="price"
                 />
               </div>
+
+              <div className="form-group">
+              <label htmlFor="brand">Brand</label>
+            <select
+                  required
+                  onChange={e => handleBrandSelector(e.target.value)}>
+                    <option>Please select a brand</option>
+                    {
+                        brands.map(brand =>
+                            <option
+                            key={brand.brand_id}
+                            value={brand.brand_id}
+                            >{brand.brand_name}
+                            </option>)
+                    }
+                  </select>
+             </div>
+
+             <div className="form-group">
+              <label htmlFor="category">Category</label>
+            <select
+                  required
+                  onChange={e => handleCategorySelector(e.target.value)}>
+                    <option>Please select a category</option>
+                    {
+                        categories.map(category =>
+                            <option
+                            key={category.category_id}
+                            value={category.category_id}
+                            >{category.category_name}
+                            </option>)
+                    }
+                  </select>
+             </div>
     
-              <button onClick={saveProduct} className="">
+              <button onClick={handleSubmit} className="">
                 Submit
               </button>
-            </div>
+         
+            
+    
+       </div>
           )}
-        </div>
+          </div>
+                
       );
     };
   

@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
-    List<Product> findByNameContaining(String name);
+    //List<Product> findByProductNameContaining(String product_name);
 
     //@Query("SELECT b FROM Product b WHERE b.brand.brand_id = :id")
     //List<Product> filterByBrand(@Param("id") int id);

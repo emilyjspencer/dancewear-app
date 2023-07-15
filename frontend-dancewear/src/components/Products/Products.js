@@ -39,8 +39,6 @@ const Products = () => {
   const [searchId, setId] = useState("");
 
 
-
-
   useEffect(() => {
     getProducts();
   }, []);
@@ -122,19 +120,19 @@ const Products = () => {
                 <Cards
                   imgSrc="https://picsum.photos/seed/picsum/200/300"
                   imgAlt="Product placeholder"
-                  text1={`Product : ${product.name}`}
+                  text1={`Product : ${product.product_name}`}
                   text2={`Description: ${product.description}`}
                   text3={`Price: ${product.price}`} />
 
                 <Link
-                  to={"/products/" + product.id}
+                  to={"/products/" + product.product_id}
                   className=""
                 >
                   Edit Product Details
                 </Link>
 
                 <Link
-                  to={"/basket/" + product.id}
+                  to={"/basket/" + product.product_id}
                   className=""
                 >
                   Add to basket
@@ -152,9 +150,11 @@ const Products = () => {
         product={productDetail}>
 
         <ul className="product-detail-list">
-          <li><strong>Name: </strong> {productDetail.name}</li>
+          <li><strong>Name: </strong> {productDetail.product_name}</li>
           <li><strong>Description: </strong>{productDetail.description}</li>
           <li><strong>Price: </strong>{productDetail.price}</li>
+          <li><strong>Brand: </strong>{productDetail.brand.brand_name}</li>
+          <li><strong>Category: </strong>{productDetail.category.category_name}</li>
 
         </ul>
       </Modal> : ""}
@@ -165,38 +165,7 @@ const Products = () => {
       >
         Delete all
       </button></>
-      
-      <div className="">
-        {currentProduct ? (
-          <div>
-            <h4>Product</h4>
-            <div>
-              <label>
-                <strong>Product </strong>
-              </label>
-            </div>
-            <div>
-              <label>
-                <strong>Description:</strong>
-              </label>{" "}
-              {currentProduct.description}
-            </div>
-            <div>
-              <label>
-                <strong>Price:</strong>
-              </label>{" "}
-              {currentProduct.price}
-            </div>
-
-
-          </div>
-        ) : (
-          <div>
-            <br />
-
-          </div>
-        )}
-      </div></>
+      </>
 
   
   );
