@@ -39,6 +39,9 @@ const Products = () => {
   const [searchId, setId] = useState("");
 
 
+  const [searchBrand, setBrand] = useState("");
+
+
   useEffect(() => {
     getProducts();
   }, []);
@@ -96,6 +99,18 @@ const Products = () => {
                       <div className="">
                           <input type="number" placeholder="Search .." name="searchId" onChange={(event) => setId(event.target.value)}></input>
                           <input type="text" placeholder="Search by product name" name="searchProductName" onChange={(event) => setSearchProductName(event.target.value)}></input>
+                          <select className="dropbtnfilter" onChange={(event) => setBrand(event.target.value)}>
+                  <option value="">Search by brand</option>
+                  <option value="katz">Katz</option>
+                  <option value="pineapple">Pineapple</option>
+                  <option value="ballet rosa">Ballet Rosa</option>
+                  <option value="revolution">Revolution</option>
+                  <option value="capezio">Capezio</option>
+                  <option value="little ballerina">Little Ballerina</option>
+                  <option value="bloch">Bloch</option>
+               
+                  </select>
+
                           
                       </div>
                   </div>
@@ -106,12 +121,14 @@ const Products = () => {
         <ul className="products-list-container">
             <>
             {products.filter((product) => {
-                      return searchId === "" ? product : product.id.toString() === searchId
+                      return searchId === "" ? product : product.product_id.toString() === searchId
                   }).filter((product) => {
-                    return searchProductName === "" ? product : product.name.toLowerCase().includes(searchProductName)
+                    return searchProductName === "" ? product : product.product_name.toLowerCase().includes(searchProductName)
+                  }).filter((product) => {
+                    return searchBrand === "" ? product : product.brand.brand_name.toLowerCase().includes(searchBrand)
                   }).map((product, index) => (
 
-              <div id="card-modal-button" key={product.id}
+              <div id="card-modal-button" key={product.product_id}
                 onClick={(e) => {
                   setActiveProduct(product, index); setProductDetail(product);
                   setModalOpen(e);
