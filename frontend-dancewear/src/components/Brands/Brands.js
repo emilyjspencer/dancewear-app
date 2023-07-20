@@ -122,7 +122,7 @@ const BrandsPage = () => {
               {brands.filter((brand) => {
                 return searchId === "" ? brand : brand.brand_id.toString() === searchId
               }).filter((brand) => {
-                return searchBrand === "" ? brand : brand.brand_name.toLowerCase().includes(searchBrandName.toLowerCase())
+                return searchBrandName === "" ? brand : brand.brand_name.toLowerCase().includes(searchBrandName.toLowerCase())
 
 
               }).map((brand, index) => (
