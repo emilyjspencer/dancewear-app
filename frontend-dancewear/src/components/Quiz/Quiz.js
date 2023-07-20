@@ -119,7 +119,7 @@ class Quiz extends Component {
       <>
         <h1 className="Header">Test your dance knowledge</h1>
 
-        <div>
+        <div className="quiz">
           <h2>{question}</h2>
           {options.map((option) => (
             <p

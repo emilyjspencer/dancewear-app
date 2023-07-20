@@ -30,7 +30,10 @@ body {
     margin: 5px;
   }
   
- 
+   .quiz {
+    margin-left: 200px;
+    margin-right: 200px;
+   }
   
   h1, h2, p {
     font-family: Dancing Script;
