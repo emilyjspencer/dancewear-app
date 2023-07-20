@@ -104,7 +104,7 @@ class Quiz extends Component {
         <div>
           <h1>You scored: {this.state.score} out of a possible 4 questions</h1>
           <h3>The correct answers were:</h3>
-          <ul>
+          <ul className="list-options">
             {QuizQuestionsAnswers.map((item, index) => (
               <li className="options" key={index}>
                 {item.answer}

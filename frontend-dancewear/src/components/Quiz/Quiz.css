@@ -1,6 +1,6 @@
 
 body {
-    display: flex;
+   
     justify-content: center;
     text-align: center;
     color: white;
@@ -22,7 +22,7 @@ body {
     font-weight: bold;
   }
   
-  ul {
+  .list-options {
     list-style-type: none;
   }
   

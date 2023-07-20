@@ -25,17 +25,35 @@ INSERT INTO User (first_name, last_name, email, phone_number, user_password, add
 CREATE TABLE Brand (
 	brand_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	brand_name varchar(30) NOT NULL,
-	description varchar(400) NOT NULL
+	description varchar(4000) NOT NULL
 );
 
-INSERT INTO Brand (brand_name, description) VALUES ('Katz', 'Katz is' );
-INSERT INTO Brand (brand_name, description) VALUES ('Pineapple', 'Pineapple is');
-INSERT INTO Brand (brand_name, description) VALUES ('Bloch', 'Bloch is' );
-INSERT INTO Brand (brand_name, description) VALUES ('Capezio', 'Capezio');
-INSERT INTO Brand (brand_name, description) VALUES ('1st Position', '1st position is');
-INSERT INTO Brand (brand_name, description) VALUES ('Ballet Rosa', 'Ballet Rosa is');
-INSERT INTO Brand (brand_name, description) VALUES ('Little Ballerina', 'Little Ballerina is');
-INSERT INTO Brand (brand_name, description) VALUES ('Revolution', 'Revolution is');
+INSERT INTO Brand (brand_name, description) VALUES ('Katz', 'Katz is a leading manufacturer of dancewear in the UK, providing a comprehensive range of shoes, garments, accessories and gifts for dancers of all ages' );
+INSERT INTO Brand (brand_name, description) VALUES ('Pineapple', 'Having been regularly employed by the clothing and textiles company Courtaulds, Debbie Moore was also experienced in clothing design and manufacture.[citation needed] During the early 1980s, she began developing her own line of dance-wear,[citation needed] including using Lycra, which at that time was not a widely used fabric. She sold her designs through a shop at the dance studios and this ultimately led to the formation of the Pineapple clothing brand.[citation needed] Louie Spence and Debbie Moore launched the Pineapple Eye-wear range of glasses on 4 August 2010 at Pineapple Dance Studios');
+INSERT INTO Brand (brand_name, description) VALUES ('Bloch', 'At BLOCH, our goal is to equip dancers with the dancewear, clothes, shoes and accessories they need to perform at their absolute best. Our range spans from beginner dancewear to professional dance shoes, helping all dancers reach new levels. We have ballet shoes, ideal for young dancers beginning their dance career, or professional pointe shoes for those ready to take their dancing to the next stage.' );
+INSERT INTO Brand (brand_name, description) VALUES ('Capezio', 'Capezio is the name that continues to make the world dance. With over 130 years of quality craftsmanship, dedicated customer service and timeless design, Capezio is the brand of choice for athletes and performers across the globe. As Capezio continues to evolve into the lifestyle category, it is these artists who will champion the brand among dancers and non-dancers alike');
+INSERT INTO Brand (brand_name, description) VALUES ('1st Position', 'First Position, dedicated to dancers, providing great quality, true value dancewear');
+INSERT INTO Brand (brand_name, description) VALUES ('Ballet Rosa', 'Ballet Rosa strives to inspire ballet dancers from all over the world with products engineered for a high level of comfort, mobility, and performance...
+
+..designed to match the sophistication, poetry, and passion of ballet. Ballet Rosa has become known in the dance world for their harmonious mastery of technical materials, combined with beautiful design.
+
+Our mission is to dazzle dancers with the excellence of our craftsmanship and by the artistry of our design.
+
+Ballet Rosa was created in 2010 by Luis Guimaraes and Adão Coelho, although the origins of the company date back much earlier.');
+INSERT INTO Brand (brand_name, description) VALUES ('Little Ballerina', 'Owner Jackie Childs spent many years as a childrens wear buyer for major high street stores before becoming a ballet mum herself.
+
+Trained at The London College of Fashion , Jackie was able to make her daughters first character skirt and soon realised that they were a hard to shop for item, so set about designing the first character skirt available from stock.
+
+In 2004 Little Ballerina was proud to be awarded a license as the approved supplier to The Royal Academy of Dance and since then has added two more styles so that we now offer the full range of RAD regulation skirts.
+
+Using her experience in the clothing industry Jackies garments use top quality fabric and are superb quality.
+
+"The joy of dance is one of the Royal Academy of Dances key objectives and we like to think our skirts are joy to wear and to shop for. No more waiting for a made to order garment."
+
+"This year we are adding a new range of bags, cards and gifts featuring our adorable vintage inspired Little Ballerina characters. We have added a fun area of printables to our website. Please take a look and maybe tell other ballet mums!"
+
+Little Ballerina is a specialist company and only stock own brand garments on this website.');
+INSERT INTO Brand (brand_name, description) VALUES ('Revolution', 'Your studio partner for dancewear & costumes. Trusted by studio owners and loved by dancers. The only dancewear company that gives back');
 
 CREATE TABLE Category (
 	category_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
