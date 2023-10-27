@@ -1,5 +1,5 @@
 import { useState, useEffect} from 'react';
-import './DanceShoes.css';
+import './Danceshoes.css';
 import Cards from '../Cards/Cards';
 import Filter from '../Filter/Filter';
 
