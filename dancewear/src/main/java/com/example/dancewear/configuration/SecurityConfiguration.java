@@ -58,8 +58,9 @@ public class SecurityConfiguration {
                     auth.antMatchers("/roles").permitAll();
                     auth.antMatchers("/admin/**").hasRole("ADMIN");
                     auth.antMatchers("/user/**").hasAnyRole("ADMIN", "USER");
+                    auth.antMatchers("/reviews/**").hasAnyRole("ADMIN", "USER", "DANCE_TEACHER");
                     auth.antMatchers("/dance-teacher/**").hasAnyRole("ADMIN", "DANCE_TEACHER");
-                    auth.antMatchers("/dance-teacheers/**").permitAll();
+                    auth.antMatchers("/dance-teachers/**").permitAll();
                     auth.antMatchers("/users/**").permitAll();
                     // auth.anyRequest().authenticated();
                 });

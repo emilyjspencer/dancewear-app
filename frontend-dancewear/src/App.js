@@ -35,17 +35,20 @@ import AddBlogPost from './components/Blog/AddBlogPost/AddBlogPost';
 import Sale from './components/Sale/Sale';
 import MyAccount from './components/MyAccount/MyAccount';
 import Basket from './components/Basket/Basket';
-import MainNavigation from './components/Navigation/MainNavigation';
+import MainNavigation from './components/Navigation/MainNavigation/MainNavigation';
 import TestUserList from './components/Test/TestUserList';
 import CookieConsent from "react-cookie-consent";
 import Logout from './components/Logout/Logout';
 import Login from './components/Login/Login';
-import Register from './components/Register/Register';
-import RegisterTeacher from './components/Register/RegisterTeacher';
 import ChatBot from 'react-simple-chatbot';
 import Accessories from './components/Accessories/Accessories';
+import AuthenticationService from './services/AuthenticationService';
+import Error from '../src/components/Error/Error';
+import UserProfile from '../src/components/UserProfile/UserProfile';
+import Registration from '../src/components/Authentication/Registration/Registration';
+import DanceTeacherList from '../src/components/DanceTeacher/DanceTeacherList.js';
+import UserList from '../src/components/User/UserList';
 
- 
 import { ThemeProvider } from 'styled-components';
 
  
@@ -110,7 +113,31 @@ const configuration = {
 
 const App = () => {
 
-  
+    function DanceTeacherGuard() {
+        const currentUser = AuthenticationService.getCurrentUser();
+        if (!currentUser) {
+          return <div>You do not have access to this page!</div>;
+        } else {
+          return <DanceTeacherList />;
+        }
+      }
+      function UserGuard() {
+        const currentUser = AuthenticationService.getCurrentUser();
+        if (!currentUser) {
+          return <div>You do not have access to this page!</div>;
+        } else {
+          return <UserList />;
+        }
+      }
+
+      function ReviewGuard() {
+        const currentUser = AuthenticationService.getCurrentUser();
+        if (!currentUser) {
+          return <div>You do not have access to this page!</div>;
+        } else {
+          return <Reviews />;
+        }
+      }
 
   return (
     <>
@@ -152,10 +179,14 @@ const App = () => {
           <Route path="/checkout" element={<Basket />} />
           <Route path="/test" element={<TestUserList/>} />
           <Route path="/logout" element={<Logout />} />
-          <Route path="/myaccount" element={<MyAccount />} />
+          <Route path="/user-profile" element={<MyAccount />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/registerteacher" element={<RegisterTeacher />} />
+          <Route path="/" element={<Home />  } />
+        <Route path="/Registration" element={<Registration />} />
+        <Route path="/user-profile" element={<UserProfile />} />
+        <Route path="/*" element={<Error />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/dance-teachers" element={<DanceTeacherList />} />
           </Routes>
           </Router>
       

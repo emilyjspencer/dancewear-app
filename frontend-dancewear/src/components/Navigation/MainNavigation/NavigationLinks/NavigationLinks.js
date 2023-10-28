@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
+import AuthenticationService from '../../../../services/AuthenticationService';
 import './NavigationLinks.css';
-import Dropdown from '../../Dropdown/Dropdown';
+import Dropdown from '../../../Dropdown/Dropdown';
 
 const NavigationLinks = () => {
   return <ul className="nav-links">

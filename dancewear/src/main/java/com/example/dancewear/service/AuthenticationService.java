@@ -5,7 +5,6 @@ import com.example.dancewear.dao.RoleRepository;
 import com.example.dancewear.dtos.LoginDTO;
 import com.example.dancewear.entity.GeneralUser;
 import com.example.dancewear.entity.UserRole;
-import lombok.RequiredArgsConstructor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -76,13 +75,12 @@ public class AuthenticationService {
 
         String encodedPassword = passwordEncoder.encode(password);
 
-        // Find the role by authority
-        UserRole accountManagerRole = roleRepository.findByAuthority(roleAuthority)
+        UserRole danceTeacherRole = roleRepository.findByAuthority(roleAuthority)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid role specified: " + roleAuthority));
 
 
         Set<UserRole> authorities = new HashSet<>();
-        authorities.add(accountManagerRole);
+        authorities.add(danceTeacherRole);
 
 
         GeneralUser danceTeacher = new GeneralUser();
