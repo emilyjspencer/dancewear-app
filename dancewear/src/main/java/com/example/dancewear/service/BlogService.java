@@ -1,13 +1,10 @@
 package com.example.dancewear.service;
 
 import com.example.dancewear.dao.BlogRepository;
-import com.example.dancewear.dao.UserRepository;
 import com.example.dancewear.entity.Blog;
-import com.example.dancewear.entity.User;
 import com.example.dancewear.exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

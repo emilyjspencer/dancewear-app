@@ -1,13 +1,8 @@
 package com.example.dancewear.controller;
 
-import com.example.dancewear.dao.UserRepository;
-import com.example.dancewear.requestresponse.AuthenticationRequest;
-import com.example.dancewear.requestresponse.AuthenticationResponse;
-import com.example.dancewear.requestresponse.RegistrationRequest;
 import com.example.dancewear.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
