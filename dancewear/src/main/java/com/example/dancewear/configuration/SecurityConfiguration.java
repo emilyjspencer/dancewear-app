@@ -1,6 +1,7 @@
 package com.example.dancewear.configuration;
 
 
+import com.example.dancewear.utilities.RSAKeyProperties;
 import com.nimbusds.jose.jwk.JWK;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
@@ -26,49 +27,77 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtGra
 import org.springframework.security.web.SecurityFilterChain;
 
 
-    @Configuration
-    public class SecurityConfiguration {
+@Configuration
+public class SecurityConfiguration {
 
+    private final RSAKeyProperties keys;
 
-
-        @Bean
-        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-            http
-                    .csrf(csrf -> csrf.disable())
-                    .authorizeHttpRequests(auth -> {
-                        auth.antMatchers("/api/auth/**").permitAll();
-                        auth.antMatchers("/roles").permitAll();
-                        auth.antMatchers("/admin/**").hasRole("ADMIN");
-                        auth.antMatchers("/user/**").hasAnyRole("ADMIN", "USER");
-                        auth.antMatchers("/dance-teacher/**").hasAnyRole("ADMIN", "DANCE_TEACHER");
-                        //auth.anyRequest().authenticated();
-                    });
-
-            http.headers().frameOptions().sameOrigin(); 
-
-            http.oauth2ResourceServer()
-                    .jwt()
-                    .jwtAuthenticationConverter(jwtAuthenticationConverter());
-            http.sessionManagement(
-                    session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-            );
-
-            return http.build();
-        }
-
-
-
-        @Bean
-        public JwtAuthenticationConverter jwtAuthenticationConverter(){
-            JwtGrantedAuthoritiesConverter jwtGrantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
-            jwtGrantedAuthoritiesConverter.setAuthoritiesClaimName("roles");
-            jwtGrantedAuthoritiesConverter.setAuthorityPrefix("ROLE_");
-            JwtAuthenticationConverter jwtConverter = new JwtAuthenticationConverter();
-            jwtConverter.setJwtGrantedAuthoritiesConverter(jwtGrantedAuthoritiesConverter);
-            return jwtConverter;
-        }
-
+    public SecurityConfiguration(RSAKeyProperties keys) {
+        this.keys = keys;
     }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public AuthenticationManager authManager(UserDetailsService detailsService) {
+        DaoAuthenticationProvider daoProvider = new DaoAuthenticationProvider();
+        daoProvider.setUserDetailsService(detailsService);
+        daoProvider.setPasswordEncoder(passwordEncoder());
+        return new ProviderManager(daoProvider);
+    }
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+                .csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(auth -> {
+                    auth.antMatchers("/api/auth/**").permitAll();
+                    auth.antMatchers("/roles").permitAll();
+                    auth.antMatchers("/admin/**").hasRole("ADMIN");
+                    auth.antMatchers("/user/**").hasAnyRole("ADMIN", "USER");
+                    auth.antMatchers("/dance-teacher/**").hasAnyRole("ADMIN", "DANCE_TEACHER");
+                    auth.antMatchers("/dance-teacheers/**").permitAll();
+                    auth.antMatchers("/users/**").permitAll();
+                    // auth.anyRequest().authenticated();
+                });
+
+        http.headers().frameOptions().sameOrigin();
+
+        http.oauth2ResourceServer()
+                .jwt()
+                .jwtAuthenticationConverter(jwtAuthenticationConverter());
+        http.sessionManagement(
+                session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+
+        return http.build();
+    }
+
+    @Bean
+    public JwtDecoder jwtDecoder() {
+        return NimbusJwtDecoder.withPublicKey(keys.getPublicKey()).build();
+    }
+
+    @Bean
+    public JwtEncoder jwtEncoder() {
+        JWK jwk = new RSAKey.Builder(keys.getPublicKey()).privateKey(keys.getPrivateKey()).build();
+        JWKSource<SecurityContext> jwks = new ImmutableJWKSet<>(new JWKSet(jwk));
+        return new NimbusJwtEncoder(jwks);
+    }
+
+    @Bean
+    public JwtAuthenticationConverter jwtAuthenticationConverter() {
+        JwtGrantedAuthoritiesConverter jwtGrantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
+        jwtGrantedAuthoritiesConverter.setAuthoritiesClaimName("roles");
+        jwtGrantedAuthoritiesConverter.setAuthorityPrefix("ROLE_");
+        JwtAuthenticationConverter jwtConverter = new JwtAuthenticationConverter();
+        jwtConverter.setJwtGrantedAuthoritiesConverter(jwtGrantedAuthoritiesConverter);
+        return jwtConverter;
+    }
+
+}
 
 
 
