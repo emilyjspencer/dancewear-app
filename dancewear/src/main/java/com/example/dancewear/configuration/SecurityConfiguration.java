@@ -55,14 +55,13 @@ public class SecurityConfiguration {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> {
                     auth.antMatchers("/api/auth/**").permitAll();
-                    auth.antMatchers("/roles").permitAll();
                     auth.antMatchers("/admin/**").hasRole("ADMIN");
                     auth.antMatchers("/user/**").hasAnyRole("ADMIN", "USER");
                     auth.antMatchers("/reviews/**").hasAnyRole("ADMIN", "USER", "DANCE_TEACHER");
                     auth.antMatchers("/dance-teacher/**").hasAnyRole("ADMIN", "DANCE_TEACHER");
                     auth.antMatchers("/dance-teachers/**").permitAll();
                     auth.antMatchers("/users/**").permitAll();
-                    // auth.anyRequest().authenticated();
+                    //auth.anyRequest().authenticated();
                 });
 
         http.headers().frameOptions().sameOrigin();

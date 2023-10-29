@@ -34,7 +34,7 @@ const NavigationLinksAdmin = () => {
         <NavLink to="/about">About</NavLink>
       </li>
       <li>
-        <NavLink to="/contact-us">Contact Us</NavLink>
+        <NavLink to="/contact">Contact Us</NavLink>
       </li>
       <li>
         <NavLink to="/basket">Basket</NavLink>

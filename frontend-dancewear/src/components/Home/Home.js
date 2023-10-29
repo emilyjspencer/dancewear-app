@@ -42,24 +42,15 @@ export default class Home extends Component {
   render() {
     return (
       <>
-    
-        
-
-       
-        <br />
         <Carousel />
-       <Sites   />
-       <Studios />
-       <Training />
-      <Reviews />
-      <br />
-      <br />
-      <br />
-      <br />
-      <Contact />
+        <Sites />
+        <Studios />
+        <Training />
+        <Reviews />
+        <br />
+        <br />
+        <Contact />
       </>
     );
-  
-    }}
-
-
+  }
+}

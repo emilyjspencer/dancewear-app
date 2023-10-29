@@ -14,9 +14,9 @@ const NavbarLogic = () => {
 
     return (
         <>
-   
+    {!currentUser && 
         <MainNavigation />
-         
+         } 
 
 {currentUser && currentUser.user.authorities[0].authority === 'DANCE_TEACHER' && 
         <MainNavigationDanceTeacher />

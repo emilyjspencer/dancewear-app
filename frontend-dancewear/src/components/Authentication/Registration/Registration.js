@@ -55,7 +55,7 @@ const Registration = () => {
   const handleDanceTeacherRegistration = (e) => {
     e.preventDefault();
     const errors = validateFormData(danceTeacherFormData);
-
+  console.log('handleDanceTeacherRegistration')
     if (Object.keys(errors).length === 0) {
       AuthenticationService.register(danceTeacherFormData, "danceTeacher")
         .then((response) => {
@@ -76,6 +76,7 @@ const Registration = () => {
   const handleUserRegistration = (e) => {
     e.preventDefault();
     const errors = validateFormData(userFormData);
+    console.log('handleUserRegistration')
 
     if (Object.keys(errors).length === 0) {
       AuthenticationService.register(userFormData, "user")
