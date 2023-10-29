@@ -40,6 +40,8 @@ class UserProfile extends Component {
 
     console.log(currentUser)
 
+    let userType = currentUser.user.authorities[0].authority
+
     return (
       <>
      
@@ -59,6 +61,8 @@ class UserProfile extends Component {
     }
 
 
+
+  
 <div className="">
           {(this.state.userReady) ?
             <div>
@@ -68,6 +72,7 @@ class UserProfile extends Component {
                 </h3>
               </header>
 
+
               <p><strong>Username: </strong></p>
               {currentUser.user.username}
               <p>
@@ -75,46 +80,52 @@ class UserProfile extends Component {
                 {currentUser.id}
                 {currentUser.user.userId}
               </p>
+              {userType != 'ADMIN'  && 
               <p>
+                
                 <strong>First Name:</strong>{" "}
                 {currentUser.user.firstName}
               </p>
+              }
+              {userType !== 'ADMIN' && 
               <p>
-                <strong>Last Name:</strong>{" "}
-                {currentUser.user.lastName}
-              </p>
-              <p>
-                <strong>Email:</strong>{" "}
-                {currentUser.email}
-                {currentUser.user.emailAddress}
-              </p>
-              <p>
-                <strong>Location:</strong>{" "}
-                {currentUser.user.location}
-              </p>
-              <p>
-                <strong>Recruitment type:</strong>{" "}
-                {currentUser.user.recruitmentType}
-              </p>
-              <p>
-                <strong>Status:</strong>{" "}
-                {currentUser.user.status}
-              </p>
-              <strong>User type:   </strong>
+                    <strong>Last Name:</strong>{" "}
+                    {currentUser.user.lastName}
+                  </p>
+              }
+                  {userType !== 'ADMIN' && 
+                  <p>
+                      <strong>Email:</strong>{" "}
+                      {currentUser.email}
+                      {currentUser.user.emailAddress}
+                    </p>
+                   }
+                 
+                 {userType !== 'ADMIN' && userType !== 'USER' &&
+                    <p>
+                      <strong>istdMembershipCode:</strong>{" "}
+                      {currentUser.user.istdMembershipCode}
+                    
+                    </p>
+                    }
+
+
+                  {userType !== 'ADMIN' &&
+                   <p>
+                    <strong>User type:   </strong>
 
               {currentUser.user.authorities[0].authority}
-
-           
+                  </p>
+                  }
+      
             </div>: null}
             </div>
 
     </> )
-    
-  
-    }
-    
-    }
-       
-    
-  export default UserProfile;
+    }}
+
+
+       export default UserProfile;
+
+
  

@@ -47,10 +47,9 @@ const Login = () => {
             console.log(currentUser);
             let roleAuthority = currentUser.authorities[0].authority;
             console.log(roleAuthority);
-            if (roleAuthority === "USER") {
+            if (roleAuthority === "USER" || roleAuthority === 'ADMIN' || roleAuthority === 'DANCE_TEACHER') {
               navigate("/user-profile");
-            } else {
-              navigate("/user-profile");
+      
             }
           } else {
             // Unsuccessful login - display an error message

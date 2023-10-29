@@ -24,7 +24,7 @@ public class AuthenticationController {
             return authenticationService.registerUser(body.getUsername(), body.getPassword(), body.getFirstName(), body.getLastName(), body.getEmailAddress(),   body.getRoleAuthority());
         }
 
-        @PostMapping("/register/dance-teacher")
+        @PostMapping("/register/danceTeacher")
         public GeneralUser registerDanceTeacher(@RequestBody DanceTeacherRegistrationDTO body) {
             return authenticationService.registerDanceTeacher(body.getUsername(), body.getPassword(), body.getFirstName(), body.getLastName(), body.getEmailAddress(),  body.getIstdMemberCode(),  body.getRoleAuthority());
         }
