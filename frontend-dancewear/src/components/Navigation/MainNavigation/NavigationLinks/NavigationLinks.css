@@ -1,31 +1,36 @@
-.nav-links {
+
+
+.navigation-links {
   list-style: none;
-  align-items: center;
+  padding: 0;
   display: flex;
-  margin: 0; 
-  padding: 0; 
+  justify-content: space-around;
+  background-color: #333;
+  color: #fff; 
 }
 
 .nav-links li {
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  margin-right: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #ffffff; 
-  font-size: 16px;
-  transition: color 0.3s ease;
-  padding: 10px; 
+  color: #fff;
+  padding: 10px 20px;
+  display: block;
+  transition: background-color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #3c3c3a; 
+  background-color: #555; 
 }
 
 .nav-links a.active {
-  color: #5b5953; 
-  font-weight: bold;
+  background-color: #007bff; 
+  border-bottom: 2px solid #0056b3;
+}
+
+.nav-links a.active {
+  padding: 10px 20px;
 }

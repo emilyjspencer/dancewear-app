@@ -10,8 +10,21 @@ const NavigationLinksDanceTeacher = () => {
   const CURRENT_USER_TYPE = AuthenticationService.getCurrentUser().user.authorities[0].authority
   return (
     <ul className="nav-links">
-      
-      
+    <li>
+        <NavLink to="/brands">Brands</NavLink>
+      </li>
+      <li>
+        <NavLink to="/sale">Clearance</NavLink>
+      </li>
+      <li>
+        <NavLink to="/products">Products</NavLink>
+      </li>
+      <li>
+        <NavLink to="/quiz">Quiz</NavLink>
+      </li>
+      <li>
+        <NavLink to="/blog">Blog</NavLink>
+      </li>
       <li>
         <NavLink to="/user-profile">My Account</NavLink>
       </li>
@@ -20,6 +33,9 @@ const NavigationLinksDanceTeacher = () => {
       </li>
       <li>
         <NavLink to="/contact-us">Contact Us</NavLink>
+      </li>
+      <li>
+        <NavLink to="/basket">Basket</NavLink>
       </li>
       <li>
         <NavLink to="/logout">Logout</NavLink>

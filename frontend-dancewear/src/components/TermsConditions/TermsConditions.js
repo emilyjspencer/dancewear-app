@@ -1,9 +1,10 @@
-
+import NavbarLogic from '../../utilities/navbarlogic';
 
 const TermsConditions = () => {
 
     return (
-        <h1>Terms & Conditions</h1>
+        <><NavbarLogic />
+        <h1>Terms & Conditions</h1></>
     )
 }
 

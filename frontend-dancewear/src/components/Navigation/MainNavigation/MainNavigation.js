@@ -13,33 +13,19 @@ import NavigationLinksUser from './NavigationLinks/NavigationLinksUser';
 const MainNavigation = () => {
 
 
- const currentUser = AuthenticationService.getCurrentUser();
+const currentUser = AuthenticationService.getCurrentUser();
 console.log(currentUser)
 
-if(!currentUser) {
-  return <NavigationLinks />
-}
 
-else if(
-  currentUser.user.authorities[0].authority === 'DANCE_TEACHER') {
-   return <NavigationLinksDanceTeacher />
-}
 
-else if(currentUser.user.authorities[0].authority === 'USER' ) {
-  return <NavigationLinksUser />
-}
 
-else if (currentUser.user.authorities[0].authority === 'ADMIN') {
-     return <NavigationLinksAdmin />
-} 
 
   return ( 
-      
-          <div className="container-fluid">
-  
-          
-              </div>
-         
+    
+      <>
+      <NavigationLinks />
+      </>
+        
             
     )
   

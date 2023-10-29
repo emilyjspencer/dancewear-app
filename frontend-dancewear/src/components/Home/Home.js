@@ -10,6 +10,7 @@ import React, { Component } from "react";
 import Login from "../../components/Authentication/Login/Login";
 import UserService from "../../services/UserService";
 import MainNavigation from "../Navigation/MainNavigation/MainNavigation";
+import NavbarLogic from "../../utilities/navbarlogic";
 
 export default class Home extends Component {
   constructor(props) {
@@ -41,17 +42,20 @@ export default class Home extends Component {
   render() {
     return (
       <>
-      <br />
-        <br/>
+    
+        
+
+       
         <br />
-        <br/>
-          <MainNavigation />
-        <Login />
         <Carousel />
        <Sites   />
        <Studios />
        <Training />
       <Reviews />
+      <br />
+      <br />
+      <br />
+      <br />
       <Contact />
       </>
     );

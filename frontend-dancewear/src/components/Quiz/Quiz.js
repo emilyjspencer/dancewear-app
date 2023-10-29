@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import NavbarLogic from '../../utilities/navbarlogic';
 import { QuizQuestionsAnswers } from "./QuizQuestionsAnswers";
 import "./Quiz.css";
 
@@ -96,7 +96,7 @@ class Quiz extends Component {
   };
 
   render() {
-    <h1>Dance Quiz</h1>;
+    <><NavbarLogic /><h1>Dance Quiz</h1></>;
     const { question, options, index, userAnswer, end } = this.state;
 
     if (end) {

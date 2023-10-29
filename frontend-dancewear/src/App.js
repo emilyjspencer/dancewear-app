@@ -37,9 +37,7 @@ import MyAccount from './components/MyAccount/MyAccount';
 import Basket from './components/Basket/Basket';
 import MainNavigation from './components/Navigation/MainNavigation/MainNavigation';
 import TestUserList from './components/Test/TestUserList';
-import CookieConsent from "react-cookie-consent";
 import Logout from './components/Logout/Logout';
-import Login from './components/Login/Login';
 import ChatBot from 'react-simple-chatbot';
 import Accessories from './components/Accessories/Accessories';
 import AuthenticationService from './services/AuthenticationService';
@@ -48,6 +46,8 @@ import UserProfile from '../src/components/UserProfile/UserProfile';
 import Registration from '../src/components/Authentication/Registration/Registration';
 import DanceTeacherList from '../src/components/DanceTeacher/DanceTeacherList.js';
 import UserList from '../src/components/User/UserList';
+import About from '../src/components/About/About';
+import Login from './components/Authentication/Login/Login';
 
 import { ThemeProvider } from 'styled-components';
 
@@ -82,9 +82,7 @@ const steps = [
         id: '4',
         options: [
              
-            // When we need to show a number of
-            // options to choose we create alist
-            // like this
+           
             { value: 1, label: 'View products' },
             { value: 2, label: 'Contact us' },
             { value: 3, label: 'Ask a question' },
@@ -157,7 +155,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
           <Route path="/basket/:id" element={<Basket />} />
           <Route path="/gymnastics" element={<Gymnastics />} />
-          <Route path ="/accessories" element={<Accessories />} />
+          <Route path="/accessories" element={<Accessories />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<EditDeleteProduct />} />
           <Route path="/products/add" element={<AddProduct />} />
@@ -180,13 +178,12 @@ const App = () => {
           <Route path="/test" element={<TestUserList/>} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/user-profile" element={<MyAccount />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Home />  } />
-        <Route path="/Registration" element={<Registration />} />
+        <Route path="/registration" element={<Registration />} />
         <Route path="/user-profile" element={<UserProfile />} />
         <Route path="/*" element={<Error />} />
-        <Route path="/logout" element={<Logout />} />
         <Route path="/dance-teachers" element={<DanceTeacherList />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
           </Routes>
           </Router>
       
@@ -199,7 +196,7 @@ const App = () => {
  
                 />
             </ThemeProvider>
-        <Footer />
+
           </>
   );
 }

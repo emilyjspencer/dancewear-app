@@ -1,8 +1,8 @@
 
-import MainNavigationAdmin from '../components/Navigation/MainNavigation/MainNavigationAdmin/MainNavigationAdmin';
+import MainNavigationAdmin from '../components/Navigation/MainNavigation/MainNavigationAdmin';
 import MainNavigation from '../components/Navigation/MainNavigation/MainNavigation';
-import MainNavigationDanceTeacher from '../Navigation/MainNavigation/MainNavigationDanceTeacher';
-import MainNavigationUser from '../Navigation/MainNavigation/MainNavigationUser';
+import MainNavigationDanceTeacher from '../components/Navigation/MainNavigation/MainNavigationDanceTeacher';
+import MainNavigationUser from '../components/Navigation/MainNavigation/MainNavigationUser';
 import AuthenticationService from "../services/AuthenticationService";
 
 const NavbarLogic = () => {
@@ -14,9 +14,9 @@ const NavbarLogic = () => {
 
     return (
         <>
-    {!currentUser && 
+   
         <MainNavigation />
-         } 
+         
 
 {currentUser && currentUser.user.authorities[0].authority === 'DANCE_TEACHER' && 
         <MainNavigationDanceTeacher />

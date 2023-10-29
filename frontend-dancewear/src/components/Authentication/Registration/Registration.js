@@ -9,7 +9,7 @@ const Registration = () => {
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
   const navigate = useNavigate();
 
-  // Validation errors state
+
   const [validationErrors, setValidationErrors] = useState({});
 
   // State and form handling code for dance teacher registration
@@ -23,7 +23,7 @@ const Registration = () => {
     roleAuthority: "DANCE_TEACHER",
   });
 
-  // State and form handling code for genral user/ non-dance teacher registration
+  // State and form handling code for general user/ non-dance teacher registration
   const [userFormData, setUserFormData] = useState({
     username: "",
     password: "",
@@ -37,6 +37,7 @@ const Registration = () => {
     setSelectedRole(role);
     setRegistrationSuccess(false);
     setValidationErrors({});
+    console.log('handleRoleSelect called')
   };
 
   const validateFormData = (formData) => {
@@ -46,14 +47,6 @@ const Registration = () => {
       if (!formData[key]) {
         errors[key] = "This field is required.";
       }
-    }
-
-    // Additional validation checks can be added here.
-    if (
-      formData.emailAddress &&
-      !/^[A-Za-z0-9._%+-]+@outlook\.com$/.test(formData.emailAddress)
-    ) {
-      errors.emailAddress = "Please use a valid outlook address.";
     }
 
     return errors;
@@ -103,9 +96,9 @@ const Registration = () => {
 
   return (
     <>
-      <div>
+     
         <MainNavigation />
-      </div>
+    
       <div className="registration-page">
         <h1>Choose Your Registration Type</h1>
         <div className="registration-buttons">
@@ -217,8 +210,7 @@ const Registration = () => {
                 )}
               </div>
               
-               
-             
+              
               <div className="form-group">
                 <label htmlFor="istdMembershipCode">ISTD Membership Code</label>
                 <input
