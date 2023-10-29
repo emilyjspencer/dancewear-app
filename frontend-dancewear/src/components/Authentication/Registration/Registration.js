@@ -98,7 +98,7 @@ const Registration = () => {
   return (
     <>
      
-        <MainNavigation />
+      
     
       <div className="registration-page">
         <h1>Choose Your Registration Type</h1>
@@ -216,12 +216,12 @@ const Registration = () => {
                 <label htmlFor="istdMembershipCode">ISTD Membership Code</label>
                 <input
                   type="text"
-                  name="status"
-                  value={danceTeacherFormData.status}
+                  name="istdMembershipCode"
+                  value={danceTeacherFormData.istdMembershipCode}
                   onChange={(e) =>
                     setDanceTeacherFormData({
                       ...danceTeacherFormData,
-                      status: e.target.value,
+                      istdMembershipCode: e.target.value,
                     })
                   }
                 />
@@ -342,7 +342,7 @@ const Registration = () => {
           )}
           {registrationSuccess && (
             <div className="success-message">
-              User successfully registered. <a href="/">Go to Login page</a>
+              User successfully registered. <a href="/login">Go to Login page</a>
             </div>
           )}
         </div>

@@ -18,6 +18,7 @@
  
    logout() {
      localStorage.removeItem("user");
+     console.log("removing user from the local storage")
    }
  
    getCurrentUser = () => {

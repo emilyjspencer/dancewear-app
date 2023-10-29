@@ -42,13 +42,12 @@ import ChatBot from 'react-simple-chatbot';
 import Accessories from './components/Accessories/Accessories';
 import AuthenticationService from './services/AuthenticationService';
 import Error from '../src/components/Error/Error';
-import UserProfile from '../src/components/UserProfile/UserProfile';
 import Registration from '../src/components/Authentication/Registration/Registration';
 import DanceTeacherList from '../src/components/DanceTeacher/DanceTeacherList.js';
 import UserList from '../src/components/User/UserList';
 import About from '../src/components/About/About';
 import Login from './components/Authentication/Login/Login';
-
+import UserProfile from './components/UserProfile/UserProfile';
 import { ThemeProvider } from 'styled-components';
 
  
@@ -178,13 +177,12 @@ const App = () => {
           <Route path="/checkout" element={<Basket />} />
           <Route path="/test" element={<TestUserList/>} />
           <Route path="/logout" element={<Logout />} />
-          <Route path="/user-profile" element={<MyAccount />} />
         <Route path="/registration" element={<Registration />} />
-        <Route path="/user-profile" element={<UserProfile />} />
         <Route path="/*" element={<Error />} />
         <Route path="/dance-teachers" element={<DanceTeacherList />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/user-profile" element={<UserProfile />} />
           </Routes>
           </Router>
       

@@ -1,0 +1,35 @@
+.navigation-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    color: #fff; 
+  }
+  
+  .nav-links li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    background-color: #555; 
+  }
+  
+  .nav-links a.active {
+    background-color: #007bff; 
+    border-bottom: 2px solid #0056b3;
+  }
+  
+  .nav-links a.active {
+    padding: 10px 20px;
+  }
+  

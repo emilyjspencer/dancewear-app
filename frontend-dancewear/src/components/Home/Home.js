@@ -7,10 +7,9 @@ import Training from "../Training/Training";
 import "./Home.css";
 import React, { Component } from "react";
 
-import Login from "../../components/Authentication/Login/Login";
+
 import UserService from "../../services/UserService";
-import MainNavigation from "../Navigation/MainNavigation/MainNavigation";
-import NavbarLogic from "../../utilities/navbarlogic";
+
 
 export default class Home extends Component {
   constructor(props) {

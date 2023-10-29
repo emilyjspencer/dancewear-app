@@ -6,6 +6,7 @@ import MainNavigationAdmin from '../Navigation/MainNavigation/MainNavigationAdmi
 import MainNavigationDanceTeacher from '../Navigation/MainNavigation/MainNavigationDanceTeacher';
 import MainNavigationUser from '../Navigation/MainNavigation/MainNavigationUser';
 
+import MainNavigation from "../Navigation/MainNavigation/MainNavigation";
 
 class UserProfile extends Component {
 
@@ -29,34 +30,36 @@ class UserProfile extends Component {
     this.setState({ currentUser: currentUser, userReady: true })
 
   }
-        
-    render() {
-      if (this.state.redirect) {
-        return <Navigate to={this.state.redirect} />
-      } 
+    
+  render() {
+    if (this.state.redirect) {
+      return <Navigate to={this.state.redirect} />
+    } 
 
-      const currentUser = AuthenticationService.getCurrentUser();
-  
-      console.log(currentUser)
+    const currentUser = AuthenticationService.getCurrentUser();
 
-      return (
-        <>
-       
-       
-       {currentUser.user.authorities[0].authority === 'DANCE_TEACHER' && 
-        <MainNavigationDanceTeacher />
-      }
+    console.log(currentUser)
 
-      {currentUser.user.authorities[0].authority === 'USER' &&
-      <MainNavigationUser />
-      }
+    return (
+      <>
+     
+     {!currentUser &&
+     <MainNavigation />}
+     
+     {currentUser.user.authorities[0].authority === 'DANCE_TEACHER' && 
+      <MainNavigationDanceTeacher />
+    }
 
-      {currentUser.user.authorities[0].authority === 'ADMIN' && 
-      <MainNavigationAdmin />
-      }
+    {currentUser.user.authorities[0].authority === 'USER' &&
+    <MainNavigationUser/>
+    }
 
-  
-        <div className="">
+    {currentUser.user.authorities[0].authority === 'ADMIN' && 
+    <MainNavigationAdmin />
+    }
+
+
+<div className="">
           {(this.state.userReady) ?
             <div>
               <header className="">
@@ -85,7 +88,18 @@ class UserProfile extends Component {
                 {currentUser.email}
                 {currentUser.user.emailAddress}
               </p>
-             
+              <p>
+                <strong>Location:</strong>{" "}
+                {currentUser.user.location}
+              </p>
+              <p>
+                <strong>Recruitment type:</strong>{" "}
+                {currentUser.user.recruitmentType}
+              </p>
+              <p>
+                <strong>Status:</strong>{" "}
+                {currentUser.user.status}
+              </p>
               <strong>User type:   </strong>
 
               {currentUser.user.authorities[0].authority}
@@ -95,5 +109,12 @@ class UserProfile extends Component {
             </div>
 
     </> )
-    }}
-       export default UserProfile;
+    
+  
+    }
+    
+    }
+       
+    
+  export default UserProfile;
+ 
