@@ -435,12 +435,6 @@ I can add new brands which customers can filte products by
 * Need to add TravisCI
 
 
-# Testing
-
-* units tests for Java code - testing controllers, services. JUnit
-* tests for React code - Jest
-* e2e tests - Cypress
-
 
 
 # Authentication
@@ -509,11 +503,6 @@ Once the SecurityconextHolder has been updated, it will dispatch the request to 
 Return the JWT token and HTTP request with a successful status of 200.
 
 
-# AuthenticationProvider
-
-This processes the authentication request and returns an object - authenticated - with all credentials
-
-DaoAuthenticationProvider is the most common implementatino in Spring - gets user details fomr a DAO - UserDetailsService which has access ONKY to the username in order to retrieve the full user entity
 
 
  # PasswordEncoder
@@ -532,9 +521,9 @@ DaoAuthenticationProvider is the most common implementatino in Spring - gets use
 
 I will have 
 
-* User
-* User (dance teacher)
-* Admin
+* USER
+* DANCE_TEACHER (dance teacher)
+* ADMIN
 
 In a portal project I'm working on - will have roles such as accountmanager, consultant admin etc
 
@@ -587,3 +576,25 @@ Common approach in React, not so much in Angular - where content projection tend
 
 At present, when adding and editing reviews and blog posts - we are selecting a user and a date. 
 Once authentication is implemented - the application will know who is logged in and the author information and publishing time will be read from that.
+
+
+# Testing 
+
+### Java testing
+
+Will use JUnit to write unit tests the Java code
+
+### React testing
+
+Will use the React Testing Library and Jest.
+React Testing library provides a virtual FOM for the tests. 
+Jest is the test runner - used to find, run the tests, determines whether the test pass or fail.
+Enzyme will not be use since this project uses React v 18 and Enzyme is not compatible with React v 18
+
+Unit tests will be written for the more complex methods, and methods defined in the services etc
+
+Functional tests will be written for most of the React code.
+
+### E2E tests
+
+Cypress will be used
