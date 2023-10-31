@@ -525,7 +525,7 @@ I will have
 * DANCE_TEACHER (dance teacher)
 * ADMIN
 
-In a portal project I'm working on - will have roles such as accountmanager, consultant admin etc
+
 
 # Authorization and roles
 
@@ -582,19 +582,32 @@ Once authentication is implemented - the application will know who is logged in 
 
 ### Java testing
 
-Will use JUnit to write unit tests the Java code
+Will use JUnit to unit test the Java code
 
 ### React testing
 
 Will use the React Testing Library and Jest.
-React Testing library provides a virtual FOM for the tests. 
-Jest is the test runner - used to find, run the tests, determines whether the test pass or fail.
-Enzyme will not be use since this project uses React v 18 and Enzyme is not compatible with React v 18
+React Testing library provides a virtual DOM for the tests. 
+Jest is the test runner - used to find, run the tests, determines whether the tests pass or fail.
+Enzyme will not be used since this project uses React v 18 and Enzyme is not compatible with React v 18
 
 Unit tests will be written for the more complex methods, and methods defined in the services etc
 
 Functional tests will be written for most of the React code.
 
+MockServiceWorker will simulate mock server responses
+
 ### E2E tests
 
 Cypress will be used
+
+# Linting and formatting
+
+* ESLint and Prettier
+* Requires configuring ESLint for React Testing Library and Jest-Dom 
+* Requires configuring ESLint in Visual Studio Code
+
+# Accessibility
+
+# Conversion of js files to .jsx files
+
