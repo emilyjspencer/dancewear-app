@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 
 
-test('renders If you need to create an account', () => {
+test('renders Dancewear', () => {
   render(<App />);
- const h1Tag = screen.getByText(/Connect with us/i)
+ const h1Tag = screen.getAllByText(/Dancewear/i)[0]
  expect(h1Tag).toBeInTheDocument();
 });

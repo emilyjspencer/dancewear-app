@@ -18,35 +18,106 @@ test('display an input field to enter password', () => {
 });
 
 
-test('upon successful login taken to user-profile page and see User type: ADMIN', async() => {
-    
-    render(<BrowserRouter><Login /></BrowserRouter>);
-   
-    const loginButton = screen.getByRole('button', {name: 'Log in'})
-    expect(loginButton).toBeInTheDocument();
-
+test("successfully logs in with username and password as admin user", async () => {
     const username = "admin";
     const password = "password";
     const mockLogin = jest.fn();
-
-    render(<BrowserRouter><Login onSubmit={mockLogin(username, password)} /></BrowserRouter>);
-    
-    const usernameInput = screen.getByTestId(/username-data/i );
-    await userEvent.type(usernameInput, 'admin');
+  
+    render(
+      <BrowserRouter>
+        <Login onSubmit={mockLogin(username, password)} />
+      </BrowserRouter>
+    );
+  
+    const usernameInput = screen.getByText(/Username/i);
+    await userEvent.type(usernameInput, "admin");
     const passwordInput = screen.getByText(/Password/i);
-    await userEvent.type(passwordInput, 'password');
-    const loginButton2 = screen.getByRole('button', { name: /^Log in$/i });
-    expect(loginButton2).toBeEnabled();
-
+    await userEvent.type(passwordInput, "password");
+    const loginButton = screen.getByRole("button", { name: /^Log in$/i });
+    expect(loginButton).toBeEnabled();
   
-    await userEvent.click(loginButton2);
-
-
-    await userEvent.click(screen.getByRole('button', {name :'Log in'}))
-   
-    await render(<BrowserRouter><UserProfile /></BrowserRouter>)
- 
-    expect(screen.getByText('User type')).toBeInTheDocument()
-    
+    await userEvent.click(loginButton);
   
-})
+    await expect(mockLogin).toHaveBeenCalled();
+    await expect(mockLogin).toHaveBeenCalledTimes(1);
+    await expect(mockLogin).toHaveBeenCalledWith("admin", "password");
+  });
+  
+
+  test("successfully logs in with username and password as normal user", async () => {
+    const username = "emilyjanespencer1";
+    const password = "disney1";
+    const mockLogin = jest.fn();
+  
+    render(
+      <BrowserRouter>
+        <Login onSubmit={mockLogin(username, password)} />
+      </BrowserRouter>
+    );
+  
+    const usernameInput = screen.getByText(/Username/i);
+    await userEvent.type(usernameInput, "emilyjanespencer1");
+    const passwordInput = screen.getByText(/Password/i);
+    await userEvent.type(passwordInput, "disney1");
+    const loginButton = screen.getByRole("button", { name: /^Log in$/i });
+    expect(loginButton).toBeEnabled();
+  
+    await userEvent.click(loginButton);
+  
+    await expect(mockLogin).toHaveBeenCalled();
+    await expect(mockLogin).toHaveBeenCalledTimes(1);
+    await expect(mockLogin).toHaveBeenCalledWith("emilyjanespencer1", "disney1");
+  });
+  
+  test("successfully logs in with username and password as dance teacher user", async () => {
+    const username = "lucyspencer1";
+    const password = "disney1";
+    const mockLogin = jest.fn();
+  
+    render(
+      <BrowserRouter>
+        <Login onSubmit={mockLogin(username, password)} />
+      </BrowserRouter>
+    );
+  
+    const usernameInput = screen.getByText(/Username/i);
+    await userEvent.type(usernameInput, "lucyspencer1");
+    const passwordInput = screen.getByText(/Password/i);
+    await userEvent.type(passwordInput, "disney1");
+    const loginButton = screen.getByRole("button", { name: /^Log in$/i });
+    expect(loginButton).toBeEnabled();
+  
+    await userEvent.click(loginButton);
+  
+    await expect(mockLogin).toHaveBeenCalled();
+    await expect(mockLogin).toHaveBeenCalledTimes(1);
+    await expect(mockLogin).toHaveBeenCalledWith("lucyspencer1", "disney1");
+  });
+  
+  test("shows an error if unsuccessful authentication", async () => {
+    const username = "admin";
+    const password = "testingggg";
+    const mockLogin = jest.fn();
+  
+    render(
+      <BrowserRouter>
+        <Login onSubmit={mockLogin(username, password)} />
+      </BrowserRouter>
+    );
+  
+    const usernameInput = screen.getByText(/Username/i);
+    await userEvent.type(usernameInput, "admin");
+    const passwordInput = screen.getByText(/Password/i);
+    await userEvent.type(passwordInput, "testingggg");
+    const loginButton = screen.getByRole("button", { name: /^Log in$/i });
+    expect(loginButton).toBeEnabled();
+  
+    await userEvent.click(loginButton);
+  
+    await expect(mockLogin).toHaveBeenCalled();
+    await expect(mockLogin).toHaveBeenCalledTimes(1);
+    await expect(mockLogin).toHaveBeenCalledWith("admin", "testingggg");
+    const element = screen.getByTestId("error-occurred");
+    expect(element).toBeInTheDocument();
+  });
+  

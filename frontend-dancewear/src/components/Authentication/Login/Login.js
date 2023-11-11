@@ -41,7 +41,7 @@ const Login = () => {
             console.log(currentUser);
             let roleAuthority = currentUser.authorities[0].authority;
          
-            if (!roleAuthority === null ) {
+            if (roleAuthority === 'ADMIN' || roleAuthority === 'DANCE_TEACHER' || roleAuthority === 'DANCE_TEACHER' ) {
               navigate("/user-profile");
             } else {
               navigate("/user-profile")
@@ -90,7 +90,7 @@ const Login = () => {
               Log in
             </button>
           </div>
-          {error && <p className="error-message">{error}</p>}
+          {error && <p data-testid="error-occurred" className="error-message">{error}</p>}
         </div>
         <p>
           If you need to create an account,{" "}
