@@ -127,7 +127,7 @@ const Registration = () => {
                 />
                 {validationErrors.username && (
                   <div className="validation-message">
-                    {validationErrors.username}
+                    {`Username: ${validationErrors.username}`}
                   </div>
                 )}
               </div>
@@ -146,7 +146,7 @@ const Registration = () => {
                 />
                 {validationErrors.password && (
                   <div className="validation-message">
-                    {validationErrors.password}
+                    {`Password: ${validationErrors.password}`}
                   </div>
                 )}
               </div>
@@ -165,7 +165,7 @@ const Registration = () => {
                 />
                 {validationErrors.firstName && (
                   <div className="validation-message">
-                    {validationErrors.firstName}
+                    {`First Name: ${validationErrors.firstName}`}
                   </div>
                 )}
               </div>
@@ -184,7 +184,7 @@ const Registration = () => {
                 />
                 {validationErrors.lastName && (
                   <div className="validation-message">
-                    {validationErrors.lastName}
+                    {`Last Name: ${validationErrors.lastName}`}
                   </div>
                 )}
               </div>
@@ -203,7 +203,7 @@ const Registration = () => {
                 />
                 {validationErrors.emailAddress && (
                   <div className="validation-message">
-                    {validationErrors.emailAddress}
+                    {`Email: ${validationErrors.emailAddress}`}
                   </div>
                 )}
               </div>
@@ -224,7 +224,7 @@ const Registration = () => {
                 />
                 {validationErrors.status && (
                   <div className="validation-message">
-                    {validationErrors.status}
+                    {`IstdMemberCode: ${validationErrors.status}`}
                   </div>
                 )}
               </div>
@@ -252,7 +252,7 @@ const Registration = () => {
                   />
                   {validationErrors.username && (
                     <div className="validation-message">
-                      {validationErrors.username}
+                      {`Username: ${validationErrors.username}`}
                     </div>
                   )}
                 </div>
@@ -271,7 +271,7 @@ const Registration = () => {
                   />
                   {validationErrors.password && (
                     <div className="validation-message">
-                      {validationErrors.password}
+                      {`Password: ${validationErrors.password}`}
                     </div>
                   )}
                 </div>
@@ -290,7 +290,7 @@ const Registration = () => {
                   />
                   {validationErrors.firstName && (
                     <div className="validation-message">
-                      {validationErrors.firstName}
+                      {`First Name: ${validationErrors.firstName}`}
                     </div>
                   )}
                 </div>
@@ -309,7 +309,7 @@ const Registration = () => {
                   />
                   {validationErrors.lastName && (
                     <div className="validation-message">
-                      {validationErrors.lastName}
+                      {`Last Name: ${validationErrors.lastName}`}
                     </div>
                   )}
                 </div>
@@ -328,12 +328,12 @@ const Registration = () => {
                   />
                   {validationErrors.emailAddress && (
                     <div className="validation-message">
-                      {validationErrors.emailAddress}
+                      {`Email: ${validationErrors.emailAddress}`}
                     </div>
                   )}
                 </div>
                 
-                <button type="submit">Register as a User</button>
+                <button data-testid="register-user-button" type="submit">Register as a User</button>
             </form>
             </div>
           )}
