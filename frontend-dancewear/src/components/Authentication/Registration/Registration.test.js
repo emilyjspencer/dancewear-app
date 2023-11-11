@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import Registration from "./Registration";
 import { BrowserRouter } from "react-router-dom";
 import { userEvent } from "@testing-library/user-event";
@@ -193,7 +193,7 @@ test("throws an error message if a field is blank when registering dance teacher
   expect(registrationButton).toBeEnabled();
 
   await userEvent.click(registrationButton);
-  const error = screen.getByText("This field is required.");
+  const error = screen.getByText(/This field is required/i);
   await expect(error).toBeInTheDocument();
 });
 
@@ -225,9 +225,11 @@ test("throws an error message if a field is blank when registering normal user",
 
   await userEvent.click(registrationButton);
 
+  await waitFor(() => {
   expect(
-    screen.getByText('Email:')
-  ).toBeInTheDocument();
+    screen.getByText('Email: This field')
+  ).not.toBeNull();
+  })
 });
 
 
