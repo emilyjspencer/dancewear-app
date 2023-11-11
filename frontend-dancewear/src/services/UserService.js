@@ -1,6 +1,6 @@
 import axios from "axios";
 import authHeader from '../utilities/auth-headers';
-
+import MockAdapter from 'axios-mock-adapter';
 class UserService {
 
   getPublicContent() {
