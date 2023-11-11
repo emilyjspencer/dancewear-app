@@ -2,6 +2,7 @@ import { useState, useEffect} from 'react';
 import './Gymnastics.css';
 import Cards from '../Cards/Cards';
 import Filter from '../Filter/Filter';
+import NavbarLogic from '../../utilities/navbarlogic';
 
 const GymnasticsPage = () => {
 const [gymnastics, setGymnastics] = useState([])
@@ -22,7 +23,7 @@ useEffect(() => {
 
 return (
   <>
-    <Filter />
+<NavbarLogic />
     <div className="">
       {gymnastics.length > 0 && (
         

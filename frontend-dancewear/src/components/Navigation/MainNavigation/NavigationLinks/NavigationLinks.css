@@ -1,12 +1,18 @@
 
+#userType {
+  vertical-align: baseline;
+  padding-top: 10px;
+  padding-right: 10px;
+}
 
-.navigation-links {
+
+.nav-links {
   list-style: none;
   padding: 0;
   display: flex;
   justify-content: space-around;
-  background-color: #333;
-  color: #fff; 
+  background-color: #333; /* Background color for the navigation bar */
+  color: #fff; /* Text color for the links */
 }
 
 .nav-links li {
@@ -23,14 +29,16 @@
 }
 
 .nav-links a:hover {
-  background-color: #555; 
+  background-color: #555; /* Background color for links on hover */
 }
 
+/* Style for the active link */
 .nav-links a.active {
-  background-color: #007bff; 
-  border-bottom: 2px solid #0056b3;
+  background-color: #007bff; /* Background color for the active link */
+  border-bottom: 2px solid #0056b3; /* Add an underline to the active link */
 }
 
+/* Optional: Add some spacing around the active link text */
 .nav-links a.active {
   padding: 10px 20px;
 }

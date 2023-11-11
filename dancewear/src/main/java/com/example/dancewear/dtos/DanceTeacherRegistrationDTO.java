@@ -13,7 +13,7 @@ public class DanceTeacherRegistrationDTO {
     private String firstName;
     private String lastName;
     private String emailAddress;
-    private String istdMemberCode;
+    private String memberCode;
     private String roleAuthority;
 
 

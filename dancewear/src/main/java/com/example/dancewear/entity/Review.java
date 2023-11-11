@@ -24,7 +24,7 @@ public class Review {
 
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "author_id")
-    private User user;
+    private GeneralUser user;
 
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "product_id")
@@ -54,9 +54,9 @@ public class Review {
     public void setPosted_date(Date posted_date) { this.posted_date = posted_date; }
 
 
-    public User getUser() { return user;  }
+    public GeneralUser getUser() { return user;  }
 
-    public void setUser(User user) {  this.user = user;}
+    public void setUser(GeneralUser user) {  this.user = user;}
 
 
     public Product getProduct() { return product; }

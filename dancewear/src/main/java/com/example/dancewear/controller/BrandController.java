@@ -1,11 +1,8 @@
 package com.example.dancewear.controller;
 
 import com.example.dancewear.entity.Brand;
-import com.example.dancewear.entity.Review;
-import com.example.dancewear.entity.User;
 import com.example.dancewear.exceptions.*;
 import com.example.dancewear.service.BrandService;
-import com.example.dancewear.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

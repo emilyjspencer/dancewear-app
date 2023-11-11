@@ -2,25 +2,8 @@ DROP SCHEMA IF EXISTS dancewear;
 CREATE SCHEMA IF NOT EXISTS dancewear;
 USE dancewear;
 
-CREATE TABLE User (
-	user_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-	first_name varchar(30) NOT NULL,
-	last_name varchar(30) NOT NULL,
-    email varchar(40) NOT NULL,
-    phone_number BIGINT NOT NULL,
-    user_password varchar(50) NOT NULL,
-    address varchar(100) NOT NULL,
-    account_number BIGINT NOT NULL
-);
 
-INSERT INTO User (first_name, last_name, email, phone_number, user_password, address, account_number) VALUES ('James', 'Smith', 'james@email.com', 8327382372, 'password' ,'1 Cherry Tree Lane', 545435);
-INSERT INTO User (first_name, last_name, email, phone_number, user_password, address, account_number) VALUES ('Sally', 'Green', 'sally@email.com', 4898493, 'password', '2 Cherry Tree Lane', 5435435);
-INSERT INTO User (first_name, last_name, email, phone_number, user_password, address, account_number) VALUES ('Laura', 'Thompson', 'laura@email.com', 58395839, 'password', '3 Cherry Tree Lane', 7574457);
-INSERT INTO User (first_name, last_name, email, phone_number, user_password, address, account_number) VALUES ('Matthew', 'Edwards', 'matt@email.com', 7434834, 'password', '4 Cherry Tree Lane', 8746474);
-INSERT INTO User (first_name, last_name, email, phone_number, user_password, address, account_number) VALUES ('Jonny', 'Jones', 'jonny@email.com', 2783734, 'password', '5 Cherry Tree Lane', 75925832);
-INSERT INTO User (first_name, last_name, email, phone_number, user_password, address, account_number) VALUES ('Imelda', 'Staunton', 'imelda@email.com', 18374742, 'password', '6 Cherry Tree Lane', 232424);
-INSERT INTO User (first_name, last_name, email, phone_number, user_password, address, account_number) VALUES ('Sandra', 'Bullock', 'sandra@email.com', 7493853984, 'password', '7 Cherry Tree Lane', 1232535);
-INSERT INTO User (first_name, last_name, email, phone_number, user_password, address, account_number) VALUES ('Ryan', 'Reynolds', 'ryan@email.com', 73875837, 'password', '8 Cherry Tree Lane', 454646);
+
 
 CREATE TABLE Brand (
 	brand_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,

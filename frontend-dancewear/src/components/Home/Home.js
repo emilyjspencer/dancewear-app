@@ -9,6 +9,7 @@ import React, { Component } from "react";
 
 
 import UserService from "../../services/UserService";
+import MainNavigation from "../Navigation/MainNavigation/MainNavigation";
 
 
 export default class Home extends Component {
@@ -41,14 +42,13 @@ export default class Home extends Component {
   render() {
     return (
       <>
+      <MainNavigation />
         <Carousel />
         <Sites />
         <Studios />
         <Training />
         <Reviews />
-        <br />
-        <br />
-        <Contact />
+   
       </>
     );
   }

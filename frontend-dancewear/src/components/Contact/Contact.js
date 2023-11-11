@@ -1,6 +1,7 @@
 
 
 import React from 'react';
+import NavbarLogic from '../../utilities/navbarlogic';
 
 
 
@@ -9,6 +10,7 @@ const Contact = () => {
 
     return (
         <>
+        <NavbarLogic />
        <h1>Connect with Us</h1>
       
     

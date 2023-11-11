@@ -3,6 +3,7 @@ import { useState, useEffect} from 'react';
 import './Costumes.css';
 import Cards from '../Cards/Cards';
 import Filter from '../Filter/Filter';
+import NavbarLogic from '../../utilities/navbarlogic';
 
 const CostumesPage = () => {
 const [costumes, setCostumes] = useState([])
@@ -23,7 +24,7 @@ useEffect(() => {
 
 return (
   <>
-     <Filter />
+    <NavbarLogic />
     <div className="">
       {costumes.length > 0 && (
         
@@ -48,4 +49,4 @@ return (
     </div>
     </>)}
 
-export default CostumePage;
+export default CostumesPage;

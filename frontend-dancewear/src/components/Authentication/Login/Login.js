@@ -13,12 +13,6 @@ const Login = () => {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
 
-  let initialState = {
-    username: "",
-    password: "",
-    loading: false,
-    message: "",
-  };
 
   const onChangeUsername = (e) => {
     setUserName(e.target.value);
@@ -46,13 +40,14 @@ const Login = () => {
             let currentUser = response.user;
             console.log(currentUser);
             let roleAuthority = currentUser.authorities[0].authority;
-            console.log(roleAuthority);
-            if (roleAuthority === "USER" || roleAuthority === 'ADMIN' || roleAuthority === 'DANCE_TEACHER') {
+         
+            if (!roleAuthority === null ) {
               navigate("/user-profile");
-      
+            } else {
+              navigate("/user-profile")
+            
             }
-          } else {
-            // Unsuccessful login - display an error message
+        }else {
             setError("Invalid username or password.");
           }
         })

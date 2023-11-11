@@ -44,35 +44,43 @@ public class AuthenticationService {
 
 
     public GeneralUser registerUser(String username, String password, String firstName, String lastName, String emailAddress,  String roleAuthority) {
-        // Encode the password
+        try {
+            // Encode the password
+
         String encodedPassword = passwordEncoder.encode(password);
 
         // Find the role by authority
-        UserRole consultantRole = roleRepository.findByAuthority(roleAuthority)
+        UserRole nonDanceTeacherRole = roleRepository.findByAuthority(roleAuthority)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid role specified: " + roleAuthority));
 
 
         Set<UserRole> authorities = new HashSet<>();
-        authorities.add(consultantRole);
-
+        authorities.add(nonDanceTeacherRole);
 
         GeneralUser user = new GeneralUser();
         user.setUsername(username);
         user.setPassword(encodedPassword);
         user.setAuthorities(authorities);
 
-
+        // attributes for general non dance teacher user
         user.setFirstName(firstName);
         user.setLastName(lastName);
         user.setEmailAddress(emailAddress);
 
 
-
-        return userRepository.save(user);
+       GeneralUser registeredUser = userRepository.save(user);
+        // Log the successful registration
+        logger.info("Consultant registered: {}", username);
+        return registeredUser;
+    } catch (Exception e) {
+        // Log the error if registration fails
+        logger.error("Consultant registration failed for user: " + username, e);
+            throw e;
+        }
     }
 
-    public GeneralUser registerDanceTeacher(String username, String password, String firstName, String lastName, String emailAddress, String istdMembershipCode, String roleAuthority) {
-
+    public GeneralUser registerDanceTeacher(String username, String password, String firstName, String lastName, String emailAddress, String memberCode, String roleAuthority) {
+  try {
         String encodedPassword = passwordEncoder.encode(password);
 
         UserRole danceTeacherRole = roleRepository.findByAuthority(roleAuthority)
@@ -92,12 +100,17 @@ public class AuthenticationService {
         danceTeacher.setFirstName(firstName);
         danceTeacher.setLastName(lastName);
         danceTeacher.setEmailAddress(emailAddress);
-        danceTeacher.setIstdMembershipCode(istdMembershipCode);
+        danceTeacher.setMemberCode(memberCode);
 
+        GeneralUser registeredUser = userRepository.save(danceTeacher);
+      // Log the successful registration
 
-
-
-        return userRepository.save(danceTeacher);
+      return registeredUser;
+  } catch (Exception e) {
+      // Log the error if registration fails
+      logger.error("dance teacher registration failed for user: " + username, e);
+      throw e; // Re-throw the exception to signal a registration failure
+  }
     }
 
 

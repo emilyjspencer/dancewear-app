@@ -1,0 +1,31 @@
+.container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #121825; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100px;
+    width: 100%; 
+  } 
+  
+  .navbar-brand {
+    display: flex;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .linksContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;  
+  }
+  
+  #logo-image {
+    height: 80px; 
+    width: auto; 
+    margin-right: 10px; 
+    align-items: left;
+    justify-content: left;
+  }

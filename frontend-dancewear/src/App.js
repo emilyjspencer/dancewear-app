@@ -140,7 +140,7 @@ const App = () => {
     <>
 
      <Router>
-     <MainNavigation brand =" " />
+  
      <Routes>
      <Route path="/" element={<Home />} />
      <Route path="/reviews" element={<Reviews />} />

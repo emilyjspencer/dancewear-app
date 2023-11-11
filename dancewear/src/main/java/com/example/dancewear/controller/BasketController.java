@@ -1,9 +1,7 @@
 package com.example.dancewear.controller;
 
 import com.example.dancewear.entity.Basket;
-import com.example.dancewear.entity.User;
 import com.example.dancewear.service.BasketService;
-import com.example.dancewear.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

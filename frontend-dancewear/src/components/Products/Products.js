@@ -5,6 +5,7 @@ import ProductsService from './ProductsService';
 import { Link } from "react-router-dom";
 import Cards from '../Cards/Cards';
 import Modal from 'react-modal';
+import NavbarLogic from '../../utilities/navbarlogic';
 
 
 const modalStyles = {
@@ -88,6 +89,7 @@ const Products = () => {
 
     <><><>
       <div class="about">
+        <NavbarLogic />
         <h4>Our products</h4>
         <p className="info">Starbound provides you with an exceptional range of dancewear to prepare you for class, studio and stage stardom! From dance underwear essentials to beautiful fashion leotards from industry leading brands including Bloch,
           Capezio, 1st Position, and more - find the dancewear look that works for you! Take a look at our dance fitness collection - perfect for keeping fit in the studio or from home! Shopping for little ones? Our dancewear comes in a range of colours and

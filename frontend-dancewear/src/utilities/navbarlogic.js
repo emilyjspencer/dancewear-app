@@ -18,17 +18,17 @@ const NavbarLogic = () => {
         <MainNavigation />
          } 
 
-{currentUser && currentUser.user.authorities[0].authority === 'DANCE_TEACHER' && 
+{currentUser && currentUser.user.authorities[0].authority === 'DANCE_TEACHER'  && (
         <MainNavigationDanceTeacher />
-      }
+      )}
 
-      {currentUser && currentUser.user.authorities[0].authority === 'USER' &&
+      {currentUser && currentUser.user.authorities[0].authority === 'USER' && (
       <MainNavigationUser />
-      }
+      )}
 
-      {currentUser && currentUser.user.authorities[0].authority === 'ADMIN' && 
+      {currentUser && currentUser.user.authorities[0].authority === 'ADMIN' && (
       <MainNavigationAdmin />
-      }
+      )}
     
     </>
     )

@@ -2,6 +2,7 @@ import { useState, useEffect} from 'react';
 import './Danceshoes.css';
 import Cards from '../Cards/Cards';
 import Filter from '../Filter/Filter';
+import NavbarLogic from '../../utilities/navbarlogic';
 
 const DanceShoesPage = () => {
 const [danceshoes, setDanceShoes] = useState([])
@@ -22,7 +23,7 @@ useEffect(() => {
 
 return (
   <>
-    <Filter />
+    <NavbarLogic />
     <div className="">
       {danceshoes.length > 0 && (
         

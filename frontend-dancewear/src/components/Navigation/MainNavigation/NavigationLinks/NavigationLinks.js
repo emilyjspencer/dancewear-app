@@ -1,14 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavigationLinks.css';
-import Dropdown from '../../../Dropdown/Dropdown';
+
 
 const NavigationLinks = () => {
 
 
   return (
 
-    <><ul className="navigation-links">
+    <><ul className="nav-links">
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
@@ -33,9 +33,7 @@ const NavigationLinks = () => {
       <li>
         <NavLink to="/login">Login</NavLink>
       </li>
-      <li>
-        <Dropdown />
-      </li>
+    
     </ul></>
   )
 

@@ -5,6 +5,7 @@ import './Blog.css';
 import { Link } from 'react-router-dom';
 import BlogPostCard from '../BlogPostCard/BlogPostCard';
 import BlogService from './BlogService';
+import NavbarLogic from '../../utilities/navbarlogic';
 
 const Blog = () => {
   const [posts, setPosts] = useState([])

@@ -1,8 +1,9 @@
+import NavbarLogic from "../../utilities/navbarlogic";
 
 const Returns = () => {
 
     return (
-        <h1>Returns Policy</h1>
+        <><NavbarLogic /><h1>Returns Policy</h1></>
     )
 }
 

@@ -1,14 +1,13 @@
-import React, { Component } from "react";
-import { Navigate } from "react-router-dom";
+import React, { Component } from 'react';
+import { Navigate } from 'react-router-dom';
 import AuthenticationService from '../../services/AuthenticationService';
 
 import MainNavigationAdmin from '../Navigation/MainNavigation/MainNavigationAdmin';
 import MainNavigationDanceTeacher from '../Navigation/MainNavigation/MainNavigationDanceTeacher';
 import MainNavigationUser from '../Navigation/MainNavigation/MainNavigationUser';
 
-import MainNavigation from "../Navigation/MainNavigation/MainNavigation";
 
-class UserProfile extends Component {
+export default class UserProfile extends Component {
 
 
   constructor(props) {
@@ -17,7 +16,7 @@ class UserProfile extends Component {
     this.state = {
       redirect: null,
       userReady: false,
-      currentUser: { username: "" }
+      currentUser: {  }
     };
   }
 
@@ -26,7 +25,7 @@ class UserProfile extends Component {
     const currentUser = AuthenticationService.getCurrentUser();
     console.log(currentUser)
 
-    if (!currentUser) this.setState({ redirect: "/home" });
+   if (!currentUser) this.setState({ redirect: "/login" });
     this.setState({ currentUser: currentUser, userReady: true })
 
   }
@@ -38,94 +37,98 @@ class UserProfile extends Component {
 
     const currentUser = AuthenticationService.getCurrentUser();
 
-    console.log(currentUser)
+    console.log(`current user is: ${currentUser}`)
 
     let userType = currentUser.user.authorities[0].authority
 
+    console.log(`current user usertype is ${userType}`)
+
     return (
       <>
-     
-     {!currentUser &&
-     <MainNavigation />}
-     
-     {currentUser.user.authorities[0].authority === 'DANCE_TEACHER' && 
+    
+    
+     {currentUser.user.authorities[0].authority === "DANCE_TEACHER" && (
       <MainNavigationDanceTeacher />
-    }
+    )}
 
-    {currentUser.user.authorities[0].authority === 'USER' &&
+    {currentUser.user.authorities[0].authority === "USER" && (
     <MainNavigationUser/>
-    }
+    )}
 
-    {currentUser.user.authorities[0].authority === 'ADMIN' && 
+    {currentUser.user.authorities[0].authority === "ADMIN" && (
     <MainNavigationAdmin />
-    }
+    )}
 
 
 
   
-<div className="">
-          {(this.state.userReady) ?
+  <div className="">
+          {this.state.userReady ? (
             <div>
               <header className="">
                 <h3>
-                  <strong>{currentUser.username}</strong> Profile
+                <strong>{currentUser.user.username}</strong> Profile
                 </h3>
               </header>
 
 
-              <p><strong>Username: </strong></p>
+              <p><strong>Username: </strong>
               {currentUser.user.username}
+              </p>
+
               <p>
-                <strong>Id:</strong>{" "}
-                {currentUser.id}
+                <strong>Id:</strong>
+             
                 {currentUser.user.userId}
               </p>
-              {userType != 'ADMIN'  && 
+
+              {userType !== 'ADMIN'  && (
               <p>
                 
-                <strong>First Name:</strong>{" "}
+                <strong>First Name:</strong>
                 {currentUser.user.firstName}
               </p>
-              }
-              {userType !== 'ADMIN' && 
+              )}
+
+              {userType !== 'ADMIN' && (
               <p>
-                    <strong>Last Name:</strong>{" "}
+                    <strong>Last Name:</strong>
                     {currentUser.user.lastName}
                   </p>
-              }
-                  {userType !== 'ADMIN' && 
+              )}
+                  {userType !== 'ADMIN' &&  (
                   <p>
-                      <strong>Email:</strong>{" "}
-                      {currentUser.email}
+                      <strong>Email:</strong>
+                    
                       {currentUser.user.emailAddress}
                     </p>
-                   }
-                 
-                 {userType !== 'ADMIN' && userType !== 'USER' &&
+                   )}
+                
+ 
+                {userType !== 'ADMIN'  && userType !== 'USER' && (
                     <p>
-                      <strong>istdMembershipCode:</strong>{" "}
-                      {currentUser.user.istdMembershipCode}
+                      <strong>istdMemberCode:</strong>
+                      {currentUser.user.memberCode}
                     
                     </p>
-                    }
+                    )}
 
-
-                  {userType !== 'ADMIN' &&
+                 
                    <p>
                     <strong>User type:   </strong>
 
               {currentUser.user.authorities[0].authority}
                   </p>
-                  }
+                  
       
-            </div>: null}
+            </div> ) : null}
             </div>
 
-    </> )
+    </> );
     }}
 
 
-       export default UserProfile;
+ 
 
 
  

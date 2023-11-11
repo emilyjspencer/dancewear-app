@@ -1,8 +1,10 @@
+import NavbarLogic from "../../utilities/navbarlogic";
 
 const About = () => {
 
+    
     return (
-    <h1>About</h1>
+        <><NavbarLogic /><h1>About</h1></>
     )
 
 }

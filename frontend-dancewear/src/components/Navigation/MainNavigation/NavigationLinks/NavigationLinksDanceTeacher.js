@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import NavbarLogicNonAuth from '../../../../utilities/navbar-logic-non-auth';
 import "./NavigationLinksDanceTeacher.css";
 import AuthenticationService from '../../../../services/AuthenticationService';
 
@@ -9,8 +9,8 @@ const NavigationLinksDanceTeacher = () => {
 
   const CURRENT_USER_TYPE = AuthenticationService.getCurrentUser().user.authorities[0].authority
   return (
-    <ul className="nav-links">
-    <li>
+    <><ul className="nav-links">
+      <li>
         <NavLink to="/brands">Brands</NavLink>
       </li>
       <li>
@@ -41,7 +41,7 @@ const NavigationLinksDanceTeacher = () => {
         <NavLink to="/logout">Logout</NavLink>
       </li>
       <div>You are logged in as: {CURRENT_USER_TYPE} </div>
-    </ul>
+    </ul></>
   );
 };
 

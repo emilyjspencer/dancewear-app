@@ -31,16 +31,15 @@ public class GeneralUser implements UserDetails {
     private String lastName;
 
     private String emailAddress;
+    private String memberCode;
 
-    public String getIstdMembershipCode() {
-        return istdMembershipCode;
+    public String getMemberCode() {
+        return memberCode;
     }
 
-    public void setIstdMembershipCode(String istdMembershipCode) {
-        this.istdMembershipCode = istdMembershipCode;
+    public void setMemberCode(String memberCode) {
+        this.memberCode = memberCode;
     }
-
-    private String istdMembershipCode;
 
 
 

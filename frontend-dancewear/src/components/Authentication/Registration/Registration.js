@@ -12,18 +12,18 @@ const Registration = () => {
 
   const [validationErrors, setValidationErrors] = useState({});
 
-  // State and form handling code for dance teacher registration
+
   const [danceTeacherFormData, setDanceTeacherFormData] = useState({
     username: "",
     password: "",
     firstName: "",
     lastName: "",
     emailAddress: "",
-    istdMembershipCode: "",
+    memberCode: "",
     roleAuthority: "DANCE_TEACHER",
   });
 
-  // State and form handling code for general user/ non-dance teacher registration
+
   const [userFormData, setUserFormData] = useState({
     username: "",
     password: "",
@@ -97,9 +97,6 @@ const Registration = () => {
 
   return (
     <>
-     
-      
-    
       <div className="registration-page">
         <h1>Choose Your Registration Type</h1>
         <div className="registration-buttons">
@@ -213,15 +210,15 @@ const Registration = () => {
               
               
               <div className="form-group">
-                <label htmlFor="istdMembershipCode">ISTD Membership Code</label>
+                <label htmlFor="memberCode">ISTD Membership Code</label>
                 <input
                   type="text"
-                  name="istdMembershipCode"
-                  value={danceTeacherFormData.istdMembershipCode}
+                  name="memberCode"
+                  value={danceTeacherFormData.memberCode}
                   onChange={(e) =>
                     setDanceTeacherFormData({
                       ...danceTeacherFormData,
-                      istdMembershipCode: e.target.value,
+                      memberCode: e.target.value,
                     })
                   }
                 />

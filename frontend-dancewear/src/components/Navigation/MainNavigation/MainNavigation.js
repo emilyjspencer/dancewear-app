@@ -34,9 +34,14 @@ else if (currentUser.user.authorities[0].authority === 'ADMIN') {
 } 
 
   return ( 
-      <>
-      
-         </>
+    <div className="container-fluid">
+  
+
+    
+          
+    {/*<NavigationLinks className="navbar-brand" to="/"></NavigationLinks> */}
+
+  </div>
             
     )
   
