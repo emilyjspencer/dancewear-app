@@ -21,7 +21,7 @@ class UserService {
     
   }
 
-  getAdminDashboardBoard() {
+  getAdminDashboard() {
     return axios.get("http://localhost:8080/admin", {
       headers: authHeader(),
     });
