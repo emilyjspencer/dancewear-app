@@ -69,12 +69,12 @@ public class AuthenticationService {
 
 
        GeneralUser registeredUser = userRepository.save(user);
-        // Log the successful registration
-        logger.info("Consultant registered: {}", username);
+        // Log the successful registration for normal user
+        logger.info("Normal user registered: {}", username);
         return registeredUser;
     } catch (Exception e) {
         // Log the error if registration fails
-        logger.error("Consultant registration failed for user: " + username, e);
+        logger.error("Normal user registration failed for user: " + username, e);
             throw e;
         }
     }
