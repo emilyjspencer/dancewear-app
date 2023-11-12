@@ -1,9 +1,14 @@
 import AuthenticationService from './AuthenticationService'; // This overwrites axios methods with jest Mock
 import axios from 'axios';
+import logout from './AuthenticationService'
+
 jest.mock('axios');
 
 
+
 describe('AuthenticationService', () => {
+
+
 
   it('should handle successful login and return JWT for user', async () => {
 
@@ -33,8 +38,18 @@ describe('AuthenticationService', () => {
   });
 
   
-  
 
+
+  it('should remove "user" from localStorage when logout is called', () => {
+    // Mock my dependency = local storage
+    const removeItemMock = jest.spyOn(localStorage, 'removeItem');
+
+    logout()
+
+    expect(removeItemMock).toHaveBeenCalledWith('user');
+
+
+  });
 
 });
 

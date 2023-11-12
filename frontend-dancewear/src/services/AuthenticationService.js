@@ -2,6 +2,8 @@ import axios from 'axios'
 
  
  class AuthenticationService {
+
+
    login(data) {
      return axios
        .post("http://localhost:8080/auth/login", data, { timeout: 100000 })
@@ -17,7 +19,6 @@ import axios from 'axios'
  
    logout() {
      localStorage.removeItem("user");
-     console.log("removing user from the local storage")
    }
  
    getCurrentUser = () => {
@@ -33,5 +34,5 @@ import axios from 'axios'
  
    
  }
- 
- export default new AuthenticationService();
+
+export default new AuthenticationService();
