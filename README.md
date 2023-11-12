@@ -604,6 +604,9 @@ Cypress will be used
 
 # Accessibility
 
+* Use of roles
+* Avoid use of findByTestId and adding test ids to elements for testing purposes
+
 # Conversion of js files to .jsx files
 
 
@@ -626,3 +629,16 @@ Common approach in React, not so much in Angular - where content projection tend
 
 * Aim to use Button components (reusable) instead of using button elements over and over again.
 
+* Use ContextAPI for the basket functionality
+
+* Fully implement authorization i.e. unauthenticated users shouldn't see an option to add a new blog post
+
+* Implement email functionality
+
+* Implement username already taken error handling
+
+* Add colour to all error handling implementations
+
+* Responsive web design: mobile-first approach
+
+* Translations
