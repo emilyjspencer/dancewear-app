@@ -4,14 +4,19 @@
 Tech stack:
 
 * Spring Boot
+* Spring Security
+* OAuth2 Resource Server
 * MySQL
 * React
-* TypeScript?
-* SCSS
-* Redux?
+* CSS
 * JUnit
 * Cypress
 * Jest
+* Axios
+* React Testing Library
+* TypeScript?
+* Redux?
+* SCSS?
 
 # Architecture
 
@@ -23,20 +28,20 @@ Tech stack:
 * Requests come into the respective controllers. Methods in the request handler for each endpoint will call the respective method in the respective service.
 The method in the service will call the respective method in the Repository. The Repository interfaces with the MySQL database.
 
-* The React application sends HTTP Requests to the Spring Boot backend and retrieve HTTP Responses.
+* The React application sends HTTP Requests to the Spring Boot backend and retrieves HTTP Responses.
 
 
 
 ## Entities
 
 * Review
-* User
+* General
 * Order
 * Brand
 * Product
 * Category
 * Basket
-* Role
+* UserRole
 
 ## Controllers
 * Review 
@@ -47,7 +52,7 @@ The method in the service will call the respective method in the Repository. The
 * Basket
 * Category
 * Authentication
-* AuthComms
+
 
 ## Services
 * Review
@@ -57,50 +62,25 @@ The method in the service will call the respective method in the Repository. The
 * Product
 * Basket
 * Category
+* Authentication
 
+## DTOs
 
+DanceTeacherRegistrationDTO
+UserRegistrationDTO
+LoginDTO
+RegistrationDTO
 
+## Repositories
 
-# Brands
-
-* 1st Position
-* Bloch
-* Capezio
-* Pineapple
-* Ballet Rosa
-* Little Ballerina
-
-# Categories
-
-* Dance Shoes -  ballet shoes character shoes   pointe shoes   jazz shoes  dance trainers  tap shoes  heels
-salsa shoes
-
-* Leotards - strappy  long sleeve short sleeve  low back   high neck   unitard   boy shorts leotard
-
-* Gymnastics
-
-* Accessories- bottles  posters  scrunchies  duvet covers  pencil cases
-
-* Dance bags - ballet bag   rucksack   holdall  string bag   shoulder bag 
-
-
-* Ballroom
-
-* Fitness
-
-* Tights and socks
-
-
-
-# Trending
-
-* Dancewear
-* Dance shoes
-* Costumes
-* Brands
-* Gymnastics
-( as a carousel)
-
+* GeneralUserRepository
+* RoleRepository
+* BasketRepository
+* BrandRepository
+* BlogRepository
+* ProductRepository
+* CategoryRepository
+* ReviewsRepository
 
 
 # Components
@@ -279,13 +259,41 @@ id 13 Tops
 id 14 Trousers
 id 15 Casual
 
+# Categories
+
+* Dance Shoes -  ballet shoes character shoes   pointe shoes   jazz shoes  dance trainers  tap shoes  heels
+salsa shoes
+
+* Leotards - strappy  long sleeve short sleeve  low back   high neck   unitard   boy shorts leotard
+
+* Gymnastics
+
+* Accessories- bottles  posters  scrunchies  duvet covers  pencil cases
+
+* Dance bags - ballet bag   rucksack   holdall  string bag   shoulder bag 
+
+* Ballroom
+
+* Fitness
+
+* Tights and socks
+
+
+# Trending
+
+* Dancewear
+* Dance shoes
+* Costumes
+* Brands
+* Gymnastics
+( as a carousel)
 
 # Points to consider
 
-* How to store images in the database
-* Should I use a CSS framework to make styling easier e.g. Tailwind, React Bootstrap
+* Storage of images in database - blobs, base64 encoding
+* Use of CSS framework to faciliate styling
 * Accessibility 
-* Testing - unit tests with Jest and e2e test with Cypress
+* Testing - unit tests with Jest, functional tests with React Testing Library and e2e test with Cypress
 * Security
 * Reusability of code
 * Performance 
@@ -429,18 +437,16 @@ I can add new brands which customers can filte products by
 
 
 
-
 # CI/CD
 
-* Need to add TravisCI
-
+* Ad TravisCI
 
 
 
 # Authentication
 
 After researching, I've chosen to take the stateless approach. In two previous mini personal projects, I've used session-based authentication (stateful, with cookes).
-Since JWT seems to be more common, and scales much better, it makes sense to use JWT.
+Since JWT seems to be more common and scales much better, it makes sense to use JWT.
 
 
 
@@ -492,7 +498,7 @@ if no usesr found - return 403 response.
 # JWT Validation mechanism
 
 
-checks whehter a token has expired for not for that user
+checks whether a token has expired for not for that user
 if the token is still valid - update the Security Context Nolder 0 which is used to store the detials of who is authenticated.
 and set the user to be this user.
 
@@ -592,6 +598,8 @@ Functional tests will be written for most of the React code.
 
 MockServiceWorker will simulate mock server responses
 
+LCov shows the coverage report - generated when running npm run test:coverage
+
 ### E2E tests
 
 Cypress will be used
@@ -637,7 +645,7 @@ Common approach in React, not so much in Angular - where content projection tend
 
 * Implement username already taken error handling
 
-* Add colour to all error handling implementations
+* Add colour to all error-handling implementations
 
 * Responsive web design: mobile-first approach
 
