@@ -566,11 +566,6 @@ but most likely will stick to using react-simple-chatbot at least for this proje
 
 Need to implement search functionality. Have only seen typeaheads in the real world created in Angular using a custom RxJS operator, so requires research
 
-# Improvements
-
-Would like to ideally implement a fully reusable Modal that uses the concept of portals - to inject the Modal outside of the typical DOM structure, using the index.js file and hooks to define where to inject the modal.
-
-Common approach in React, not so much in Angular - where content projection tends to be used, unless using third parties such as Angular Material.
 
 # Modifications
 
@@ -610,4 +605,24 @@ Cypress will be used
 # Accessibility
 
 # Conversion of js files to .jsx files
+
+
+
+# Improvements
+
+* Would like to ideally implement a fully reusable Modal that uses the concept of portals - to inject the Modal outside of the typical DOM structure, using the index.js file and hooks to define where to inject the modal.
+
+Common approach in React, not so much in Angular - where content projection tends to be used, unless using third parties such as Angular Material.
+
+* Use TypeScript with React - convert js files to .tsx
+
+* Improve test coverage on the backend and frontend
+
+* Avoid using findByTestId in RTL tests - should ideally be using roles so that the elements can be found in tests in the manner that screen readers can; meaning that the app should be accessible.
+
+* Consider accessibility at all levels
+
+* Implement Cypress tests
+
+* Aim to use Button components (reusable) instead of using button elements over and over again.
 
