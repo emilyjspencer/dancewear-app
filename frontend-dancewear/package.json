@@ -33,6 +33,10 @@
       "react-app/jest"
     ]
   },
+  "moduleNameMapper": {
+    "axios": "axios/dist/node/axios.cjs"
+},
+  "type": "module",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -46,7 +50,7 @@
     ]
   },
   "devDependencies": {
-    "axios": "^1.6.1",
+    "axios": "^0.27.2",
     "axios-mock-adapter": "^1.22.0",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.2",
