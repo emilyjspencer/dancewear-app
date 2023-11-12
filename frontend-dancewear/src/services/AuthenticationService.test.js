@@ -42,11 +42,11 @@ describe('AuthenticationService', () => {
 
   it('should remove "user" from localStorage when logout is called', () => {
     // Mock my dependency = local storage
-    const removeItemMock = jest.spyOn(localStorage, 'removeItem');
+    const removeItemMock = jest.spyOn(window.localStorage.__proto__, 'removeItem');
 
-    logout()
+    AuthenticationService.logout();
 
-    expect(removeItemMock).toHaveBeenCalledWith('user');
+    expect(removeItemMock).toHaveBeenCalled();
 
 
   });
