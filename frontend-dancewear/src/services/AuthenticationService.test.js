@@ -48,9 +48,30 @@ describe('AuthenticationService', () => {
 
     expect(removeItemMock).toHaveBeenCalled();
 
-
   });
 
-});
+
+
+    it('should handle successful registration', async () => {
+  
+      axios.post.mockResolvedValue({ data: 'success' });
+
+
+      const data = { username: 'emjspen', password: 'password' };
+      const roleAuthority = 'USER';
+
+      const result = await AuthenticationService.register(data, roleAuthority);
+
+      expect(axios.post).toHaveBeenCalledWith(
+        `http://localhost:8080/auth/register/${roleAuthority}`,
+        data
+      );
+
+
+      expect(result.data).toEqual('success');
+    });
+  });
+
+
 
 
